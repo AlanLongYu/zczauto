@@ -19,6 +19,11 @@ class HomeController extends FrontController
     public function getIndex()
     {
         $articles = Article::orderBy('created_at', 'desc')->simplePaginate(3);
+		#导航
+		#轮播
+		#静态
+		#最新公告
+		#友情链接
         return view('desktop.index', compact('articles'));
     }
 
