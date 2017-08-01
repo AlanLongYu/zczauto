@@ -1,6 +1,6 @@
 @extends('admin.layout._base')
 
-@section('title') Layer - YASCMF @stop
+@section('title') Layer - ZCZ汽车管理中心 @stop
 
 @section('meta')
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>

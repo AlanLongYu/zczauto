@@ -1,21 +1,10 @@
 @extends('admin.layout._base')
 
 @section('hacker_header')
-<!--
- __     __         _____   _____  __  __  ______ 
- \ \   / / /\     / ____| / ____||  \/  ||  ____|
-  \ \_/ / /  \   | (___  | |     | \  / || |__   
-   \   / / /\ \   \___ \ | |     | |\/| ||  __|  
-    | | / ____ \  ____) || |____ | |  | || |     
-    |_|/_/    \_\|_____/  \_____||_|  |_||_|     
-                                                 
-    ASCII text from http://patorjk.com/software/taag/#p=display&h=1&v=0&f=Big&t=YASCMF
-    Template from https://almsaeedstudio.com/
-    modified by raoyc<raoyc2009@gmail.com>
--->
+<!-- Jason ZCZ汽车管理中心 -->
 @stop
 
-@section('title') 后台 - YASCMF @stop
+@section('title') 后台 - ZCZ汽车管理中心 @stop
 
 @section('meta')
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>

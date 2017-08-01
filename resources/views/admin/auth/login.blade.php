@@ -20,7 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 @stop
 
-@section('title') 登录 - YASCMF @stop
+@section('title') 登录 - ZCZAUTO @stop
 
 @section('meta')
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
@@ -57,7 +57,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <div class="login-box">
       <div class="login-logo">
-        <a href="#"><b>YAS</b>CMF</a>
+        <a href="#"><b>ZCZAUTO</b>System</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">登录开始您的会话</p>
@@ -117,16 +117,4 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 @section('hacker_footer')
 
-<!--
-    ____                                   __   __             __                                __
-   / __ \____ _      _____  ________  ____/ /  / /_  __  __   / /   ____ __________ __   _____  / /
-  / /_/ / __ \ | /| / / _ \/ ___/ _ \/ __  /  / __ \/ / / /  / /   / __ `/ ___/ __ `/ | / / _ \/ / 
- / ____/ /_/ / |/ |/ /  __/ /  /  __/ /_/ /  / /_/ / /_/ /  / /___/ /_/ / /  / /_/ /| |/ /  __/ /  
-/_/    \____/|__/|__/\___/_/   \___/\__,_/  /_.___/\__, /  /_____/\__,_/_/   \__,_/ |___/\___/_/   
-                                                  /____/                                           
-
-
-Powered by Laravel 
-v5.2.x
--->
 @stop

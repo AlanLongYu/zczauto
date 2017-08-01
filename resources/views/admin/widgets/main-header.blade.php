@@ -6,9 +6,9 @@
         <!-- Logo -->
         <a href="#" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>YAS</b></span>
+          <span class="logo-mini"><b>ZCZ</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>YAS</b>CMF</span>
+          <span class="logo-lg"><b>ZCZ</b>后台管理中心</span>
         </a>
 
         <!-- Header Navbar -->
@@ -22,7 +22,7 @@
             <ul class="nav navbar-nav">
 
               <li>
-                <a href="{{ site_url('/', 'desktop') }}">
+                <a target="blank" href="{{ site_url('/', 'desktop') }}">
                   <i class="fa fa-home" title="前台首页"></i>
                   <span class="label label-info">H</span>
                 </a>

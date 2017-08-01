@@ -19,8 +19,8 @@
               <!-- small box -->
               <div class="small-box bg-aqua">
                 <div class="inner">
-                  <h3>149<sup style="font-size: 20px">个</sup></h3>
-                  <p>本周新增话题</p>
+                  <h3>{{$order_num}}<sup style="font-size: 20px">个</sup></h3>
+                  <p>本周新增订单</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-chatboxes"></i>
@@ -45,7 +45,7 @@
               <!-- small box -->
               <div class="small-box bg-yellow">
                 <div class="inner">
-                  <h3>44<sup style="font-size: 20px">人</sup></h3>
+                  <h3>{{$reg_num}}<sup style="font-size: 20px">人</sup></h3>
                   <p>本周新增注册用户</p>
                 </div>
                 <div class="icon">
@@ -58,7 +58,7 @@
               <!-- small box -->
               <div class="small-box bg-red">
                 <div class="inner">
-                  <h3>65<sup style="font-size: 20px">人次</sup></h3>
+                  <h3>{{$active_num}}<sup style="font-size: 20px">人次</sup></h3>
                   <p>本周活跃用户访问量</p>
                 </div>
                 <div class="icon">
