@@ -22,7 +22,7 @@
         <div id="header">
 	<div class="w-1000 relative">
 		<!--logo-->
-		<a href="http://www.car60.com/" class="logo">
+		<a href="http://www.zczauto.com/" class="logo">
 			<img src="{{ _asset('assets/images/logo.png') }}" height="40" width="109">
 			<img src="{{ _asset('assets/images/logo.jpg') }}" style="display:none;"/>
 		</a>
@@ -30,7 +30,7 @@
 		<!--nav-->
 		<nav>
 			<ul class="header-nav">
-				<li><a href="/index/index" class="current">首页</a></li>
+				<li><a href="/" class="current">首页</a></li>
 				<li >资料查询<i class="arrow-icon"></i>
 					<div class="submenu">
 						<a href="/data/data"><i class="wxsck-icon"></i>维修手册库<span>1500+</span></a>		
@@ -41,7 +41,7 @@
 					</div>
 				</li>	
 				<li><a href="/vip/vip_index" >VIP购买</a></li>
-				<li><a href="/Help/about" >帮助</a></li>
+				<li><a href="/help/about"class="help">帮助</a></li>
 				<!--<li>技术学习<i class="arrow-icon"></i>
 					<div class="submenu">
 						<a href=""><i class="kck-icon"></i>基础入门课程<span>100+</span></a>
@@ -132,13 +132,13 @@
 					</dl>-->
 					<dl>
 						<dt>常见问题</dt>
-						<dd><a target="_blank" href="/Help/start">手册库使用</a></dd>
-						<dd><a target="_blank" href="/Help/softdown">软件库使用</a></dd>
-						<dd><a target="_blank" href="/Help/member">如何购买VIP</a></dd>
+						<dd><a target="_blank" href="/help/start">手册库使用</a></dd>
+						<dd><a target="_blank" href="/help/softdown">软件库使用</a></dd>
+						<dd><a target="_blank" href="/help/member">如何购买VIP</a></dd>
 					</dl>
 					<dl>
 						<dt>其他</dt>
-						<dd><a target="_blank" href="/Help/about">关于我们</a></dd>
+						<dd><a target="_blank" href="/help/about">关于我们</a></dd>
 						<dd><a target="_blank" href="http://car60.taobao.com/">淘宝店铺</a></dd>
 					</dl>
 

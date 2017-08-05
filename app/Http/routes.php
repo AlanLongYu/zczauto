@@ -160,6 +160,24 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
 
     # 展示文章
     Route::get('{category}/{article}.html', 'HomeController@getArticle');
+	
+	#帮助页面
+    Route::get('/help/about', 'HelpController@about');
+	
+	#维修手册库
+    Route::get('/help/start', 'HelpController@start');
+	
+	#维修软件库
+    Route::get('/help/softdown', 'HelpController@softdown');
+	
+	#VIP购买
+    Route::get('/help/member', 'HelpController@vip');
+	
+	#加入我们
+    Route::get('/help/joinus', 'HelpController@joinus');
+	
+	#联系我们
+    Route::get('/help/contact', 'HelpController@contact');
 
 });
 /*-----
