@@ -161,6 +161,17 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
     # 展示文章
     Route::get('{category}/{article}.html', 'HomeController@getArticle');
 	
+	
+	#维修手册库
+    Route::get('/data/data', 'DataController@data');
+	
+	#维修软件库
+    Route::get('/soft/index', 'SoftController@soft_index');
+	
+	#VIP购买
+    Route::get('/vip/vip_index', 'VipController@vip_index');
+	
+	
 	#帮助页面
     Route::get('/help/about', 'HelpController@about');
 	
@@ -170,7 +181,7 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
 	#维修软件库
     Route::get('/help/softdown', 'HelpController@softdown');
 	
-	#VIP购买
+	#帮助-VIP购买
     Route::get('/help/member', 'HelpController@vip');
 	
 	#加入我们
@@ -178,6 +189,16 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
 	
 	#联系我们
     Route::get('/help/contact', 'HelpController@contact');
+	
+	#会员中心
+	Route::get('/user/user_info', 'UserController@info');
+	
+	#会员中心-我的VIP
+	Route::get('/user/user_vip', 'UserController@vip');
+	
+	
+	#会员中心-我的订单
+	Route::get('/user/order', 'UserController@order');
 
 });
 /*-----

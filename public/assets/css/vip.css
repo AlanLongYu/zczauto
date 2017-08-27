@@ -1,0 +1,217 @@
+/*=======总体布局=====*/
+.vip_box{
+	margin:20px auto;
+	background-color:#fff;
+    overflow: hidden;
+}
+
+/*=======标题=====*/
+.vip_box h1{
+	font-size: 25px;
+    text-align: center;
+    margin: 10px 0;
+}
+.vip_box h2{
+	font-size: 16px;
+	text-align:center;
+	border-top:1px solid #eee;
+	color:#999;
+	padding-top:10px;
+	margin:10px 0 20px;
+}
+
+
+/*=======对比表格=====*/
+.vip_box .duibi{
+	width:900px;
+	margin:40px auto;
+	border-top:2px solid #33b558;
+}
+.vip_box .duibi th{
+	height:32px;
+	font-weight:normal;
+	border-bottom:1px solid #ccc;
+}
+.vip_box .duibi td{
+	color:#888;
+	border-bottom:1px dashed #f5f5f5;
+	height:32px;
+	padding-left:10px;
+}
+.vip_box .duibi .center{
+	text-align:center;
+	color:#666;
+}
+.vip_box .duibi .focus{
+	background-color:#f5f5f5;
+}
+
+
+/*=========卡片列表===========*/
+.vip_box .card-list{
+	width:900px;
+	margin:60px auto;
+}
+
+.vip_box .card-list dd{
+	width: 240px;
+    float: left;
+	border:1px solid #cec;
+	height:420px;
+}
+.vip_box .card-list dd + dd{
+	margin-left:86px;
+}
+.vip_box .card-list .vip-time{
+	height: 150px;
+    text-align: center;
+}
+.vip_box .card-list .vip-time h4{
+	font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    height: 46px;
+    line-height: 46px;
+    border-bottom: 1px solid #eee;
+}
+.vip_box .card-list .vip-time p {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+	text-indent:0px;
+}
+.vip_box .card-list .vip-time .pay-money{
+	color: #35b558;
+    text-align: center;
+    margin-top: 20px;
+}
+.vip_box .card-list .vip-time .pay-money em{
+	font-size: 20px;
+    vertical-align: top;
+	font-style: normal;
+}
+.vip_box .card-list .vip-time .pay-money span{
+	font-size: 42px;
+    line-height: 42px;
+}
+.vip_box .card-list li{
+	height: 40px;
+	line-height:40px;
+    color: #666;
+	padding:0 20px;
+}
+.vip_box .card-list dl dd li:nth-child(2n+1) {
+    background: #eee;
+}
+
+.vip_box .card-list .chaozhi{
+	width: 51px;
+    height: 51px;
+    right: -3px;
+    top: -3px;
+    z-index: 30;
+	position:absolute;
+}
+.vip_box .card-list .color-red{color:#ff9900;}
+
+
+.vip_box .card-list .greenbtn{
+	width: 160px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    font-size: 18px;
+    margin: 20px auto;
+	color:#fff;
+	background-color:#35b558;
+}
+
+
+/*===========累计评价===============*/
+.eval{
+	width:900px;
+	margin:50px auto;	
+}
+.eval h4{
+	border-top:2px solid #35b558;
+	border-bottom:1px solid #f5f5f5;
+	font-size:20px;
+	height:40px;
+	line-height: 40px;
+}
+.eval h4 em{
+	margin-left:10px;
+	font-size:18px;
+	color:red;
+	font-weight:bold;
+	font-style:normal;
+}
+.eval h4 .right{
+	color:#999;
+	font-size:14px;
+	font-weight:normal;
+}
+.eval dd{
+	margin:15px auto;
+	border-bottom:1px dashed #35b558;
+	min-height:90px;
+}
+.eval .user_info{
+	width:150px;
+	text-align:center;
+}
+.eval .user_info img{
+	width:50px;
+	height:40px;
+}
+.eval .user_info span{
+	display:block;
+	font-size:12px;
+}
+.eval .user_info .orange{color:#ff9900}
+.eval .eval_body{
+	width:700px;
+}
+.eval .eval_body p{
+	margin-bottom:5px;
+}
+.eval .eval_body .order_info{
+	font-size:13px;
+	color:#ccc;
+	margin-bottom:15px;
+}
+
+/*移动端*/
+@media only screen and (max-width: 800px) {
+	.w-1000{
+		width:100%;
+		margin:20px auto;
+	}
+	.vip_box h2{margin:0 10px;}
+	.eval{width:100%;}
+	.eval .user_info{width:30%;}
+	.eval .eval_body{width:67%;}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+	.vip_box .duibi{width:95%;}
+	.vip_box .duibi th{	width:25%;}
+	.vip_box .card-list{width:95%;}
+	.vip_box .card-list dd{width:calc((100% - 46px) / 3);}
+	.vip_box .card-list dd + dd{margin-left:20px;}
+}
+
+@media only screen and (max-width: 480px) {
+	.vip_box .duibi{display:none;}
+	.vip_box .card-list{width:95%;}
+	.vip_box .card-list dd{
+		width: 90%;
+		float: none;
+		margin:20px auto;
+	}
+	.vip_box .card-list dd + dd{margin-left:20px;}
+	.vip_box .m_h{display:none;}
+	.eval .order_info span{display:block;}
+}

@@ -23,8 +23,8 @@
 	<div class="w-1000 relative">
 		<!--logo-->
 		<a href="http://www.zczauto.com/" class="logo">
-			<img src="{{ _asset('assets/images/logo.png') }}" height="40" width="109">
-			<img src="{{ _asset('assets/images/logo.jpg') }}" style="display:none;"/>
+			<img src="{{ _asset('assets/images/logo.gif') }}" height="40" width="109">
+			<img src="{{ _asset('assets/images/logo.gif') }}" style="display:none;"/>
 		</a>
 
 		<!--nav-->
@@ -34,7 +34,7 @@
 				<li >资料查询<i class="arrow-icon"></i>
 					<div class="submenu">
 						<a href="/data/data"><i class="wxsck-icon"></i>维修手册库<span>1500+</span></a>		
-						<a href="/soft/soft"><i class="wxrjk-icon"></i>维修软件库<span>15+</span></a>				
+						<a href="/soft/index"><i class="wxrjk-icon"></i>维修软件库<span>15+</span></a>				
 						<!--<a href=""><i class="qxspk-icon"></i>维修视频库<span>1000+</span></a>
 						<a href=""><i class=""></i>维修案例库<span>3000+</span></a>						
 						<a href="/Vip/vip_index"><i class="vip-icon"></i>VIP会员购买<span>30元/月</span></a>-->
@@ -59,11 +59,11 @@
 
 		<!--login-->
 		<div class="icon-box">
-			<span class="app-icon relative loginlist">
+			<!--<span class="app-icon relative loginlist">
 				<div class="submenu">
 					<img src="{{_asset('assets/images/heade-rwm.png')}}">
 				</div>
-			</span>
+			</span>-->
 			<span class="login-icon relative loginlist" id="login-icon">
 				<dl class="submenu">
 					<dd>
@@ -83,21 +83,22 @@
 							$.post('/User/getGroupId',{'username':username},function(data){
 								if(data == 2) $(".vipbs-icon").show();
 							});
-						</script>					</dd>
-					<dd>
-						<a href="/Ucenter/user_info"><i class="grzl-icon"></i>个人资料</a>
+						</script>
 					</dd>
 					<dd>
-						<a href="/Ucenter/user_vip"><i class="wdvip-icon"></i>我的VIP</a>
+						<a href="/user/user_info"><i class="grzl-icon"></i>个人资料</a>
+					</dd>
+					<dd>
+						<a href="/user/user_vip"><i class="wdvip-icon"></i>我的VIP</a>
 					</dd>
 					<!--<dd>
 						<a href="/Ucenter/message"><i class="xxtz-icon"></i>消息通知</a>
 					</dd>-->
 					<dd>
-						<a href="/Ucenter/user_order"><i class="wddd-icon"></i>我的订单</a>
+						<a href="/user/order"><i class="wddd-icon"></i>我的订单</a>
 					</dd>
 										<dd>
-						<a href="/User/logout"><i class="tcdl-icon"></i>退出登录</a>
+						<a href="/user/logout"><i class="tcdl-icon"></i>退出登录</a>
 					</dd>				</dl>
 			</span>
 

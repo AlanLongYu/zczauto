@@ -1,0 +1,652 @@
+@charset "utf-8";
+
+/******************总体样式***************/
+.aside{
+	width:210px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.main{
+	width:770px;
+	background-color:#fff;
+	min-height:700px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+/*移动端*/
+@media only screen and (max-width: 800px) {
+	.w-1000{width:100%;}
+	.aside{width:30%;}
+	.main{width:67%;}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+}
+
+@media only screen and (max-width: 480px) {
+	.aside{margin-top:62px;}
+	.main{
+		height:auto;
+		margin-top:62px;
+	}
+}
+
+
+
+/*==================左侧分类样式=================*/
+/*==整体样式==*/
+.aside-allCategory,
+.aside-search{
+	margin:0;
+	background-color:#fff;
+}
+
+/*==分类标题样式==*/
+.aside-allCategory > .hd,
+.aside-search > .hd{
+	height:45px;
+	padding:0 32px;
+	border-bottom:1px solid #eee;
+	line-height:45px;
+	cursor:default
+}
+
+/*标题图标*/
+.aside-allCategory > .hd .icon-course-curr{
+	display:block;
+	width:15px;
+	height:15px;
+	background:url(../images/data/doc.png) no-repeat 0 0 / 15px 15px;
+	position:absolute;
+	margin-left:-20px;
+	margin-top:14px
+}
+
+/*标题*/
+.aside-allCategory > .hd h2,
+.aside-search > .hd h2{
+	position:relative;
+	font-size:14px;
+	font-weight:400;
+	color:#35b558;
+}
+.aside-allCategory > .hd h2 a{
+	color:#35b558;
+}
+
+/*==分类体  1级分类==*/
+.aside-cList{
+	position:relative;
+	width:208px;
+}
+
+.aside-cList li{
+	padding:0;
+	border-bottom:0
+}
+
+.aside-cList li > div{
+	cursor:pointer;
+	width:208px;
+	height:37px;
+	border-bottom:1px solid #f5f5f5;
+	background:url(../images/data/icon-more.png) 186px center no-repeat;
+	background-size:6px 10px;
+	padding-left:32px;
+}
+
+.aside-cList li > div a{
+	font-size:14px;
+	color:#666;
+	line-height:36px
+}
+
+.aside-cList li > div a.active{
+	color:#35b558
+}
+
+/*当鼠标放上时的样式*/
+.aside-cList li > div:hover{
+	border-left:1px solid #ddd;
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	height:38px;
+	width:210px;
+	margin-top:-1px;
+	margin-left:-1px;
+	padding-left:24px;
+	-webkit-box-shadow:1px 2px 4px rgba(0,0,0,.1);
+	box-shadow:1px 2px 4px rgba(0,0,0,.1)
+}
+
+.aside-cList li > div:hover >a{
+	display:block;
+	width:188px;
+	background:#fff;
+	position:absolute;
+	z-index:1102;
+	border-right:3px solid #fff;
+	color:#35b558;
+	font-size:13px;
+	font-weight:500;
+	line-height:36px;
+}
+
+/*==分类体 2级分类==*/
+.aside-cList li .list-show{
+	display:none;
+	-webkit-box-shadow:2px 2px 4px rgba(0,0,0,.1);
+	-moz-box-shadow:2px 2px 4px rgba(0,0,0,.1);
+	box-shadow:1px 2px 4px rgba(0,0,0,.1);
+	overflow:hidden;
+	min-height:417px;
+	min-width:600px;
+	background:#fff;
+	border:1px solid #ddd;
+	position:absolute;
+	left:209px;
+	top:-46px;
+	z-index:1101;
+	list-style:none;
+	margin-left:-1px;
+	padding-bottom:30px;
+	float:left;
+	width:600px;
+}
+
+.aside-cList li .list-show a:hover{
+	color:#35b558;
+}
+.aside-cList li>div:hover .list-show{
+	display:block;
+}
+.aside-cList li .list-show dl{
+	margin:0 15px;
+	overflow:hidden;
+	border-bottom:1px solid #f3f3f3;
+}
+
+.aside-cList li .list-show dt{
+	display:block;
+	height:37px;	
+	width:100px;
+	float:left;
+	background:url(../images/data/icon-more.png) 86px center no-repeat;
+	background-size:6px 10px;
+}
+/*2级分类*/
+.aside-cList li .list-show dt>a{
+	color:#333;
+	font-size:13px;
+	font-weight:500
+}
+
+
+/*==分类体 3级分类==*/
+.aside-cList li .list-show dd{
+	list-style:none;
+	padding:3px 0;
+	float:right;
+	width:460px;
+}
+
+.aside-cList li .list-show dd a.active,.aside-cList li .list-show dt>a.active{
+	color:#35b558
+}
+/*3级分类*/
+.aside-cList li .list-show dd a{
+	height:14px;
+	line-height:14px;
+	margin-bottom:10px;
+	margin-top:5px;
+	padding:0 7px;
+	color:#666;
+	display:inline-block;
+	font-size:12px;
+	border-left:1px solid #e0e0e0;
+	float:left;
+	white-space:nowrap;
+	font-weight:400
+}
+
+.aside-cList li .list-show dd a:last-child{
+	border-right:0
+}
+
+.aside-cList li .list-show a:hover{
+	color:#35b558
+}
+
+.aside-cList li:last-child{
+	border:0
+}
+
+
+/*移动端*/
+@media only screen and (max-width: 800px) {
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+	.aside-cList{
+		width:100%;
+	}
+	.aside-cList li > div{
+		width:100%;
+		background:url(../images/data/icon-more.png) 110px center no-repeat;
+		background-size:6px 10px;
+	}
+	.aside-cList li > div:hover{
+		width:118px;
+		padding-left:34px;
+	}
+	.aside-cList li > div:hover >a{
+		width:110px;
+	}
+	.aside-cList li .list-show{
+		position:absolute;
+		left:118px;
+		top:-46px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	
+
+	/*分类标题样式*/
+	.aside-allCategory > .hd,
+	.aside-search > .hd{padding:0 0 0 20px;}
+	.aside-allCategory > .hd .icon-course-curr{margin-left:-15px;}	
+	/*分类导航*/
+	.aside-cList{width:100px;}
+	.aside-cList li > div{
+		width:100px;
+		background:url(../images/data/icon-more.png) 90px center no-repeat;
+		background-size:6px 10px;
+		padding-left:15px;
+	}
+	.aside-cList li > div:hover{
+		width:100px;
+		padding-left:15px;
+	}
+	.aside-cList li > div:hover >a{
+		width:85px;
+	}
+	.aside-cList li .list-show{
+		min-height:300px;
+		min-width:200px;
+		position:absolute;
+		left:85px;
+		top:-46px;
+		width:220px;
+	}
+	/*子菜单*/
+	.aside-cList li .list-show dt{
+		display:block;
+		height:37px;	
+		width:100%;
+		float:none;
+		border-bottom:1px solid #35b558;
+	}
+	.aside-cList li .list-show dd{
+		float:none;
+		width:200px;
+	}
+
+}
+
+
+/*==========左侧搜索样式=============*/
+.aside-search{
+	margin-top:12px;
+
+}
+
+.aside-search > .hd .icon-search{
+	display:block;
+	width:25px;
+	height:20px;
+	background:url(../images/data/icon-search.png) no-repeat 0 0 / 18px 18px;
+	position:absolute;
+	margin-left:-25px;
+	margin-top:12px
+}
+
+.aside-search > .bd{
+	height:60px;
+}
+
+/*车型搜索*/
+
+.bigsearch{
+	display:block;
+	border:solid 1px #35b558;
+	height:30px;
+	width: 150px;
+	margin:20px;
+	border-radius:3px;
+}
+.bigsearch .stext {
+	width: 100px;
+    padding: 0 5px;
+    background-position: left 0;
+    font: 12px/1.5 "Microsoft YaHei","微软雅黑","SimSun","宋体";
+	border:none;
+}
+.bigsearch .stext, 
+.bigsearch .sbtn{
+    float: left;
+    height: 30px;
+    
+    line-height: 30px;
+}
+.bigsearch .sbtn{
+    width: 30px;
+	background: url(../images/data/search1-bg.png) no-repeat;
+    background-position: right 0;
+    cursor: pointer;
+	border:none;
+}
+
+/*移动端*/
+@media only screen and (max-width: 800px) {
+
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+	.bigsearch{
+		height:30px;
+		width: 120px;
+		margin:5px auto;
+	}
+	.bigsearch .stext {width: 80px;}
+}
+
+@media only screen and (max-width: 480px) {
+	.aside-search{
+		position:absolute;
+		left:0;
+		top:0;
+		margin:10px 0;
+		width:100%;
+		height:42px;
+	}
+	.aside-search > .hd{display:none;}
+	.aside-search > .bd{width:100%;}
+	.bigsearch{
+		height:30px;
+		width: 200px;
+		margin:5px auto;
+	}
+	.bigsearch .stext {width: 150px;}
+}
+
+
+
+/*===============右侧模块main(主页)====================*/
+/*温馨提示*/
+#info{
+	padding:10px;
+}
+#info h1{
+	font-size: 25px;
+    color: #33b558;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#info p{
+	margin:0 10px;
+	font-size:14px;
+	text-indent:20px;
+	color:#666;
+}
+#info p a{
+	color:#ff5c00;
+}
+/*最新车型*/
+.main h2{
+	font-size:15px;
+	margin:10px;
+	border-bottom:1px solid #eee;
+	padding-bottom:5px;
+	padding-left:10px;
+}
+/*最新车型与浏览历史*/
+#roll{
+	overflow:hidden;
+	height:200px;
+}
+
+.main .car{
+	margin:0 30px 20px;
+	height:210px;
+}
+.main .car li{
+	float:left;
+	width:300px;
+	height:25px;
+	background:url('../images/data/car_list.gif') no-repeat;
+	padding-left:28px;
+}
+.main .car a{color:#666;}
+.main .car a:hover{color:#33b558;}
+.main .car span{
+	float:right;
+	color:#ccc;
+	margin-right:20px;
+	font-size:13px;
+}
+
+/*移动端*/
+@media only screen and (max-width: 800px) {
+	#info h1{font-size: 18px;}
+	.main .car li span{display:none;}
+	.main .car li{
+		text-overflow:ellipsis; 
+		overflow:hidden; 
+		white-space:nowrap; 
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+	.main .car li{width:210px;}
+}
+
+@media only screen and (max-width: 480px) {
+	.main .car{
+		margin:0 10px 20px;
+		height:auto;
+	}
+	.main .car li{
+		float:none;
+		width:88%;
+		background:none;
+		padding-left:10px;
+	}
+}
+
+
+/********************右侧模块样式(车型子页)*************************/
+/*标题部分*/
+.factory span{
+	color:#999;
+	font-size:14px;
+}
+.factory a{
+	float:right;
+	color:#999;
+}
+/*车型列表部分*/
+.car_list{
+	margin:20px 20px 50px;
+	box-shadow: 5px 5px 5px #eee;
+	padding:15px;
+	border:solid 1px #eee;
+	position:relative;
+}
+.car_list img{
+	width:310px;
+	height:200px;
+	padding:5px 20px 5px 5px;
+	border-right:1px dashed #999;
+	float:left;
+}
+
+.car_list .free,
+.car_list .vip{
+	width:38px;
+	height:22px;    	
+	position:relative;
+	left:250px;
+	top:3px;
+}
+.car_list .free{
+	background: url(../images/data/free-icon.png) 0 0 no-repeat;
+	background-size:38px 22px;
+}
+.car_list .vip{
+	background: url(../images/data/vip-icon.png) 0 0 no-repeat;
+	background-size:38px 22px;
+}
+
+.car_list ul{
+	float:left;
+	margin-left:20px;
+	width:300px;
+	height:200px;
+}
+.car_list ul h4{
+	font-weight:bold;
+	font-size:15px;
+	margin-bottom:5px;
+	padding-bottom:10px;
+	border-bottom:1px solid #eee;
+}
+.car_list ul h4 span{
+	float:right;
+	color:#888;
+	font-size:12px;
+	font-weight:normal;
+}
+.car_list ul li{
+	height:30px;
+	line-height:30px;
+}
+.car_list .desc{
+	height:60px;
+}
+.car_btn{
+	margin:15px 0;
+	width: 220px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background: #35b885;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+	font-family: "Microsoft YaHei","微软雅黑","SimSun","宋体";
+}
+.car_list .address{
+	border:1px dashed #35b885;
+	height:auto;
+	line-height:20px;
+	padding:5px;
+}
+.car_list .address a:hover{
+	color:#35b885;
+}
+
+
+
+/*移动端*/
+@media only screen and (max-width: 800px) {
+	
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+	.car_list img{
+		padding:5px 5px 20px;
+		border-bottom:1px dashed #999;
+		border-right:none;
+		float:none;
+		display:block;
+		margin:10px auto;
+	}
+	.car_list form{
+		width:310px;
+		display:block;
+		margin:0 auto;
+	}
+	.car_list .desc{
+		height:40px;
+		line-height:25px;
+	}
+	.car_list .free,
+	.car_list .vip{
+		width:38px;
+		height:22px;    	
+		position:absolute;
+		top:28px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.main h2{
+		margin:10px 5px;
+		border-bottom:1px solid #35b558;
+	}
+	.factory strong{
+		display:none;
+	}
+	.factory span{
+		font-size:13px;
+		color:#35b558;
+	}
+	.car_list{
+		margin:20px 0;
+		padding:0 5px 30px;
+	}
+
+	.car_list img{
+		width:95%;
+		max-width:300px;
+		height:auto;
+		padding:5px 5px 20px;
+		border-bottom:1px dashed #999;
+		border-right:none;
+		float:none;
+		display:block;
+		margin:10px auto;
+	}
+	.car_list ul{
+		margin-left:5px;
+		width:100%;
+		height:auto;
+	}
+	.car_list ul li{
+		height:auto;
+		line-height:30px;
+	}
+	.car_list .desc{
+		height:auto;
+		line-height:25px;
+	}
+	.car_list ul h4 span{
+		float:none;
+		display:block;
+		font-size:12px;
+	}
+	.car_list .free,
+	.car_list .vip{
+		width:38px;
+		height:22px;    	
+		position:absolute;
+		top:12px;
+		left:150px;
+	}
+	.factory a{
+		float:none;
+		font-size:12px;
+	}
+}

@@ -1,0 +1,329 @@
+@charset "utf-8";
+
+/*===========总体样式===============*/
+.w-1000{
+	margin:20px auto;
+}
+.aside{
+	width:210px;
+	background-color:#fff;
+}
+.main{
+	width:770px;
+	background-color:#fff;
+	min-height:900px;
+	border: 1px solid #e4e4e4;
+}
+
+
+/*==============左侧模块样式==============*/
+.aside ul{
+	border-left:1px solid #e4e4e4;
+	bordr-right:1px solid #e4e4e4;
+}
+.aside ul li{
+    padding-left: 20px;
+    height: 50px;
+    line-height: 50px;
+    border-top: 1px solid #e4e4e4;
+}
+.aside ul li:last-child{
+	border-bottom: 1px solid #e4e4e4;
+}
+.aside ul li a{
+	color:#333;
+}
+.aside ul li a.active,
+.aside ul li a:hover{
+	color:#35b558;
+}
+
+
+/*==============右侧模块样式==============*/
+.main h2{
+	font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #e4e4e4;
+	padding-left: 20px;
+}
+.main h3{
+	margin-top: 20px;
+	margin-left: -1px;
+	margin-bottom:20px;
+    color: #666;
+    border-left: 4px solid #35b558;
+	padding-left: 20px;
+	line-height: 20px;
+	font-weight: 400;
+}
+.main section p{
+	margin-left:40px;
+	color:#ff9900;
+}
+.main ul li{
+	margin-bottom: 20px;
+    height: 30px;
+    line-height: 30px;
+}
+.main ul li label{
+	display: inline-block;
+    vertical-align: top;
+    width: 100px;
+    text-align: right;
+}
+.main ul li div.inputbox{
+	display: inline-block;
+    margin-left: 20px;
+}
+.main ul li .headpic{
+	height:100px;
+}
+.main ul li .inputbox input{
+    width: 200px;
+    height: 30px;
+    border: 1px solid #e4e4e4;
+    text-indent: 10px;
+}
+.main ul li .inputbox .ex-tips{
+    display: inline-block;
+    margin-left: 15px;
+    color: #999;
+	font-size:12px;
+}
+.main .green-btn{
+	display:block;
+	background-color:#35b558;
+	color:#fff;
+	margin: 30px auto;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+	border-radius: 2px;
+	cursor: pointer;
+	border:0;
+	font-family:'微软雅黑';
+	text-align:center;
+}
+.main .green-btn:hover{
+	background-color: #ff9900;
+}
+
+/*我的订单页面*/
+.order_table{
+	width:90%;
+	margin:20px auto;
+	border:0;
+	border-collapse:collapse;
+}
+.order_table th{
+	font-size:14px;
+	font-weight:normal;
+	color:#333;
+	text-align:left;
+	border-bottom:1px solid #35b558;
+	height:30px;
+	line-height:30px;
+}
+.order_table td{
+	color:#888;
+	height:28px;
+	line-height:28px;
+	border-bottom:1px solid #eee;
+}
+.order_table a{
+	color:#ff9900;
+}
+.order_table a.eval_btn:hover{
+	color:#35b558;
+	text-decoration:underline;
+}
+.order_table span.eval{
+	color:#35b558;
+}
+.noorder{
+	width:320px;
+	margin:50px auto;
+	text-align:center;
+}
+.main section .noorder p{color:#666;}
+.noorder p a{color:#35b558;}
+.noorder p a:hover{color:#ff9900;}
+
+
+
+/*移动端*/
+@media only screen and (max-width: 800px) {
+	.w-1000{
+		width:100%;
+		margin:20px auto;
+	}
+	.main ul li .inputbox .ex-tips{
+		display: block;
+	}
+	.main ul li{
+		height: auto;
+		line-height: auto;
+	}
+	/*我的订单*/
+	.order_table th{display:none;}
+	.order_table tr:first-child{
+		border-bottom:1px solid #35b558;
+	}
+	.main section p{
+		margin:0 10px;
+	}
+	.order_table tr{
+		display:block;
+		margin:20px 0;
+		background-color:#f5f5f5;
+	}
+	.order_table td{
+		text-indent:10px;
+		display:block;
+	}
+	.order_table .c_time:before{
+		content:'下单时间:\00a0\00a0\00a0\00a0';
+	}
+	.order_table .type:before{
+		content:'购买类型:\00a0\00a0\00a0\00a0';
+	}
+	.order_table .o_time:before{
+		content:'成交时间:\00a0\00a0\00a0\00a0';
+	}
+	.order_table .status:before{
+		content:'交易状态:\00a0\00a0\00a0\00a0';
+	}
+	.order_table .eval:before{
+		content:'评价管理:\00a0\00a0\00a0\00a0';
+	}
+	.p_hide{display:none;}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+	.aside{
+		width:30%;
+	}
+	.main{
+		width:67%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.aside{
+		float:none;
+		width:100%;
+	}	
+	.main{
+		margin-top:20px;
+		float:none;
+		width:100%;
+	}
+	.aside ul li{
+		text-align:center;
+		height: 45px;
+		line-height: 45px;
+		padding:0;
+	}
+	.main h2{
+		height: 45px;
+		line-height: 45px;
+		padding: 0;
+		text-align:center;
+	}
+
+	.main ul li label{
+		width: 80px;
+	}
+	.main ul li .inputbox input{
+		width: 160px;
+	}
+
+	
+}
+
+
+/*头像修改专用*/
+.upload-area {
+	position: relative;
+	float: left;
+	margin-right: 30px;
+	width: 200px;
+	height: 200px;
+	background-color: #F5F5F5;
+    border: 2px solid #E1E1E1;
+}
+.upload-area .file-tips {
+	position: absolute;
+	top: 90px;
+	left: 0;
+    padding: 0 15px;
+    width: 170px;
+    line-height: 1.4;
+    font-size: 12px;
+	color: #A8A8A3;
+    text-align: center;
+}
+.userup-icon {
+    display: inline-block;
+    margin-right: 3px;
+    width: 16px;
+    height: 16px;
+    vertical-align: -2px;
+	background: url("../img/user/userup_icon.png") no-repeat;
+}
+.uploadify-button {
+	line-height: 120px!important;
+	text-align: center;
+}
+.preview-area {
+	float: left;
+}
+.tcrop {
+    clear: right;
+    font-size: 14px;
+    font-weight: bold;
+}
+.preview-area .crop {
+    background: url("../img/user/mystery.png") no-repeat scroll center center #EEEEEE;
+    float: left;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.crop100 {
+    height: 100px;
+    width: 100px;
+}
+
+.preview-area .save-pic {
+    clear: left;
+    margin-right: 20px;
+}
+.preview-area .uppic-btn {
+    background-color: #35b558;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    width: 89px;
+}
+.preview-area .uppic-btn:hover{
+	background-color: #ff9900;
+} 
+.preview {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 11;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	background:#fff;
+	display: none;
+}
