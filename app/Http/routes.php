@@ -148,10 +148,9 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
 -----*/
 $_dp = config('site.route.prefix.desktop', '');
 Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['block:desktop', 'web']], function () {
-
     //桌面站主页
     Route::get('/', 'HomeController@getIndex');
-
+    
     //设置语言版本
     Route::get('lang', 'HomeController@getLang');
 

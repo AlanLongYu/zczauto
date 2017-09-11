@@ -1,23 +1,6 @@
 @extends('admin.layout._base')
 
 @section('hacker_header')
-<!--
- __     __         _____   _____  __  __  ______ 
- \ \   / / /\     / ____| / ____||  \/  ||  ____|
-  \ \_/ / /  \   | (___  | |     | \  / || |__   
-   \   / / /\ \   \___ \ | |     | |\/| ||  __|  
-    | | / ____ \  ____) || |____ | |  | || |     
-    |_|/_/    \_\|_____/  \_____||_|  |_||_|     
-                                                 
-    ASCII text from http://patorjk.com/software/taag/#p=display&h=1&v=0&f=Big&t=YASCMF
-    Template from https://almsaeedstudio.com/
-    modified by raoyc<raoyc2009@gmail.com>
--->
-
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 @stop
 
 @section('title') 登录 - ZCZAUTO @stop

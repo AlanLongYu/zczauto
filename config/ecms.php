@@ -31,6 +31,99 @@ return [
             ],
         ],
         [
+            'name' => '会员管理',
+            'icon' => 'fa-user',
+            'child_icon' => '',
+            'sub_menu' => [
+                [
+                    'name' => '表单',
+                    'route' => 'admin:demo.form',
+                    'can' => '',
+                ],
+                [
+                    'name' => '图标',
+                    'route' => 'admin:demo.icon',
+                    'can' => '',
+                ],
+                [
+                    'name' => '更多',
+                    'route' => 'https://almsaeedstudio.com/',
+                    'can' => '',
+                ],
+            ],
+        ],
+        
+        
+        [
+            'name' => '订单管理',
+            'icon' => 'fa-paper-plane',
+            'child_icon' => 'fa-file-o',
+            'sub_menu' => [
+                [
+                    'name' => '表单',
+                    'route' => 'admin:demo.form',
+                    'can' => '',
+                ],
+                [
+                    'name' => '图标',
+                    'route' => 'admin:demo.icon',
+                    'can' => '',
+                ],
+                [
+                    'name' => '更多',
+                    'route' => 'https://almsaeedstudio.com/',
+                    'can' => '',
+                ],
+            ],
+        ],
+        
+        [
+            'name' => '资料库管理',
+            'icon' => 'fa-paper-plane',
+            'child_icon' => 'fa-file-o',
+            'sub_menu' => [
+                [
+                    'name' => '表单',
+                    'route' => 'admin:demo.form',
+                    'can' => '',
+                ],
+                [
+                    'name' => '图标',
+                    'route' => 'admin:demo.icon',
+                    'can' => '',
+                ],
+                [
+                    'name' => '更多',
+                    'route' => 'https://almsaeedstudio.com/',
+                    'can' => '',
+                ],
+            ],
+        ],
+        
+        [
+            'name' => '软件库管理',
+            'icon' => 'fa-paper-plane',
+            'child_icon' => 'fa-file-o',
+            'sub_menu' => [
+                [
+                    'name' => '表单',
+                    'route' => 'admin:demo.form',
+                    'can' => '',
+                ],
+                [
+                    'name' => '图标',
+                    'route' => 'admin:demo.icon',
+                    'can' => '',
+                ],
+                [
+                    'name' => '更多',
+                    'route' => 'https://almsaeedstudio.com/',
+                    'can' => '',
+                ],
+            ],
+        ],
+        
+        [
             'name' => '内容管理',
             'icon' => 'fa-edit',
             'child_icon' => 'fa-star-o',
