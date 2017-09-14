@@ -1,0 +1,81 @@
+/*	--------------------------------------------------
+	系统样式
+	-------------------------------------------------- */
+		
+	.reveal-modal-bg { 
+		position: fixed;
+		height:100%;
+		width: 100%;
+		background: #000;
+		background: rgba(0,0,0,.8);
+		z-index: 100;
+		display: none;
+		top: 0;
+		left: 0; 
+	}
+	
+	.reveal-modal {
+		visibility: hidden;
+		top: 120px; 
+		left: 50%;
+		margin-left: -200px;
+		width: 400px;
+		background-color:#fff;
+		position: absolute;
+		z-index: 10001;
+		padding: 30px 40px 34px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		text-align:center;
+		}	
+	
+	
+	.reveal-modal .close-reveal-modal {
+		font-size: 22px;
+		line-height: .5;
+		position: absolute;
+		top: 8px;
+		right: 11px;
+		color: #aaa;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: bold;
+		cursor: pointer;
+		} 
+
+/*	--------------------------------------------------
+	自定义样式
+	-------------------------------------------------- */	
+	.reveal-modal h6{
+		font-size:18px;
+		font-weight:bold;
+		margin-bottom:5px;
+	}
+	.reveal-modal p{
+		color:#666;
+	}
+	.reveal-modal .btn{
+		display:block;
+		height:32px;
+		line-height:32px;
+		width:200px;
+		background-color:#35b558;
+		color:#fff;
+		margin:20px auto;
+	}
+
+	.reveal-modal .inp{
+		display:block;
+		width:200px;
+		height:32px;
+		background-color:#fff;
+		margin:10px auto;
+	}	
+
+
+@media only screen and (max-width: 480px) {
+	.reveal-modal {	width: 90%;}
+}

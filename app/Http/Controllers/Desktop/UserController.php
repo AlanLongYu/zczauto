@@ -35,6 +35,21 @@ class UserController extends FrontController
 		
 		return view('desktop.order');
 	}
+    
+    
+    //注册
+	public function register()
+	{
+		
+		return view('desktop.register');
+	}
+    
+    //登录
+	public function login()
+	{
+		
+		return view('desktop.login');
+	}
 	
 	//退出
 	public function logout(){

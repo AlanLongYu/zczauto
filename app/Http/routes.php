@@ -188,6 +188,12 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
 	
 	#联系我们
     Route::get('/help/contact', 'HelpController@contact');
+    
+    #注册
+	Route::get('/user/register', 'UserController@register');
+    
+    #注册
+	Route::get('/user/login', 'UserController@login');
 	
 	#会员中心
 	Route::get('/user/user_info', 'UserController@info');
