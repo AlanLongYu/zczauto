@@ -24,7 +24,7 @@ class MultiSiteRedirectIfAuthenticated
     public function handle($request, Closure $next, $site = null)
     {
         $backend_home_url = config('site.route.prefix.admin', 'admin').'/dashboard';
-        $desktop_home_url = config('site.route.prefix.desktop', '').'/i/welcome.html';
+        $desktop_home_url = config('site.route.prefix.desktop', 'desktop').'/user/user_info';
         switch ($site) {
             case 'admin':
                 $guard = 'web';
@@ -38,9 +38,9 @@ class MultiSiteRedirectIfAuthenticated
                 break;
         }
         if (Auth::guard($guard)->check()) {
+            echo 1111;exit;
             return redirect($home_url);
         }
-
         return $next($request);
     }
 }

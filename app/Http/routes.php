@@ -84,6 +84,7 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
 
 
     Route::group(['prefix' => '', 'middleware' => ['multi-site.auth:admin']], function () {
+        #multi-site.auth \App\Http\Middleware\MultiSiteAuthenticate::class
 
         Route::get('dashboard', 'DashboardController@getIndex');
 
@@ -194,16 +195,25 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
     
     #注册
 	Route::get('/user/login', 'UserController@login');
+
+    # 登录处理函数
+    Route::get('/user/dologin', 'UserController@dologin');
+
+    # 退出逻辑
+    Route::get('/user/logout', 'UserController@logout');
+    
+    #需要登录验证的路由组
+    Route::group(['prefix' => 'user', 'middleware' => ['multi-site.auth:desktop']],function(){
+        //Route::auth();
+         #会员中心
+        Route::get('user_info', 'UserController@info');
+        #会员中心-我的VIP
+        Route::get('user_vip', 'UserController@vip');
+        
+        #会员中心-我的订单
+        Route::get('order', 'UserController@order');
+    });
 	
-	#会员中心
-	Route::get('/user/user_info', 'UserController@info');
-	
-	#会员中心-我的VIP
-	Route::get('/user/user_vip', 'UserController@vip');
-	
-	
-	#会员中心-我的订单
-	Route::get('/user/order', 'UserController@order');
 
 });
 /*-----
