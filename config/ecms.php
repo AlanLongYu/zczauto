@@ -83,18 +83,13 @@ return [
             'child_icon' => 'fa-file-o',
             'sub_menu' => [
                 [
-                    'name' => '表单',
-                    'route' => 'admin:demo.form',
+                    'name' => '资料分类',
+                    'route' => 'admin:category.index',
                     'can' => '',
                 ],
                 [
-                    'name' => '图标',
-                    'route' => 'admin:demo.icon',
-                    'can' => '',
-                ],
-                [
-                    'name' => '更多',
-                    'route' => 'https://almsaeedstudio.com/',
+                    'name' => '资料列表',
+                    'route' => 'admin:ziliao.index',
                     'can' => '',
                 ],
             ],
