@@ -13,8 +13,9 @@ class ZiliaoController extends Controller
     //列表
     public function index()
     {
-    	$ziliao = Ziliao::paginate(15);
-        return view('admin.back.ziliao.index', compact('ziliao'));
+    	$ziliaos = Ziliao::paginate(15);
+    	var_dump($ziliaos->items());exit;
+        return view('admin.back.ziliao.index', compact('ziliaos'));
     }
 
      public function add()
