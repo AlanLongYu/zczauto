@@ -51,11 +51,48 @@ class UserController extends FrontController
 		
 		return view('desktop.register');
 	}
+
+	//注册处理
+	public function doregister(Request $request)
+	{
+		$phone = $request->input('phone');
+		$password = $request->input('password');
+		$passwordConfirm = $request->input('password2');
+
+		if(empty($phone)){
+			return redirect()->back()->withInput($request->input())->with('fail', '手机号不能为空');
+		}
+
+		$exists = \App\Member::where('phone',$phone)->get();
+		if(!$exists->isEmpty()){
+			return redirect()->back()->withInput($request->input())->with('fail', '手机号已注册');
+		}
+		
+		if(empty($password)){
+			return redirect()->back()->withInput($request->input())->with('fail', '密码不能为空');
+		}
+
+		if($password != $passwordConfirm){
+			return redirect()->back()->withInput($request->input())->with('fail', '两次密码不一致');
+		}
+
+
+		try{
+			$memberModel = new \App\Member;
+			$memberModel->phone = e($phone);
+			$memberModel->password = md5(trim($password));
+			if(!$memberModel->save()){
+				throw new Exception("注册失败,请联系管理员", 100110);
+			}
+			return redirect()->to(site_path('user/login', 'web'))->with('message', '注册成功');
+		}catch(Exception $e){
+			return redirect()->back()->withInput($request->input())->with('fail', $e->getMessage());
+		}	
+	}
     
     //登录
-	public function login()
-	{
-		
+	public function login(Request $request)
+	{	
 		return view('desktop.login');
 	}
 

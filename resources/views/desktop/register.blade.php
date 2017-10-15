@@ -24,7 +24,8 @@
 					<tr>
 						<td class="title">手机号：</td>
 						<td>
-							<input type="text" class="textcss" id="phone" name="phone" placeholder="请输入手机号">
+							<input type="text" class="textcss" id="phone" name="phone" placeholder="请输入手机号" value="{{old(
+							'phone')}}">
 							<span class="msgs" id="msg_phone">有效的11位手机号码</span>
 						</td>
 					</tr>
@@ -43,18 +44,12 @@
 						</td>
 					</tr>
 					<tr>
-						<td class="title">验证码：</td>
-						<td>
-							<input type="text" class="textcss short" id="sms_verify" name="sms_verify">
-							<button class="sms_btn" id="sms_btn">获取手机验证码</button>
-							<span class="msgs" id="msg_sms">点击按钮发送验证码到手机</span>
-						</td>
-					</tr>
-					<tr>
 						<td class="title">&nbsp;</td>
 						<td>
 							<input type="submit" value="注 册" class="butncss" id="regSubmitButton">
-							<p class="msgs" id="msgs" style="display: none;"></p>
+							 @if(session()->has('fail'))
+							<p class="msgs" id="msgs" style="color: red;">{{session('fail')}}</p>
+							@endif
 						</td>
 					</tr>
 				</tbody>
@@ -69,8 +64,8 @@
 
 
 <!--弹出层-->
-<script src="/Public/Home/js/jquery.reveal.js"></script>
-<link rel="stylesheet" href="/Public/Home/css/reveal.css">	
+<script src="{{ _asset('/assets/js/jquery.reveal.js')}}"></script>
+<link rel="stylesheet" href="{{ _asset('/assets/css/reveal.css')}}">	
 <a href="#" id="registerok" data-reveal-id="myModal" style="display:none"></a>
 <div id="myModal" class="reveal-modal">
 	<h6>恭喜您，注册成功，马上转到登录页！</h6>

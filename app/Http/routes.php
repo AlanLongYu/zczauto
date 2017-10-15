@@ -191,7 +191,8 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
     Route::get('/help/contact', 'HelpController@contact');
     
     #注册
-	Route::get('/user/register', 'UserController@register');
+    Route::get('/user/register', 'UserController@register');
+	Route::post('/user/register', 'UserController@doregister');
     
     #注册
 	Route::get('/user/login', 'UserController@login');

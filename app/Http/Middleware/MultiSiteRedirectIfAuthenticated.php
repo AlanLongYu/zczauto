@@ -38,7 +38,6 @@ class MultiSiteRedirectIfAuthenticated
                 break;
         }
         if (Auth::guard($guard)->check()) {
-            echo 1111;exit;
             return redirect($home_url);
         }
         return $next($request);
