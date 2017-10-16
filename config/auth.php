@@ -110,6 +110,12 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
+        'members' => [
+            'provider' => 'members',
+            'email' => 'auth.emails.password',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
     ],
 
 ];

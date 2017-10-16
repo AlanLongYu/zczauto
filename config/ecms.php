@@ -36,8 +36,8 @@ return [
             'child_icon' => '',
             'sub_menu' => [
                 [
-                    'name' => '表单',
-                    'route' => 'admin:demo.form',
+                    'name' => '会员列表',
+                    'route' => 'admin:member.index',
                     'can' => '',
                 ],
                 [

@@ -129,6 +129,10 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
              * 自定义二次开发区域 END
              * ----------------------------------------
              */
+        //会员管理
+        Route::get('member', 'MemberController@index');
+        Route::post('member', 'MeController@getMe');
+
 
         //用户管理
         Route::get('me', 'MeController@getMe');
