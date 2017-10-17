@@ -130,9 +130,10 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
              * ----------------------------------------
              */
         //会员管理
-        Route::get('member', 'MemberController@index');
+        //Route::get('member', 'MemberController@index');
         Route::post('member', 'MeController@getMe');
 
+        Route::resource('member','MemberController');
 
         //用户管理
         Route::get('me', 'MeController@getMe');

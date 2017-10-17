@@ -7,13 +7,14 @@ use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
 use App\Loggers\SystemLogger;
 use App\Repositories\UserRepository;
+use App\Repositories\MemberRepository;
 use App\Repositories\RoleRepository;
 use Gate;
 
 /**
  * 管理员(用户)资源控制器
  *
- * @author raoyc <raoyc2009@gmail.com>
+ * @author raoyc <raoyc2009@gmail.compact     >
  */
 class MemberController extends BackController
 {
@@ -33,7 +34,7 @@ class MemberController extends BackController
     protected $user;
 
     public function __construct(
-        UserRepository $user,
+        MemberRepository $user,
         RoleRepository $role)
     {
         parent::__construct();
@@ -44,6 +45,7 @@ class MemberController extends BackController
             $this->middleware('deny403');
         }
     }
+
 
 
     /**
@@ -58,7 +60,7 @@ class MemberController extends BackController
             's_name' => $request->input('s_name'),
             's_phone' => $request->input('s_phone'),
         ];
-        $users = $this->user->index($data);
+        $users =  $this->user->index($data);
 
         return view('admin.back.member.index', compact('users'));
     }
@@ -76,7 +78,7 @@ class MemberController extends BackController
             return deny();
         }
         $roles = $this->user->role();
-        return view('admin.back.user.create', ['roles' => $roles]);
+        return view('admin.back.member.create', ['roles' => $roles]);
     }
 
 
@@ -92,6 +94,7 @@ class MemberController extends BackController
             return deny();
         }
         $data = $request->all();
+        //print_r($data);exit;
         $manager = $this->user->store($data);
         if ($manager->id) {  //添加成功
 
@@ -100,11 +103,11 @@ class MemberController extends BackController
             $log = [
                 'user_id' => auth()->user()->id,
                 'type'    => 'management',
-                'content' => '管理员：成功新增一名管理用户'.$manager->username.'<'.$manager->email.'>。',
+                'content' => '管理员：成功新增一名会员用户'.$manager->username.'<'.$manager->email.'>。',
             ];
             SystemLogger::write($log);
 
-            return redirect()->to(site_path('user', 'admin'))->with('message', '成功新增管理员！');
+            return redirect()->to(site_path('member', 'admin'))->with('message', '成功新增会员！');
 
         } else {
             return redirect()->back()->withInput($request->input())->with('fail', '数据库操作返回异常！');
@@ -137,7 +140,7 @@ class MemberController extends BackController
 
             $own_role = $this->user->fakeRole();  //伪造一个Role对象，以免报错
         }
-        return view('admin.back.user.edit', compact('user', 'roles', 'own_role'));
+        return view('admin.back.member.edit', compact('user', 'roles', 'own_role'));
     }
 
 
