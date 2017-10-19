@@ -16,15 +16,15 @@
 			</span> 
 		欢迎登录ZCZ汽车网
 		</h1>
-		<form action="/Home/User/login" id="form_regist" autocomplete="off" name="form_regist" method="post">
+		<form action="/user/login" id="form_login" autocomplete="off" name="form_regist" method="post">
 			<table class="regtable">
 				<tbody>	
 					
 					<tr>
 						<td class="title">手机：</td>
 						<td>
-							<input type="text" class="textcss" id="username" name="username" placeholder="请输入手机号/邮箱/用户名">
-							<span class="msgs" id="msg_username">邮箱或用户名也可以</span>
+							<input type="text" class="textcss" id="username" name="username" placeholder="请输入手机号">
+							<span class="msgs" id="msg_username">请输入您的手机号</span>
 						</td>
 					</tr>
 					<tr>
@@ -32,14 +32,6 @@
 						<td>
 							<input type="password" autocomplete="off" class="textcss" id="password" name="password" placeholder="请输入密码">
 							<span class="msgs" id="msg_password">您的登录密码</span>   
-						</td>
-					</tr>
-					<tr>
-						<td class="title">验证码：</td>
-						<td class="verify_box">
-							<input type="text" class="textcss short" id="verify" name="verify"  maxlength="4" placeholder="右侧验证码">
-							<img src="/Home/User/code" alt="verify" onclick= this.src="/Home/User/code/"+Math.random() title="看不清？点击更换另一个验证码。"id="verify_img"/>
-							<span class="msgs" id="msg_verify">点击验证码图片可更换</span>
 						</td>
 					</tr>
 					<tr>
@@ -53,7 +45,7 @@
 						<td class="title">&nbsp;</td>
 						<td>
 							<p class="msgs" id="msgs" style="display: none;"></p>
-							<input type="submit" value="登 录" class="butncss" id="loginSubmitButton">						
+							<input type="submit" value="登 录"  class="butncss" id="loginSubmitButton">						
 						</td>
 					</tr>
 				</tbody>

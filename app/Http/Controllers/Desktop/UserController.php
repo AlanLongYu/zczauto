@@ -9,6 +9,8 @@ use Auth;
 use App\Jobs\ChangeLocale;
 use Douyasi\Models\Article;
 use Douyasi\Models\Category;
+use App\Events\UserLogin;
+use App\Events\UserLogout;
 
 class UserController extends FrontController
 {
@@ -24,7 +26,6 @@ class UserController extends FrontController
 	//登录之后个人资料
 	public function info()
 	{
-		
 		return view('desktop.user_info');
 	}
 	
@@ -65,7 +66,8 @@ class UserController extends FrontController
 
 		$exists = \App\Member::where('phone',$phone)->get();
 		if(!$exists->isEmpty()){
-			return redirect()->back()->withInput($request->input())->with('fail', '手机号已注册');
+			return redirect()->back()->withInput($request->input())->with('fail', '手机号
+				已注册');
 		}
 		
 		if(empty($password)){
@@ -80,7 +82,7 @@ class UserController extends FrontController
 		try{
 			$memberModel = new \App\Member;
 			$memberModel->phone = e($phone);
-			$memberModel->password = md5(trim($password));
+			$memberModel->password = bcrypt(trim($password));
 			if(!$memberModel->save()){
 				throw new Exception("注册失败,请联系管理员", 100110);
 			}
@@ -102,13 +104,13 @@ class UserController extends FrontController
 		$redirectTo = '/';
 		//会员登录认证凭证
         $credentials = [
-            'phone'  => '18682317653',//$request->input('phone'),
-            'password'  => 'admin',//$request->input('password'),
+            'phone'  => e($request->input('username')),
+            'password'  => e($request->input('password')),
             'is_locked' => 0,
         ];
         $flag = Auth::guard('member')->attempt($credentials, $request->has('remember'));
         if ($flag) {
-            //event(new UserLogin(auth()->user()));  //触发登录事件
+            event(new UserLogin(Auth::guard('member')->user()));  //触发登录事件
             return redirect()->intended($redirectTo);
         } else {
             // 登录失败，跳回
@@ -120,8 +122,10 @@ class UserController extends FrontController
 	
 	//退出
 	public function logout(){
-		
-		//@event(new UserLogout(auth()->user()));  //触发登出事件
+		if(Auth::check()){ 
+            Auth::logout();
+        }
+		@event(new UserLogout(Auth::guard('member')->user()));  //触发登出事件
 		Auth::guard('member')->logout();
 		return redirect()->intended('/');
 	}

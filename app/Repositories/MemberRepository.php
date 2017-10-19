@@ -45,7 +45,7 @@ class MemberRepository extends BaseRepository
     private function saveMember($member, $inputs)
     {
         $member->username = $member->nickname = e($inputs['username']);
-        $member->password = md5(e($inputs['password']));
+        $member->password = bcrypt(e($inputs['password']));
         $member->email = e($inputs['email']);
         $member->realname = e($inputs['realname']);
 

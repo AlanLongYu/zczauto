@@ -210,7 +210,7 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
 	Route::get('/user/login', 'UserController@login');
 
     # 登录处理函数
-    Route::get('/user/dologin', 'UserController@dologin');
+    Route::post('/user/login', 'UserController@dologin');
 
     # 退出逻辑
     Route::get('/user/logout', 'UserController@logout');

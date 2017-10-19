@@ -59,11 +59,8 @@
 
 		<!--login-->
 		<div class="icon-box">
-			<!--<span class="app-icon relative loginlist">
-				<div class="submenu">
-					<img src="{{_asset('assets/images/heade-rwm.png')}}">
-				</div>
-			</span>-->
+			
+			@if(Auth::guard('member')->check())
 			<span class="login-icon relative loginlist" id="login-icon">
 				<dl class="submenu">
 					<dd>
@@ -101,10 +98,15 @@
 						<a href="/user/logout"><i class="tcdl-icon"></i>退出登录</a>
 					</dd>				</dl>
 			</span>
+			@else
+				<a href="/user/register" class="reg-btn">注册</a>
+						&nbsp;|&nbsp;
+				<a href="/user/login" class="login-btn">登录</a>
+			@endif
 
 		</div>
 		<!--login-->
-
+		
 		
 	</div>
 </div>
