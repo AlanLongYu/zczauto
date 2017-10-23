@@ -29,8 +29,14 @@ class CategoryController extends BackController
 
     public function index(Request $request)
     {
-        $categories = Category::paginate(15);
-        return view('admin.back.category.index', compact('categories'));
+        $categories = Category::all();
+        $items = [];
+        foreach($categories->toArray() AS $key => $val){
+            $items[$val['id']] = $val;
+        }
+        $tree =  Category::generateTree($items);
+
+        return view('admin.back.category.index', ['categories' => $categories,'tree'=> $tree]);
     }
 
     public function create(Request $request)

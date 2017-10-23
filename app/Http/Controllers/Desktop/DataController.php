@@ -16,8 +16,13 @@ class DataController extends FrontController
 	//VIP购买
 	public function data()
 	{
-		
-		return view('desktop.data');
+		$categories = Category::orderBy('sort','desc')->get();
+        $items = [];
+        foreach($categories->toArray() AS $key => $val){
+            $items[$val['id']] = $val;
+        }
+        $tree =  Category::generateTree($items);
+		return view('desktop.data',['categories' =>$tree]);
 	}
 	
     /**

@@ -8,7 +8,7 @@ return [
 
     //sidebar menu
     'sidebar' => [
-        [
+        /*[
             'name' => '开发演示',
             'icon' => 'fa-paper-plane',
             'child_icon' => 'fa-file-o',
@@ -29,7 +29,7 @@ return [
                     'can' => '',
                 ],
             ],
-        ],
+        ],*/
         [
             'name' => '会员管理',
             'icon' => 'fa-user',
@@ -40,7 +40,7 @@ return [
                     'route' => 'admin:member.index',
                     'can' => '',
                 ],
-                [
+               /* [
                     'name' => '图标',
                     'route' => 'admin:demo.icon',
                     'can' => '',
@@ -49,7 +49,7 @@ return [
                     'name' => '更多',
                     'route' => 'https://almsaeedstudio.com/',
                     'can' => '',
-                ],
+                ],*/
             ],
         ],
         

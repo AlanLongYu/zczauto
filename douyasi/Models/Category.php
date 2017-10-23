@@ -18,5 +18,16 @@ class Category extends Model
                             'sort',
                             'slug',
                         ];
-
+ 
+	 public static function generateTree($items){
+	    $tree = array();
+	    foreach($items as $item){
+	        if(isset($items[$item['p_id']])){
+	            $items[$item['p_id']]['son'][] = &$items[$item['id']];
+	        }else{
+	            $tree[] = &$items[$item['id']];
+	        }
+	    }
+	    return $tree;
+	}
 }

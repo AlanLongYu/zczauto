@@ -50,37 +50,92 @@
                       </tr>
                       <!--tr-th end-->
 
-                      @foreach ($categories as $cat)
+                      @foreach ($tree as $cat)
                       <tr>
                         <td>
                             @can('category-write')
-                            <a href="{{ _route('admin:category.edit', $cat->id) }}"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
+                            <a href="{{ _route('admin:category.edit', $cat['id']) }}"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
                             @endcan
                             @can('category-show')
-                            <a href="{{ _route('admin:article.index', ['s_cid' => $cat->id]) }}"><i class="fa fa-fw fa-link" title="查看该分类下文章"></i></a>
+                            <a href="{{ _route('admin:article.index', ['s_cid' => $cat['id']]) }}"><i class="fa fa-fw fa-link" title="查看该分类下文章"></i></a>
                             @endcan
                         </td>
-                        <td>{{ $cat->id }}</td>
+                        <td>{{ $cat['id'] }}</td>
                         <td class="text-muted">
-                          {{ $cat->name }}
+                          {{ $cat['name'] }}
                         </td>
                         <td class="text-green">
-                          @if(empty($cat->slug))
+                          @if(empty($cat['slug']))
                           -
                           @else
-                          {{ $cat->slug }}
+                          {{ $cat['slug'] }}
                           @endif
                         </td>
-                        <td>{{ $cat->sort }}</td>
-                        <td>{{ $cat->updated_at }}</td>
+                        <td>{{ $cat['sort'] }}</td>
+                        <td>{{ $cat['updated_at'] }}</td>
                       </tr>
+                      @if(isset($cat['son']))
+                        @foreach ($cat['son'] as $cat)
+                      <tr>
+                        <td>
+                            @can('category-write')
+                            <a href="{{ _route('admin:category.edit', $cat['id']) }}"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
+                            @endcan
+                            @can('category-show')
+                            <a href="{{ _route('admin:article.index', ['s_cid' => $cat['id']]) }}"><i class="fa fa-fw fa-link" title="查看该分类下文章"></i></a>
+                            @endcan
+                        </td>
+                        <td>{{ $cat['id'] }}</td>
+                        <td class="text-muted">
+                            &nbsp;&nbsp;&nbsp;&nbsp;├ {{ $cat['name'] }}
+                        </td>
+                        <td class="text-green">
+                          @if(empty($cat['slug']))
+                          -
+                          @else
+                          {{ $cat['slug'] }}
+                          @endif
+                        </td>
+                        <td>{{ $cat['sort'] }}</td>
+                        <td>{{ $cat['updated_at'] }}</td>
+                      </tr>
+                      @endforeach
+                      @endif
+
+                      @if(isset($cat['son']))
+                        @foreach ($cat['son'] as $cat)
+                      <tr>
+                        <td>
+                            @can('category-write')
+                            <a href="{{ _route('admin:category.edit', $cat['id']) }}"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
+                            @endcan
+                            @can('category-show')
+                            <a href="{{ _route('admin:article.index', ['s_cid' => $cat['id']]) }}"><i class="fa fa-fw fa-link" title="查看该分类下文章"></i></a>
+                            @endcan
+                        </td>
+                        <td>{{ $cat['id'] }}</td>
+                        <td class="text-muted">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├ {{ $cat['name'] }}
+                        </td>
+                        <td class="text-green">
+                          @if(empty($cat['slug']))
+                          -
+                          @else
+                          {{ $cat['slug'] }}
+                          @endif
+                        </td>
+                        <td>{{ $cat['sort'] }}</td>
+                        <td>{{ $cat['updated_at'] }}</td>
+                      </tr>
+                      @endforeach
+                      @endif
                       @endforeach
 
                     </tbody>
                   </table>
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
-                  {!! $categories->render() !!}
+                  
                 </div>
 
               </div>
