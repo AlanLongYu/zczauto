@@ -108,10 +108,7 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
              */
 
              #资料管理
-            Route::get('ziliao', 'ZiliaoController@index');
-            Route::post('ziliao/add', 'ZiliaoController@add');
-            Route::post('ziliao/edit', 'ZiliaoController@edit');
-            Route::post('ziliao/delete', 'ZiliaoController@delete');
+            Route::resource('ziliao', 'ZiliaoController');
 
 
             //内容管理

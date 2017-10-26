@@ -3,13 +3,13 @@
 @section('content-header')
 @parent
           <h1>
-            内容管理
-            <small>分类</small>
+            资料库管理
+            <small>新增资料</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="{{ site_url('dashboard', 'admin') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
-            <li><a href="{{ _route('admin:category.index') }}">内容管理 - 分类</a></li>
-            <li class="active">新增分类</li>
+            <li><a href="{{ _route('admin:category.index') }}">资料库管理 - 资料列表</a></li>
+            <li class="active">新增资料</li>
           </ol>
 @stop
 
@@ -35,7 +35,7 @@
             </div>
           @endif
 
-              <h2 class="page-header">新增分类</h2>
+              <h2 class="page-header">新增资料</h2>
               <form method="post" action="{{ _route('admin:category.store') }}" accept-charset="utf-8">
               {!! csrf_field() !!}
               <div class="nav-tabs-custom">
@@ -48,17 +48,29 @@
                     
                     <div class="tab-pane active" id="tab_1">
                       <div class="form-group">
-                        <label>分类名称 <small class="text-red">*</small></label>
-                        <input type="text" class="form-control" name="name" autocomplete="off" value="{{ old('name') }}" placeholder="分类名称" maxlength="20">
+                        <label>下拉单选项 - 分类 <small class="text-red">*</small></label>
+                        <div class="input-group">
+                          <select data-placeholder="选择下拉项..." class="chosen-select" style="min-width:200px;" name="cat_id">
+                          <dl>
+                           @foreach ($categories as $k => $v)
+                           <option value=""  disabled=""><dt>{{ $v['name'] }}111</dt></option>
+                            @foreach($v['son'] as $kk => $vv)
+                              <option value="{{ $kk }}"><dd>&nbsp;&nbsp;-{{$vv}}</dd></option>
+                             @endforeach
+                           @endforeach
+                          </dl>
+                          </select>
+                        </div>
                       </div>
                       <div class="form-group">
-                        <label>分类别名 <small class="text-red">*</small> <span class="text-green">[a-z\-_]{3,20}</span> <a href="javascript:void(0);" class="auto-to-pinyin"><i class="fa fa-fw fa-hand-o-down" title="自动转换"></i></a></label>
-                        <input type="text" class="form-control" name="slug" placeholder="分类别名" maxlength="20" value="{{ old('slug') }}">
+                        <label>标题 <small class="text-red">*</small> <span class="text-green">[a-z\-_]{3,20}</span> <a href="javascript:void(0);" class="auto-to-pinyin"><i class="fa fa-fw fa-hand-o-down" title="自动转换"></i></a></label>
+                        <input type="text" class="form-control" name="slug" placeholder="标题" maxlength="20" value="{{ old('slug') }}">
                       </div>
                       <div class="form-group">
-                        <label>分类排序 <small class="text-red">*</small> <span class="text-green">000-999</span></label>
-                        <input type="text" class="form-control" name="sort" placeholder="分类排序" value="{{ old('sort', 999) }}">
+                        <label>资料上传 <a href="javascript:void(0);" class="uploadFile" data-id="file"><i class="fa fa-fw fa-file-o" title="上传"></i></a></label>
+                        <input type="text" class="form-control" id="file" name="document" value="{{ old('document') }}" placeholder="文件地址：如{{ url('') }}/assets/doc/yas_logo.pdf">
                       </div>
+
                     </div><!-- /.tab-pane -->
 
                     <button type="submit" class="btn btn-primary">新增分类</button>
@@ -71,7 +83,8 @@
 
 
 @section('extraPlugin')
-
+<!--引入Layer组件-->
+<script src="{{ _asset(ref('layer.js')) }}"></script>
 <script type="text/javascript">
    $('.auto-to-pinyin').click(function () {
       var _name = $('input[name="name"]').val();
@@ -85,5 +98,30 @@
         }
       });
    });
+
+        //上传文件
+        $('.uploadFile').click(function(){
+            var ele = $(this).data('id');
+            layer.open({
+                type : 2,
+                closeBtn : false,
+                title: false,
+                fix: false,
+                area : ['600px' , '250px'],
+                offset : ['', ''],
+                content: ['{{ _route('admin:upload.document') }}?from=' + ele],
+                success: function(layero){
+                        console.log(layero);
+                        $(layero['selector']).css('border-radius','6px');
+                        $(layero['selector'] + ' .layui-layer-content').css('border-radius','6px');
+                },
+                cancel : function(index){
+                    layer.closeAll();
+                },
+                end : function(index){
+                    //location.reload();
+                }
+            });
+        });
 </script>
 @stop

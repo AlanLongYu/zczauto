@@ -3,7 +3,7 @@
 @section('content-header')
 @parent
           <h1>
-            资料管理
+            资料库管理
             <small>资料列表</small>
           </h1>
           <ol class="breadcrumb">
@@ -35,6 +35,16 @@
               <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">资料列表</h3>
+                   @can('user-search')
+                  <div class="box-tools">
+                    <form action="{{ _route('admin:member.index') }}" method="get" class="form-inline">
+                      <div class="form-group">
+                        <input type="text" class="form-control input-sm" name="subject" value="{{ request('subject') }}" style="width: 150px;" placeholder="搜索标题关键字">
+                      </div>
+                      <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                    </form>
+                  </div>
+                  @endcan
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive">
                   <table class="table table-hover table-bordered">
@@ -80,7 +90,7 @@
                   </table>
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
-                  {!! $categories->render() !!}
+                  {!! $ziliaos->render() !!}
                 </div>
 
               </div>
