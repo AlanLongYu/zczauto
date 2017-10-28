@@ -54,7 +54,8 @@
                         <th>操作</th>
                         <th>编号</th>
                         <th>名称</th>
-                        <th>缩略名</th>
+                        <th width="15%">描述</th>
+                        <th>缩略图</th>
                         <th>排序</th>
                         <th>更新时间</th>
                       </tr>
@@ -64,10 +65,10 @@
                       <tr>
                         <td>
                             @can('category-write')
-                            <a href="{{ _route('admin:category.edit', $cat->id) }}"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
+                            <a href="{{ _route('admin:ziliao.edit', $cat->id) }}"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
                             @endcan
                             @can('category-show')
-                            <a href="{{ _route('admin:article.index', ['s_cid' => $cat->id]) }}"><i class="fa fa-fw fa-link" title="查看该分类下文章"></i></a>
+                            <a href="{{ $cat->detail_url }}" target="_blank"><i class="fa fa-fw fa-link" title="查看资料详情"></i></a>
                             @endcan
                         </td>
                         <td>{{ $cat->id }}</td>
@@ -75,13 +76,20 @@
                           {{ $cat->name }}
                         </td>
                         <td class="text-green">
-                          @if(empty($cat->slug))
+                          @if(empty($cat->content))
                           -
                           @else
-                          {{ $cat->slug }}
+                          {{ $cat->content }}
                           @endif
                         </td>
-                        <td>{{ $cat->sort }}</td>
+                        <td class="text-green">
+                          @if(empty($cat->thumb))
+                          -
+                          @else
+                          <a href="{{ $cat->thumb }}" target="_blank">{{ $cat->thumb }}</a>
+                          @endif
+                        </td>
+                        <td>{{ $cat->sort_order }}</td>
                         <td>{{ $cat->updated_at }}</td>
                       </tr>
                       @endforeach

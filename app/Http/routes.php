@@ -173,6 +173,8 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
 	
 	#维修手册库
     Route::get('/data/data', 'DataController@data');
+    Route::post('/data/detail', 'DataController@detail');
+    Route::get('/data/cardetail/{catid}', 'DataController@carDetail');
 	
 	#维修软件库
     Route::get('/soft/index', 'SoftController@soft_index');

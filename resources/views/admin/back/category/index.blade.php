@@ -3,12 +3,12 @@
 @section('content-header')
 @parent
           <h1>
-            内容管理
+            资料库管理
             <small>分类</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="{{ site_url('dashboard', 'admin') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
-            <li class="active">内容管理 - 分类</li>
+            <li class="active">资料库管理 - 分类</li>
           </ol>
 @stop
 

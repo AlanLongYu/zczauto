@@ -36,7 +36,7 @@
           @endif
 
               <h2 class="page-header">新增资料</h2>
-              <form method="post" action="{{ _route('admin:category.store') }}" accept-charset="utf-8">
+              <form method="post" action="{{ _route('admin:ziliao.store') }}" accept-charset="utf-8">
               {!! csrf_field() !!}
               <div class="nav-tabs-custom">
                   
@@ -64,21 +64,36 @@
                       </div>
                       <div class="form-group">
                         <label>标题 <small class="text-red">*</small> <span class="text-green">[a-z\-_]{3,20}</span> <a href="javascript:void(0);" class="auto-to-pinyin"><i class="fa fa-fw fa-hand-o-down" title="自动转换"></i></a></label>
-                        <input type="text" class="form-control" name="slug" placeholder="标题" maxlength="20" value="{{ old('slug') }}">
+                        <input type="text" class="form-control" name="name" placeholder="标题" maxlength="20" value="{{ old('name') }}">
+                      </div>
+                      <div class="form-group">
+                        <label>描述信息 <small class="text-red">*</small></label>
+                        <textarea class="form-control" name="content" rows="3" cols="200" autocomplete="off" placeholder="请输入文本">{{ old('content') }}</textarea>
+                      </div>
+                      <div class="form-group">
+                        <label>缩略图  <a href="javascript:void(0);" class="uploadPic" data-id="thumb"><i class="fa fa-fw fa-picture-o" title="上传"></i></a>  <a href="javascript:void(0);" class="previewPic" data-id="thumb"><i class="fa fa-fw fa-eye" title="预览小图"></i></a></label>
+                        <input type="text" class="form-control" id="thumb" name="thumb" value="{{ old('picture') }}" placeholder="图片地址：如{{ url('') }}/assets/img/yas_logo.png" readonly="readonly">
                       </div>
                       <div class="form-group">
                         <label>资料上传 <a href="javascript:void(0);" class="uploadFile" data-id="file"><i class="fa fa-fw fa-file-o" title="上传"></i></a></label>
-                        <input type="text" class="form-control" id="file" name="document" value="{{ old('document') }}" placeholder="文件地址：如{{ url('') }}/assets/doc/yas_logo.pdf">
+                        <input type="text" class="form-control" id="file" name="detail_url" value="{{ old('detail_url') }}" placeholder="文件地址：如{{ url('') }}/assets/doc/yas_logo.pdf">
+                      </div>
+                      <div class="form-group">
+                        <label>排序 <small class="text-red">*</small> <span class="text-green">000-999</span></label>
+                        <input type="text" class="form-control" name="sort" placeholder="分类排序" value="{{ old('sort', 999) }}">
                       </div>
 
                     </div><!-- /.tab-pane -->
 
-                    <button type="submit" class="btn btn-primary">新增分类</button>
+                    <button type="submit" class="btn btn-primary">新增资料</button>
 
                   </div><!-- /.tab-content -->
                   
               </div>
               </form>
+              <div id="layerPreviewPic" class="fn-hide">
+            
+              </div>
 @stop
 
 
@@ -98,7 +113,7 @@
         }
       });
    });
-
+@include('admin.scripts.endSinglePic') {{-- 引入单个图片上传与预览JS，依赖于Layer --}}
         //上传文件
         $('.uploadFile').click(function(){
             var ele = $(this).data('id');
