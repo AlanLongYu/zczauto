@@ -92,7 +92,7 @@ $(function() {
 	<div class="aside left">
 		<div class="crumbs">
 			<span>
-				<img src="/Public/Home/img/read/prev.png" title="点击重选车型" id="prev"/>
+				<img src="{{ _asset('/assets/img/read/prev.png')}}" title="点击重选车型" id="prev"/>
 				中国车系>奇瑞>A1>2007			</span>
 		</div>
 		<div id="sidetree">
