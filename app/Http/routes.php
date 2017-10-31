@@ -111,6 +111,7 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
             Route::resource('ziliao', 'ZiliaoController');
 
 
+
             //内容管理
             #分类
             Route::resource('category', 'CategoryController');
@@ -175,6 +176,8 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
     Route::get('/data/data', 'DataController@data');
     Route::post('/data/detail', 'DataController@detail');
     Route::get('/data/cardetail/{catid}', 'DataController@carDetail');
+
+    Route::get('/data/document/{file}','DataController@document');
 	
 	#维修软件库
     Route::get('/soft/index', 'SoftController@soft_index');

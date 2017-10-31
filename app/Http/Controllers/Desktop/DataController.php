@@ -45,7 +45,7 @@ class DataController extends FrontController
         $tree =  Category::generateTree($items);
 
         $ziliao = Ziliao::where('category_id',$catid)->paginate(15);
-
+// print_r($ziliao);exit;
         return view('desktop.ziliaolist',['ziliao' => $ziliao,'categories' =>$tree]);
     }
 
@@ -67,6 +67,12 @@ class DataController extends FrontController
         return view('desktop.ziliaodetail',['ziliao' => $ziliao,'categories' =>$tree]);
     }
 	
+
+    public function document($file)
+    {
+        $file  = '';
+        return view('desktop.document',['file' => $file]);
+    }
     /**
      * YASCMF landing page
      */

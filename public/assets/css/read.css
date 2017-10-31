@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+
+/*==============整体布局==========*/
+/*工具栏底色*/
+.readshop{
+	width:100%;
+	margin-top: 0px;
+	z-index:-1;
+	height:32px;
+	background:#35b558;
+}
+
+/*内容区w-1000*/
+.read_container{
+	top:-32px;
+	background-color:#f5f5f5;
+}
+
+/*左侧模块*/
+.aside{
+	width:200px; 
+	height:800px;
+	z-index:1;
+	background-color:#f5f5f5;
+	margin:0;
+}
+
+/*右侧模块*/
+.main{
+	width:calc(100% - 210px);
+	height:800px;
+	z-index:1;
+	background-color:#fff;
+	margin:0;
+}
+ 
+
+/*============左侧模块样式============*/
+/*面包屑*/
+.crumbs{
+	width:100%;
+	height:32px;
+	background-color:#35b558;
+	margin-bottom:20px;
+}
+.crumbs span{
+	display:block;
+	width:300px;
+	height:32px;
+	line-height:32px;
+	position:relative;
+	color:#fff;
+}
+.crumbs span img{
+	position:relative;
+	width:15px;
+	height:18px;
+	top:4px;
+	cursor:pointer;
+}
+.crumbs span img:hover{
+	box-shadow:0 0 5px rgba(0,0,0,0.3);
+}
+/*资料目录*/
+#sidetree{
+	height:748px;
+	width:100%;
+	background-color:#fff;
+	overflow:auto;
+}
+#sidetreecontrol{
+	height:30px;
+	line-height:30px;
+	border-bottom:1px solid #eee;
+	padding-left:5px;
+	color:#33b558;
+}
+#sidetreecontrol a{
+	color:#33b558;
+}
+#sidetreecontrol a:hover{
+	color:#ff9900;
+}
+#read_menu{
+	margin:5px;
+	overflow:auto;
+}
+
+#tree .file:hover{color:#35b558;cursor:pointer;}
+
+#tree{
+	font-size:13px;
+}
+
+/*全屏样式*/
+.full{width:100%;}
+
+
+/*======================移动端=====================*/
+@media only screen and (max-width: 789px) {
+	.read_container{width:100%;}
+	.aside{
+		display:none;
+		width:200px; 
+		float:none;
+		position:absolute;
+		left:0;
+		top:33px;
+		z-index:2;
+		overflow:auto;
+		border-right:1px solid #ccc;
+	}
+	.main{
+		width:100%;
+	}
+	.crumbs{
+		display:none;
+	}
+	#sidetree {
+		border-right:1px solid #ccc;
+		box-shadow:3px 0 3px rgba(0,0,0,0.1);
+		-o-box-shadow:3px 0 3px rgba(0,0,0,0.1);
+		-webkit-box-shadow:3px 0 3px rgba(0,0,0,0.1);
+		-moz-box-shadow:3px 0 3px rgba(0,0,0,0.1);
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+}
+
+@media only screen and (max-width: 480px) {
+
+}
