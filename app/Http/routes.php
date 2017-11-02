@@ -109,6 +109,7 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
 
              #资料管理
             Route::resource('ziliao', 'ZiliaoController');
+            Route::resource('soft', 'SoftController');
 
 
 

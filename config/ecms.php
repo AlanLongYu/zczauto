@@ -54,7 +54,7 @@ return [
         ],
         
         
-        [
+        /*[
             'name' => '订单管理',
             'icon' => 'fa-paper-plane',
             'child_icon' => 'fa-file-o',
@@ -75,7 +75,7 @@ return [
                     'can' => '',
                 ],
             ],
-        ],
+        ],*/
         
         [
             'name' => '资料库管理',
@@ -97,9 +97,20 @@ return [
         
         [
             'name' => '软件库管理',
-            'icon' => 'fa-paper-plane',
+            'icon' => 'fa-automobile',
             'child_icon' => 'fa-file-o',
             'sub_menu' => [
+
+                [
+                    'name' => '软件分类',
+                    'route' => 'admin:soft',
+                    'can' => '',
+                ],
+                [
+                    'name' => '软件列表',
+                    'route' => 'admin:soft.list',
+                    'can' => '',
+                ],
                 [
                     'name' => '表单',
                     'route' => 'admin:demo.form',
@@ -118,7 +129,7 @@ return [
             ],
         ],
         
-        [
+        /*[
             'name' => '内容管理',
             'icon' => 'fa-edit',
             'child_icon' => 'fa-star-o',
@@ -134,7 +145,7 @@ return [
                     'can' => '@article',
                 ],
             ],
-        ],
+        ],*/
     ],
 
     //各模型推荐位
