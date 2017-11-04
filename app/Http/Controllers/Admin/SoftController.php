@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
-use Douyasi\Http\Requests\CategoryRequest;
+use Douyasi\Http\Requests\SoftRequest;
 use Douyasi\Models\SoftCategory;
 use Gate;
 
@@ -29,7 +29,7 @@ class SoftController extends BackController
 
     public function index(Request $request)
     {
-        $categories = SoftCategory::paginate(15);
+        $categories = SoftCategory::orderBy('sort', 'asc')->paginate(15);
         return view('admin.back.soft.index', compact('categories'));
     }
 
@@ -46,41 +46,41 @@ class SoftController extends BackController
         if (Gate::denies('category-write')) {
             return deny();
         }
-        $data = Category::find($id);
+        $data = SoftCategory::find($id);
         is_null($data) AND abort(404);
         return view('admin.back.soft.edit', compact('data'));
     }
 
 
-    public function store(CategoryRequest $request)
+    public function store(SoftRequest $request)
     {
         if (Gate::denies('category-write')) {
             return deny();
         }
         $inputs = $request->all();
-        $category = new Category;
-        $category->name = e($inputs['name']);
+        $category = new SoftCategory;
         $category->sort = e($inputs['sort']);
         $category->slug = e(trim($inputs['slug']));
+        $category->name = !isset($inputs['name']) ? $category->slug : e($inputs['name']);
         if($category->save()) {
-            return redirect()->to(site_path('soft', 'admin'))->with('message', '成功新增分类！');
+            return redirect()->to(site_path('soft', 'admin'))->with('message', '成功新增软件分类！');
         } else {
             return redirect()->back()->withInput($request->input())->with('fail', '数据库操作返回异常！');
         }
     }
 
-    public function update(CategoryRequest $request, $id)
+    public function update(SoftRequest $request, $id)
     {
         if (Gate::denies('category-write')) {
             return deny();
         }
         $inputs =$request->all();
-        $category = Category::find($id);
-        $category->name = e($inputs['name']);
+        $category = SoftCategory::find($id);
         $category->sort = e($inputs['sort']);
         $category->slug = e(trim($inputs['slug']));
+        $category->name = !isset($inputs['name']) ? $category->slug : e($inputs['name']);
         if($category->save()) {
-            return redirect()->to(site_path('soft', 'admin'))->with('message', '成功修改分类！');
+            return redirect()->to(site_path('soft', 'admin'))->with('message', '成功修改软件分类！');
         } else {
             return redirect()->back()->withInput($request->input())->with('fail', '数据库操作返回异常！');
         }

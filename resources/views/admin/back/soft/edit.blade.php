@@ -3,12 +3,12 @@
 @section('content-header')
 @parent
           <h1>
-            内容管理
+            软件库管理
             <small>分类</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="{{ site_url('dashboard', 'admin') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
-            <li><a href="{{ _route('admin:category.index') }}">内容管理 - 分类</a></li>
+            <li><a href="{{ _route('admin:soft.index') }}">软件库管理 - 分类</a></li>
             <li class="active">修改分类</li>
           </ol>
 @stop
@@ -36,7 +36,7 @@
           @endif
 
               <h2 class="page-header">修改分类</h2>
-              <form method="post" action="{{ _route('admin:category.update', $data->id) }}" accept-charset="utf-8">
+              <form method="post" action="{{ _route('admin:soft.update', $data->id) }}" accept-charset="utf-8">
               {!! method_field('put') !!}
               {!! csrf_field() !!}
               <div class="nav-tabs-custom">
@@ -47,14 +47,14 @@
 
                   <div class="tab-content">
                     
-                    <div class="tab-pane active" id="tab_1">
+                    <!--<div class="tab-pane active" id="tab_1">
                       <div class="form-group">
                         <label>分类名称 <small class="text-red">*</small></label>
                         <input type="text" class="form-control" name="name" autocomplete="off" value="{{ old('name', isset($data) ? $data->name : null) }}" placeholder="分类名称" maxlength="20">
-                      </div>
+                      </div>-->
                       <div class="form-group">
-                        <label>分类别名 <small class="text-red">*</small> <span class="text-green">[a-z\-_]{3,20}</span> <a href="javascript:void(0);" class="auto-to-pinyin"><i class="fa fa-fw fa-hand-o-down" title="自动转换"></i></a></label>
-                        <input type="text" class="form-control" name="slug" placeholder="分类别名" maxlength="20" value="{{ old('slug', isset($data) ? $data->slug : null) }}">
+                        <label>分类名称 <small class="text-red">*</small> <span class="text-green"></span> <a href="javascript:void(0);" class="auto-to-pinyin"><i class="fa fa-fw fa-hand-o-down" title="自动转换"></i></a></label>
+                        <input type="text" class="form-control" name="slug" placeholder="分类名称" maxlength="20" value="{{ old('slug', isset($data) ? $data->slug : null) }}">
                       </div>
                       <div class="form-group">
                         <label>分类排序 <small class="text-red">*</small> <span class="text-green">000-999</span></label>

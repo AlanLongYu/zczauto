@@ -3,13 +3,13 @@
 @section('content-header')
 @parent
           <h1>
-            资料库管理
+            软件库管理
             <small>分类</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="{{ site_url('dashboard', 'admin') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
-            <li><a href="{{ _route('admin:category.index') }}">资料库管理 - 分类</a></li>
-            <li class="active">资料库管理</li>
+            <li><a href="{{ _route('admin:soft.index') }}">软件库管理 - 分类</a></li>
+            <li class="active">软件库管理</li>
           </ol>
 @stop
 
@@ -35,8 +35,8 @@
             </div>
           @endif
 
-              <h2 class="page-header">新增分类</h2>
-              <form method="post" action="{{ _route('admin:category.store') }}" accept-charset="utf-8">
+              <h2 class="page-header">新增软件分类</h2>
+              <form method="post" action="{{ _route('admin:soft.store') }}" accept-charset="utf-8">
               {!! csrf_field() !!}
               <div class="nav-tabs-custom">
                   
@@ -47,12 +47,12 @@
                   <div class="tab-content">
                     
                     <div class="tab-pane active" id="tab_1">
-                      <div class="form-group">
-                        <label>分类名称 <small class="text-red">*</small></label>
+                      <!--<div class="form-group">
+                        <label>软件分类名称 <small class="text-red">*</small></label>
                         <input type="text" class="form-control" name="name" autocomplete="off" value="{{ old('name') }}" placeholder="分类名称" maxlength="20">
-                      </div>
+                      </div>-->
                       <div class="form-group">
-                        <label>分类别名 <small class="text-red">*</small> <span class="text-green">[a-z\-_]{3,20}</span> <a href="javascript:void(0);" class="auto-to-pinyin"><i class="fa fa-fw fa-hand-o-down" title="自动转换"></i></a></label>
+                        <label>软件分类名称 <small class="text-red">*</small> <span class="text-green"></span> <a href="javascript:void(0);" class="auto-to-pinyin"><i class="fa fa-fw fa-hand-o-down" title="自动转换"></i></a></label>
                         <input type="text" class="form-control" name="slug" placeholder="分类别名" maxlength="20" value="{{ old('slug') }}">
                       </div>
                       <div class="form-group">
@@ -61,7 +61,7 @@
                       </div>
                     </div><!-- /.tab-pane -->
 
-                    <button type="submit" class="btn btn-primary">新增分类</button>
+                    <button type="submit" class="btn btn-primary">新增软件分类</button>
 
                   </div><!-- /.tab-content -->
                   

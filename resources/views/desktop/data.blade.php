@@ -239,5 +239,11 @@
 	
 </div>
 <!--内容结束-->	
+<script>
+$(document).ready(function(){
+	$(".current").removeClass("current");
+	$(".ziliao-search").addClass("current");
+});
+</script>
 
 @endsection

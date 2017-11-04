@@ -118,6 +118,7 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
             Route::resource('category', 'CategoryController');
             #文章
             Route::resource('article', 'ArticleController');
+            Route::resource('softarticle', 'SoftArticleController');
             #图链
             Route::resource('picture', 'PictureController');
 
@@ -182,6 +183,7 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
 	
 	#维修软件库
     Route::get('/soft/index', 'SoftController@soft_index');
+    Route::get('/soft/detail/{id}', 'SoftController@detail');
 	
 	#VIP购买
     Route::get('/vip/vip_index', 'VipController@vip_index');

@@ -47,9 +47,32 @@ class ZiliaoController extends Controller
         return view('admin.back.ziliao.create', ['ziliaos'=> $ziliaos,'categories' => $arr]);
     }
 
-     public function edit()
+     public function edit($id)
     {
-    	
+        $ziliaos = Ziliao::find($id);
+        $categories = Category::all();
+        is_null($ziliaos) AND abort(404);
+        $items = [];
+        foreach($categories->toArray() AS $key => $val){
+            $items[$val['id']] = $val;
+        }
+        $tree =  Category::generateTree($items);
+        $arr = [];
+        foreach ($tree as $k => $v) {
+            if(isset($v['son'])){
+                foreach ($v['son'] as $kk => $vv) {
+                    if(isset($vv['son'])){
+                        foreach ($vv['son'] as $kkk => $vvv) {
+                           $arr[$vv['id']]['name'] = $vv['name'];
+                           $arr[$vv['id']]['son'][$vvv['id']] = $vvv['name'];
+                        }
+                    }
+                    
+                }
+            }
+        }//print_r($arr);
+        
+        return view('admin.back.ziliao.edit', ['ziliaos'=> $ziliaos,'categories' => $arr]);
     }
 
      public function store(ZiliaoRequest $request)
@@ -72,18 +95,20 @@ class ZiliaoController extends Controller
         }
     }
 
-    public function update(CategoryRequest $request, $id)
+    public function update(ZiliaoRequest $request, $id)
     {
         if (Gate::denies('category-write')) {
             return deny();
         }
         $inputs =$request->all();
-        $category = Category::find($id);
-        $category->name = e($inputs['name']);
-        $category->sort = e($inputs['sort']);
-        $category->slug = e(trim($inputs['slug']));
-        if($category->save()) {
-            return redirect()->to(site_path('category', 'admin'))->with('message', '成功修改分类！');
+        $Ziliao = Ziliao::find($id);
+        $Ziliao->category_id = e($inputs['cat_id']);
+        $Ziliao->content = e($inputs['content']);
+        $Ziliao->sort_order = e($inputs['sort']);
+        $Ziliao->thumb = e(trim($inputs['thumb']));
+        $Ziliao->detail_url  = e(trim($inputs['detail_url']));
+        if($Ziliao->save()) {
+            return redirect()->to(site_path('ziliao', 'admin'))->with('message', '成功修改资料！');
         } else {
             return redirect()->back()->withInput($request->input())->with('fail', '数据库操作返回异常！');
         }

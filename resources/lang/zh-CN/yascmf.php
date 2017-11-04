@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | 芽丝内容管理框架 - 基础开发版：系统本地化语言文件
+    | 飞宇网络科技后台管理系统框架 - 正式版：系统本地化语言文件
     |--------------------------------------------------------------------------
     */
     'lang_code' => 'zh-CN',
@@ -13,10 +13,10 @@ return [
         'zh-CN' => '简体中文',  //Chinese (Simplified)
         'en'    => 'English',  //英文
     ],
-    'framework_name' => '芽丝内容管理框架',
-    'version_name'   => '基础开发版',
+    'framework_name' => '飞宇网络科技后台管理系统框架',
+    'version_name'   => '正式版',
     'alias'          => 'YASCMF',
-    'full_name'      => '芽丝内容管理框架 - 基础开发版',
+    'full_name'      => '飞宇网络科技后台管理系统框架 - 正式版',
     'author'         => 'Jason',
     'author_url'     => '',
     'description'    => 'ZCZ汽车管理系统天下没有难修的汽车',
@@ -27,7 +27,7 @@ return [
         'contact' => '联系',
     ],
     'intro' => [
-        'text'      => '芽丝内容管理框架（YASCMF），基于 Laravel 5 构建，是套简约、易用、面向开发者且可快速二开的内容管理框架！',
+        'text'      => '飞宇网络科技后台管理系统框架（YASCMF），基于 Laravel 5 构建，是套简约、易用、面向开发者且可快速二开的内容管理框架！',
         'preview'   => '在线演示',
         'source'    => '基础版源码',
         'donation'  => '打赏捐助',
@@ -36,7 +36,7 @@ return [
     'feature' => [
         'thanks' => [
             'heading'   => '特别致谢：<br>Laravel',
-            'paragraph' => '芽丝内容管理框架基于 <span>Laravel 5</span> 构建。<a href="http://laravel.com">Laravel</a> 让我们书写优雅的代码，是为 Web 艺术家创造的 PHP 框架。',
+            'paragraph' => '飞宇网络科技后台管理系统框架基于 <span>Laravel 5</span> 构建。<a href="http://laravel.com">Laravel</a> 让我们书写优雅的代码，是为 Web 艺术家创造的 PHP 框架。',
         ],
         'advantages' => [
             'heading'   => '多站点、多语言、多认证<br>基础版 <span>MIT</span> 开源授权',

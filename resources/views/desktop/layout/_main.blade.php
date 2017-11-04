@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>首页-ZCZ汽车网 | 天下没有难修的汽车</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="@section('description') {{ isset($description) ? $description : '琅环汽车网专注于提供汽车维修资料，本站有上千款车型维修手册及电路图在线查询、打印和下载，每日更新，汽车维修企业必备神器！' }} @show{{-- meta描述 --}}" />
+    <meta name="description" content="@section('description') {{ isset($description) ? $description : 'ZCZ汽修网专注于提供汽车维修资料，本站有上千款车型维修手册及电路图在线查询、打印和下载，每日更新，汽车维修企业必备神器！' }} @show{{-- meta描述 --}}" />
     <meta name="keywords" content="汽车维修资料,汽车维修技术,汽车维修论坛,汽车论坛,汽车维修资料免费下载,汽修资料,汽车维修手册,汽车电路图,{{ cache('website_keywords') }}" />
     <meta name="author" content="{{ cache('system_author_website', 'http://www.zczauto.com/') }}" />
     <meta name="renderer" content="webkit">
@@ -31,7 +31,7 @@
 		<nav>
 			<ul class="header-nav">
 				<li><a href="/" class="current">首页</a></li>
-				<li >资料查询<i class="arrow-icon"></i>
+				<li class="ziliao-search">资料查询<i class="arrow-icon"></i>
 					<div class="submenu">
 						<a href="/data/data"><i class="wxsck-icon"></i>维修手册库<span>1500+</span></a>		
 						<a href="/soft/index"><i class="wxrjk-icon"></i>维修软件库<span>15+</span></a>				
@@ -40,8 +40,8 @@
 						<a href="/Vip/vip_index"><i class="vip-icon"></i>VIP会员购买<span>30元/月</span></a>-->
 					</div>
 				</li>	
-				<li><a href="/vip/vip_index" >VIP购买</a></li>
-				<li><a href="/help/about"class="help">帮助</a></li>
+				<li><a href="/vip/vip_index" class="vip">VIP购买</a></li>
+				<li><a href="/help/about" class="help">帮助</a></li>
 				<!--<li>技术学习<i class="arrow-icon"></i>
 					<div class="submenu">
 						<a href=""><i class="kck-icon"></i>基础入门课程<span>100+</span></a>

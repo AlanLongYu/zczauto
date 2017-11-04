@@ -30,7 +30,7 @@
                 </div>
               @endif
 
-              <a href="{{ _route('admin:category.create') }}" class="btn btn-primary margin-bottom">新增软件分类</a>
+              <a href="{{ _route('admin:soft.create') }}" class="btn btn-primary margin-bottom">新增软件分类</a>
 
               <div class="box box-primary">
                 <div class="box-header with-border">
@@ -43,8 +43,8 @@
                       <tr>
                         <th>操作</th>
                         <th>编号</th>
+                        <!--<th>名称</th>-->
                         <th>名称</th>
-                        <th>缩略名</th>
                         <th>排序</th>
                         <th>更新时间</th>
                       </tr>
@@ -61,9 +61,9 @@
                             @endcan
                         </td>
                         <td>{{ $cat['id'] }}</td>
-                        <td class="text-muted">
+                        <!--<td class="text-muted">
                           {{ $cat['name'] }}
-                        </td>
+                        </td>-->
                         <td class="text-green">
                           @if(empty($cat['slug']))
                           -

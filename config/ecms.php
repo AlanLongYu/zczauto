@@ -108,10 +108,10 @@ return [
                 ],
                 [
                     'name' => '软件列表',
-                    'route' => 'admin:soft.list',
+                    'route' => 'admin:softarticle',
                     'can' => '',
                 ],
-                [
+                /*[
                     'name' => '表单',
                     'route' => 'admin:demo.form',
                     'can' => '',
@@ -125,7 +125,7 @@ return [
                     'name' => '更多',
                     'route' => 'https://almsaeedstudio.com/',
                     'can' => '',
-                ],
+                ],*/
             ],
         ],
         
@@ -160,5 +160,10 @@ return [
             't' => '置顶',
         ],
 
+    ],
+    //语言选择
+    'language' => [
+        1 => '中文',
+        2 => '英文'
     ],
 ];

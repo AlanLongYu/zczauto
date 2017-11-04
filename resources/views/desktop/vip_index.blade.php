@@ -13,7 +13,7 @@
 		<table class="duibi">
 				<tr>
 					<th width="200">对比项目</th>
-					<th width="208" class="focus">琅环汽车网</th>
+					<th width="208" class="focus">ZCZ汽修网</th>
 					<th width="208">其它资料库</th>
 					<th width="208">淘宝资料店</th>
 				</tr>
@@ -241,7 +241,12 @@
 		</div>
 
 </div>
-
+<script>
+$(document).ready(function(){
+	$(".current").removeClass("current");
+	$(".vip").addClass("current");
+});
+</script>
 <!--内容结束-->	
 
 @endsection
