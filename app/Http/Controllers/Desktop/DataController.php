@@ -59,7 +59,7 @@ class DataController extends FrontController
     {   
         //获取上传的资料目录
         // $base_dir = str_replace('\\','/',public_path('uploads')).'/ziliao/';
-         $base_dir = public_path('uploads').'/ziliao/';
+        $base_dir = public_path('uploads').'/ziliao/';
         $id = $data->data_id;
         $breadcrumb = $data->breadcrumb;
         $tmpArr = explode('>',$breadcrumb);
@@ -78,20 +78,42 @@ class DataController extends FrontController
         
         $filess = self::recurDir($fileDir);
         $lastFileTree = self::beautifulTree($filess);
+        $xxx = [];
         foreach($filess AS $kkk => $vvv){
-
+            if(is_array($vvv)){
+                foreach ($vvv as $kkkk => $vvvv) {
+                    $tmp_key = substr($kkk,strrpos($kkk,'/')+1);
+                     // $xxx[$tmp_key][$kkkk]['name'] = substr($vvvv,strrpos($vvvv,'/')+1,-4);
+                      $xxx[$tmp_key][$kkkk] = substr($vvvv,strrpos($vvvv,'/')+1,-4);
+                     //$xxx[$tmp_key][$kkkk]['url'] = url('uploads/ziliao').'/'.$tmp_key.'/'.$afterFix.'/'.$xxx[$tmp_key][$kkkk]['name'].'.pdf';
+                }
+            }else{
+                $xxx[$kkk] = substr($vvv,strrpos($vvv,'/')+1,-4);
+                // $xxx[$kkk]['name'] = substr($vvv,strrpos($vvv,'/')+1,-4);
+                //$xxx[$kkk]['url'] = url('uploads/ziliao').'/'.$afterFix.'/'.$xxx[$kkk]['name'].'.pdf';
+            }
         }
-        print_r($filess);//exit;
+        //echo url('uploads/ziliao').'/'.$afterFix;exit;
+        // print_r($xxx);//exit;
         
 
-        return view('desktop.ziliaodetail',['ziliao' => $ziliao,'categories' =>$tree,'breadcrumb' => $breadcrumb]);
+        return view('desktop.ziliaodetail',['base_path' => url('uploads/ziliao'),'ziliao' => $ziliao,'categories' =>$tree,'breadcrumb' => $breadcrumb,'files'=>$xxx,'afterFix' =>$afterFix]);
     }
 	
 
-    public function document($file)
+    public function document(Request $request)
     {
-        $file  = '';
+        $file = url('/uploads/ziliao').'/';
+        $folder = $request->folder;
+        $file_name =  $request->file;
+        if(!empty($folder)){
+            $file .= $folder.'/'.$file_name;
+        }else{
+            $file .=$file_name; 
+        }
+        // echo $file;
         return view('desktop.document',['file' => $file]);
+        // return view('desktop.viewer',['file' => $file]);
     }
     /**
      * YASCMF landing page

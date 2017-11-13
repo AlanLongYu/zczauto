@@ -30,21 +30,23 @@ $(function() {
 	//目录阅读权限
 	$('.file').click(function(){
 		var file_name=$(this).text();
-		var url='中国车系/奇瑞/A1/2007';
+		var url="{!! $breadcrumb !!}";
 		var folder=$(this).parents("ul").prev("span.folder").map(function(){
 			return $(this).text();
 		}).get();
-		var iframe_url=encodeURI('/Public/pdf/'+url+'/'+folder.reverse().join("/")+'/'+file_name+'.pdf');
-
+		var iframe_url=encodeURI("{{$base_path}}"+"/{!! $afterFix !!}/"+folder.reverse().join("/")+'/'+file_name+'.pdf');
+		var iframe_url=encodeURI("{!! $afterFix !!}/"+folder.reverse().join("/")+'/'+file_name+'.pdf');
+console.log(iframe_url);
+	$("#iframe").attr("src","/data/document/"+iframe_url);
 		var group_id=0;			
-				if(group_id==0){
-			alert("请登录后再操作");
-			return;
+		if(group_id==0){
+			//alert("请登录后再操作");
+			//return;
 		}
 		if(group_id==1){
 			$.post('downfile',{},function(data){
 				if(data=='yes'){
-					$("#iframe").attr("src","/Home/Read/document.html?file="+iframe_url);
+					$("#iframe").attr("src","/data/document/"+iframe_url);
 				}else if(data=='no'){
 					alert("亲！您的积分不够了喔！");
 				}
@@ -93,25 +95,29 @@ $(function() {
 		<div class="crumbs">
 			<span>
 				<img src="{{ _asset('/assets/img/read/prev.png')}}" title="点击重选车型" id="prev"/>
-				中国车系>奇瑞>A1>2007			</span>
+				{{$breadcrumb}}			</span>
 		</div>
 		<div id="sidetree">
 			<div id="sidetreecontrol">
 				<a href="?#">折叠目录</a> | <a href="?#">展开目录</a>
 			</div>
 			<div id="read_menu">
-				<h4>2007奇瑞A1</h4>
+				<h4>{{$breadcrumb}}</h4>
 				<ul id='tree' class='filetree'>
-<li><span class='file'>01-动力总成部分</span></li>
-<li><span class='file'>02-473发动机机械部分</span></li>
-<li><span class='file'>03-473发动机联电电喷部分</span></li>
-<li><span class='file'>04-QR513变速箱部分</span></li>
-<li><span class='file'>05-底盘部分</span></li>
-<li><span class='file'>06-ABS部分</span></li>
-<li><span class='file'>07-ABS部分(qq6)</span></li>
-<li><span class='file'>08-车身附件及尺寸</span></li>
-<li><span class='file'>09-电路部分</span></li>
-</ul>
+				 @foreach($files AS $kkk => $vvv)
+				 	@if(is_array($vvv))
+				 		<li class="expandable"><div class="hitarea expandable-hitarea"></div><span class="folder">{{$kkk}}</span>
+							<ul style="display: none;">
+					 	@foreach($vvv AS $kkkk => $vvvv)
+								<li><span class="file">{{$vvvv}}</span></li>
+					 	@endforeach
+					 		</ul>
+						</li>
+				 	@else
+				 		<li><span class='file'>{{$vvv}}</span></li>
+				 	@endif
+				 @endforeach
+				</ul>
 				<!--
 				<span class="file">表示文档
 				<span class="folder">表示文件夹

@@ -6,7 +6,8 @@
 	<script src="{{ _asset('/assets/js/jquery.min.js')}}"></script>
 	<script src="{{ _asset('/assets/js/l10n.js')}}"></script>
 	<script src="{{ _asset('/assets/js/pdf.js')}}"></script>
-	<script src="{{ _asset('/assets/js/viewer.js')}}"></script>	
+
+	<script src="{{ _asset('/assets/js/viewer.js')}}"></script>
     <link rel="stylesheet" href="{{ _asset('/assets/css/viewer.css')}}"/>
 </head>
 
@@ -382,13 +383,15 @@
 <!--实验脚本-->
 <script type="text/javascript">
 	//viewer.js所需参数
-	var DEFAULT_URL = '';
+  
+  DEFAULT_URL = "{{$file}}"; 
 	function configure(PDFJS) {
-	  PDFJS.imageResourcesPath = '/Public/Home/img/read/';
-	  PDFJS.workerSrc = '/Public/Home/js/pdf.worker.js';
+	  PDFJS.imageResourcesPath = '/assets/img/read/';
+	  PDFJS.workerSrc = "{{_asset('assets/js/pdf.worker.js')}}";
 	  PDFJS.cMapPacked = true;
 	}	
 	
+
 	//PDF阅读器工具
 	$(function(){
 		//全屏按钮

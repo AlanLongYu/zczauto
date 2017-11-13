@@ -179,7 +179,9 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
     Route::post('/data/detail', 'DataController@detail');
     Route::get('/data/cardetail/{catid}', 'DataController@carDetail');
 
-    Route::get('/data/document/{file}','DataController@document');
+    Route::get('/data/document/{folder?}/{file}','DataController@document');
+    Route::get('/data/document/{file}','DataController@document')->where('file', '.*$');
+    //Route::get('/data/document?file={file_path}','DataController@document');
 	
 	#维修软件库
     Route::get('/soft/index', 'SoftController@soft_index');
