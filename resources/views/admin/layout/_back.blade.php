@@ -84,10 +84,9 @@ html {overflow-x:hidden;overflow-y:hidden;}/*禁止出现滚动条*/
       <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-          后台模版基于 <a href="https://github.com/almasaeed2010/AdminLTE">AdminLTE</a> ， 经过 <a href="http://raoyc.com">raoyc</a> 修改以适配当前系统 。
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2011-{{ date('Y') }}  <a href="http://www.yascmf.com/">{{ trans('yascmf.full_name') }}</a></strong>
+        <strong>Copyright &copy; 2011-{{ date('Y') }}  <a href="/">{{ trans('yascmf.full_name') }}</a></strong>
       </footer>
 
 @stop

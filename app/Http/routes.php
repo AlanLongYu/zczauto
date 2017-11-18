@@ -114,6 +114,8 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
 
 
             //内容管理
+            #导航
+            Route::resource('nav', 'NavController');
             #分类
             Route::resource('category', 'CategoryController');
             #文章
