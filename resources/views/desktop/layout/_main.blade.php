@@ -142,7 +142,6 @@
 					<dl>
 						<dt>其他</dt>
 						<dd><a target="_blank" href="/help/about">关于我们</a></dd>
-						<dd><a target="_blank" href="http://car60.taobao.com/">淘宝店铺</a></dd>
 					</dl>
 
 					<div class="down">
