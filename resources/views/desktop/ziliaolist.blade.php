@@ -68,7 +68,7 @@
 <div class="main right">	
     <h2 class="factory">
         <strong>当前车型：</strong>
-        <span>中国车系>奇瑞汽车>A5</span>
+        <span>{{$breadcrumb}}</span>
     </h2> 
     @if($ziliao)
 	    @foreach($ziliao AS $k => $v)
@@ -76,6 +76,7 @@
 	        <img src="{{$v->thumb}}" alt="{{$v->name}}" />			
 	        <form action="/data/detail" method="post">
 	            <input type="hidden" name="data_id" value="{{$v->id}}"/>
+	            <input type="hidden" name="breadcrumb" value="{{$breadcrumb}}"/>
 	            <ul>
 	                <h4>{{$v->name}}</h4>
 	                <li>{{explode('|',$v->content)[0]}}</li>

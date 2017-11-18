@@ -65,7 +65,7 @@
                       <tr>
                         <td>
                             @can('category-write')
-                            <a href="{{ _route('admin:ziliao.edit', $cat->id) }}"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
+                            <a href="{{ _route('admin:ziliao.edit',$cat->id) }}"><i class="fa fa-fw fa-pencil" title="修改"></i></a>
                             @endcan
                             @can('category-show')
                             <a href="{{ $cat->detail_url }}" target="_blank"><i class="fa fa-fw fa-link" title="查看资料详情"></i></a>

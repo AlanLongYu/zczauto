@@ -35,7 +35,7 @@
 										<dd>
 										@if(isset($cc['son']))
 											@foreach($cc['son'] AS $ccc)
-												<a href="/data/cardetail/{{$ccc['id']}}" class="car">{{$ccc['name']}}</a>
+												<a href="cardetail/{{$ccc['id']}}" class="car">{{$ccc['name']}}</a>
 											@endforeach
 										@endif
 										</dd>
@@ -239,5 +239,11 @@
 	
 </div>
 <!--内容结束-->	
+<script>
+$(document).ready(function(){
+	$(".current").removeClass("current");
+	$(".ziliao-search").addClass("current");
+});
+</script>
 
 @endsection

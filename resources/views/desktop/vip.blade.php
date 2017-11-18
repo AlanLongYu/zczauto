@@ -36,14 +36,10 @@
     </div>
 </div>
 
-
-
-
-
 <script>
 $(document).ready(function(){
 	$(".current").removeClass("current");
-	$(".help").addClass("current");
+	$(".vip").addClass("current");
 });
 </script>
 @endsection

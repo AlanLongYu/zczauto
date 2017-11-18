@@ -1,6 +1,6 @@
 <?php
 
-namespace Douyasi\Models;
+	namespace Douyasi\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,8 +14,10 @@ class Category extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
+    						'id',
                             'name',
                             'sort',
+                            'p_id',
                             'slug',
                         ];
  

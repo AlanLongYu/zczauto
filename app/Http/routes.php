@@ -109,6 +109,8 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
 
              #资料管理
             Route::resource('ziliao', 'ZiliaoController');
+            Route::resource('soft', 'SoftController');
+
 
 
             //内容管理
@@ -116,6 +118,7 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
             Route::resource('category', 'CategoryController');
             #文章
             Route::resource('article', 'ArticleController');
+            Route::resource('softarticle', 'SoftArticleController');
             #图链
             Route::resource('picture', 'PictureController');
 
@@ -175,9 +178,14 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
     Route::get('/data/data', 'DataController@data');
     Route::post('/data/detail', 'DataController@detail');
     Route::get('/data/cardetail/{catid}', 'DataController@carDetail');
+
+    Route::get('/data/document/{folder?}/{file}','DataController@document');
+    Route::get('/data/document/{file}','DataController@document')->where('file', '.*$');
+    //Route::get('/data/document?file={file_path}','DataController@document');
 	
 	#维修软件库
     Route::get('/soft/index', 'SoftController@soft_index');
+    Route::get('/soft/detail/{id}', 'SoftController@detail');
 	
 	#VIP购买
     Route::get('/vip/vip_index', 'VipController@vip_index');
