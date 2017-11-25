@@ -34,14 +34,26 @@
 				<li class="ziliao-search">资料查询<i class="arrow-icon"></i>
 					<div class="submenu">
 						<a href="/data/data"><i class="wxsck-icon"></i>维修手册库<span>1500+</span></a>		
-						<a href="/soft/index"><i class="wxrjk-icon"></i>维修软件库<span>15+</span></a>				
-						<!--<a href=""><i class="qxspk-icon"></i>维修视频库<span>1000+</span></a>
-						<a href=""><i class=""></i>维修案例库<span>3000+</span></a>						
-						<a href="/Vip/vip_index"><i class="vip-icon"></i>VIP会员购买<span>30元/月</span></a>-->
+						<a href="/soft/index"><i class="wxrjk-icon"></i>维修软件库<span>15+</span></a>
 					</div>
-				</li>	
-				<li><a href="/vip/vip_index" class="vip">VIP购买</a></li>
-				<li><a href="/help/about" class="help">帮助</a></li>
+				</li>
+
+				<li class="weixiu-search">维修项目<i class="arrow-icon"></i>
+					<div class="submenu">
+						<a href="/data/data"><i class="wxsck-icon"></i>维修手册库<span>1500+</span></a>		
+						<a href="/soft/index"><i class="wxrjk-icon"></i>维修软件库<span>15+</span></a>
+					</div>
+				</li>
+
+				<li class="baoyang-search">保养项目<i class="arrow-icon"></i>
+					<div class="submenu">
+						<a href="/data/data"><i class="wxsck-icon"></i>维修手册库<span>1500+</span></a>		
+						<a href="/soft/index"><i class="wxrjk-icon"></i>维修软件库<span>15+</span></a>
+					</div>
+				</li>				
+				<!--<li><a href="/vip/vip_index" class="vip">VIP购买</a></li>-->
+				<li><a href="/book/index" class="book">汽车书籍</a></li>
+				<!--<li><a href="/help/about" class="help">帮助</a></li>-->
 				<!--<li>技术学习<i class="arrow-icon"></i>
 					<div class="submenu">
 						<a href=""><i class="kck-icon"></i>基础入门课程<span>100+</span></a>

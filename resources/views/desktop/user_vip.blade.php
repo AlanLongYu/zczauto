@@ -23,7 +23,7 @@
 									<li>
 						<label>会员级别</label>
 						<div class="inputbox">							
-							<span style="color:#35b558">普通会员</span>
+							<span style="color:blue">普通会员</span>
 						</div>
 						<a  href="/Vip/vip_index" class="green-btn">购买VIP/超级会员</a>
 					</li>					

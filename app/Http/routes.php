@@ -109,6 +109,7 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
 
              #资料管理
             Route::resource('ziliao', 'ZiliaoController');
+            Route::resource('carowner', 'CarownerController');
             Route::resource('soft', 'SoftController');
 
 
@@ -176,13 +177,7 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
     Route::get('{category}/{article}.html', 'HomeController@getArticle');
 	
 	
-	#维修手册库
-    Route::get('/data/data', 'DataController@data');
-    Route::post('/data/detail', 'DataController@detail');
-    Route::get('/data/cardetail/{catid}', 'DataController@carDetail');
-
-    Route::get('/data/document/{folder?}/{file}','DataController@document');
-    Route::get('/data/document/{file}','DataController@document')->where('file', '.*$');
+	
     //Route::get('/data/document?file={file_path}','DataController@document');
 	
 	#维修软件库
@@ -234,6 +229,27 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
         
         #会员中心-我的订单
         Route::get('order', 'UserController@order');
+
+        #会员中心-我的VIP
+        Route::get('book', 'BookController@index');
+    });
+
+
+    #需要登录验证的其他路由组
+    Route::group(['middleware' => ['multi-site.auth:desktop']],function(){
+        //Route::auth();
+        #维修手册库
+        Route::get('/data/data', 'DataController@data');
+        Route::post('/data/detail', 'DataController@detail');
+        Route::get('/data/cardetail/{catid}', 'DataController@carDetail');
+
+        Route::get('/data/document/{folder?}/{file}','DataController@document');
+        Route::get('/data/document/{file}','DataController@document')->where('file', '.*$');
+
+        #汽车书籍
+        Route::get('/book/index', 'BookController@index');
+        Route::get('/book/info/{file}','BookController@detail')->where('file', '.*$');
+
     });
 	
 

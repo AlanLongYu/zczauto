@@ -39,11 +39,25 @@ class CategoryController extends BackController
         return view('admin.back.category.index', ['categories' => $categories,'tree'=> $tree]);
     }
 
+    public function show($id)
+    {
+        $categories = Category::all();
+        $items = [];
+        foreach($categories->toArray() AS $key => $val){
+            $items[$val['id']] = $val;
+        }
+        $tree =  Category::generateTree($items);
+
+        return view('admin.back.category.index', ['categories' => $categories,'tree'=> $tree]);
+    }
+
     public function create(Request $request)
     {
         if (Gate::denies('category-write')) {
             return deny();
         }
+        //获取父级分类
+        
         return view('admin.back.category.create');
     }
 

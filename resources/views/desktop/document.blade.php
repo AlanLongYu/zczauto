@@ -128,10 +128,10 @@
 				</button>
 
 				<button id="print" style="display:none"></button>
-				<button id="printcheck" class="toolbarButton print" title="打印"></button>
+				<!--<button id="printcheck" class="toolbarButton print" title="打印"></button>-->
 
                 <button id="download" style="display:none;"></button>
-				<button id="downloadcheck" class="toolbarButton download" title="下载"></button>
+				<!--<button id="downloadcheck" class="toolbarButton download" title="下载"></button>-->
 
                 <a href="#" id="viewBookmark" class="toolbarButton bookmark hiddenSmallView" title="Current view (copy or open in new window)" style="display:none;">
                   <span >当前视图</span>
