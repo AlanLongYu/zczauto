@@ -3,13 +3,13 @@
 @section('content-header')
 @parent
           <h1>
-            资料库管理
-            <small>分类</small>
+            导航管理
+            <small>新增</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="{{ site_url('dashboard', 'admin') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
-            <li><a href="{{ _route('admin:category.index') }}">资料库管理 - 分类</a></li>
-            <li class="active">资料库管理</li>
+            <li><a href="{{ _route('admin:nav.index') }}">导航管理 - 新增</a></li>
+            <li class="active">导航管理</li>
           </ol>
 @stop
 
@@ -35,33 +35,55 @@
             </div>
           @endif
 
-              <h2 class="page-header">新增分类</h2>
-              <form method="post" action="{{ _route('admin:category.store') }}" accept-charset="utf-8">
+              <h2 class="page-header">新增导航</h2>
+              <form method="post" action="{{ _route('admin:nav.store') }}" accept-charset="utf-8">
               {!! csrf_field() !!}
               <div class="nav-tabs-custom">
                   
                   <ul class="nav nav-tabs">
                     <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">主要内容</a></li>
+                    <li style="display: none;" class="tab_2"><a href="#tab_2" data-toggle="tab" aria-expanded="true">车型配置</a></li>
                   </ul>
 
                   <div class="tab-content">
                     
                     <div class="tab-pane active" id="tab_1">
-                      <div class="form-group">
-                        <label>分类名称 <small class="text-red">*</small></label>
-                        <input type="text" class="form-control" name="name" autocomplete="off" value="{{ old('name') }}" placeholder="分类名称" maxlength="20">
+                    <div class="form-group">
+                        <label>父级导航 <small class="text-red">*</small></label>
+                        <div class="input-group">
+                          <select data-placeholder="选择父级导航..." class="chosen-select" style="min-width:280px;" name="p_id" onChange="displayCarModel(this);">
+                          <option value="0">顶级导航</option>
+                          @foreach ($Nav as $nav)
+                            @if(in_array($nav->id,$topNav))
+                            <option value="{{ $nav->id }}" {{ ($nav->id == old('p_id') ) ? 'selected':'' }}>{{ $nav->name }}</option>
+                            @endif
+                          @endforeach
+                          </select>
+                        </div>
                       </div>
                       <div class="form-group">
-                        <label>分类别名 <small class="text-red">*</small> <span class="text-green">[a-z\-_]{3,20}</span> <a href="javascript:void(0);" class="auto-to-pinyin"><i class="fa fa-fw fa-hand-o-down" title="自动转换"></i></a></label>
-                        <input type="text" class="form-control" name="slug" placeholder="分类别名" maxlength="20" value="{{ old('slug') }}">
+                        <label>导航名称 <small class="text-red">*</small></label>
+                        <input type="text" class="form-control" name="name" autocomplete="off" value="{{ old('name') }}" placeholder="导航名称" maxlength="20">
+                      </div>
+                      <div class="form-group" style="display:none;">
+                        <label>导航别名 <small class="text-red">*</small> <span class="text-green">[a-z\-_]{3,20}</span> <a href="javascript:void(0);" class="auto-to-pinyin"><i class="fa fa-fw fa-hand-o-down" title="自动转换"></i></a></label>
+                        <input type="text" class="form-control" name="slug" placeholder="导航别名" maxlength="20" value="{{ old('slug') }}">
+                      </div>
+                      <div class="form-group" style="display:none;">
+                        <label>导航Url <small class="text-red">*</small></label>
+                        <input type="text" class="form-control" name="url" placeholder="导航Url" maxlength="255" value="{{ old('url') }}">
                       </div>
                       <div class="form-group">
-                        <label>分类排序 <small class="text-red">*</small> <span class="text-green">000-999</span></label>
-                        <input type="text" class="form-control" name="sort" placeholder="分类排序" value="{{ old('sort', 999) }}">
+                        <label>导航排序 <small class="text-red">*</small> <span class="text-green">000-999</span></label>
+                        <input type="text" class="form-control" name="sort" placeholder="导航排序" value="{{ old('sort', 999) }}">
                       </div>
                     </div><!-- /.tab-pane -->
 
-                    <button type="submit" class="btn btn-primary">新增分类</button>
+                    <div class="tab-pane" id="tab_2">
+
+                    </div><!-- /.tab-pane -->
+
+                    <button type="submit" class="btn btn-primary">新增导航</button>
 
                   </div><!-- /.tab-content -->
                   
@@ -85,5 +107,11 @@
         }
       });
    });
+   var displayCarModel = function(val){
+      if(val.value != 0){
+        $("#tab_2").html('放醋');
+        $(".tab_2").show();
+      }
+   }
 </script>
 @stop

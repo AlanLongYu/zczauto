@@ -15,9 +15,13 @@ class DataController extends FrontController
 {
 	
 	//VIP购买
-	public function data()
-	{
-		$categories = Category::orderBy('sort','desc')->get();
+	public function data($catId)
+	{   
+        if(empty($catId)){
+            echo 'alert("对不起，参数错误")';
+            return ;
+        }
+		$categories = Category::where(['nav_id' => $catId]) ->orderBy('sort','desc')->get();
         $items = [];
         foreach($categories->toArray() AS $key => $val){
             $items[$val['id']] = $val;

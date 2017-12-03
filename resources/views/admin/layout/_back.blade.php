@@ -124,6 +124,7 @@ html {overflow-x:hidden;overflow-y:hidden;}/*禁止出现滚动条*/
           <!--highlight main-sidebar-->
           /*导航高亮*/
           var path_array = window.location.pathname.split( '/' );
+          console.log(path_array);
           var scheme_less_url = '//' + window.location.host + window.location.pathname;
           if(path_array[3] === undefined || path_array[3] === "create" || parseInt(path_array[3]) == path_array[3]) {
             {{--
@@ -136,6 +137,9 @@ html {overflow-x:hidden;overflow-y:hidden;}/*禁止出现滚动条*/
             -->
             --}}
             scheme_less_url = '//' + window.location.host + '/' + path_array[1] + '/' + path_array[2];
+          }
+          if(path_array.length == 4 && parseInt(path_array[3]) == path_array[3]){
+            scheme_less_url +='/'+ path_array[3];
           }
           $('ul.treeview-menu>li').find('a[href="'+scheme_less_url+'"]').closest('li').addClass('active');  //二级链接高亮
           $('ul.treeview-menu>li').find('a[href="'+scheme_less_url+'"]').closest('li.treeview').addClass('active');  //一级栏目[含二级链接]高亮

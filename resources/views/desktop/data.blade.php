@@ -35,7 +35,7 @@
 										<dd>
 										@if(isset($cc['son']))
 											@foreach($cc['son'] AS $ccc)
-												<a href="cardetail/{{$ccc['id']}}" class="car">{{$ccc['name']}}</a>
+												<a href="/data/cardetail/{{$ccc['id']}}" class="car">{{$ccc['name']}}</a>
 											@endforeach
 										@endif
 										</dd>
@@ -65,7 +65,7 @@
 
 	</div>
 	
-	<div class="main right">
+	<!--<div class="main right">
 		<div id="info">
 			<h1>温馨提示</h1>
 			<p>1、模块功能：本模块可在线浏览、打印、下载维修手册电路图！请在左侧菜单栏选择国家、厂家、车型！也可直接搜索车型！</p>
@@ -234,7 +234,7 @@
 		<li><a href="/Home/Read/read_index?data_id=666">2014-2017宝马X5(F15)</a></li><li><a href="/Home/Read/read_index?data_id=447">2004广汽本田飞度FIT</a></li><li><a href="/Home/Read/read_index?data_id=681">2015-2017奥迪R8</a></li><li><a href="/Home/Read/read_index?data_id=368">2012-2016一汽奥迪新A6L</a></li>			<div class="clearfix"></div>
 		</ul>
 
-	</div>
+	</div>-->
 
 	
 </div>

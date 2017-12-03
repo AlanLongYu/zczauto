@@ -30,7 +30,26 @@
 		<!--nav-->
 		<nav>
 			<ul class="header-nav">
-				<li><a href="/" class="current">首页</a></li>
+				
+				@foreach($navs AS $nav)
+					@if($nav->p_id == 0)
+						<li>
+							<a href="{{$nav->url}}" class="current">{{$nav->name}}</a>
+							@if(in_array($nav->id,[2,5,9]))
+								<i class="arrow-icon"></i>
+								<div class="submenu">
+									@foreach($navs AS $secondNav)
+										@if($secondNav->p_id == $nav->id)
+											<a href="{{$secondNav -> url}}"><i class="wxsck-icon"></i>{{$secondNav->name}}<span></span></a>		
+										@endif
+									@endforeach
+								</div>
+							@endif
+						</li>
+					@endif
+				@endforeach
+	
+				<!--<li><a href="/" class="current">首页</a></li>
 				<li class="ziliao-search">资料查询<i class="arrow-icon"></i>
 					<div class="submenu">
 						<a href="/data/data"><i class="wxsck-icon"></i>维修手册库<span>1500+</span></a>		
@@ -52,7 +71,7 @@
 					</div>
 				</li>				
 				<!--<li><a href="/vip/vip_index" class="vip">VIP购买</a></li>-->
-				<li><a href="/book/index" class="book">汽车书籍</a></li>
+				<!--<li><a href="/book/index" class="book">汽车书籍</a></li>-->
 				<!--<li><a href="/help/about" class="help">帮助</a></li>-->
 				<!--<li>技术学习<i class="arrow-icon"></i>
 					<div class="submenu">
@@ -164,10 +183,6 @@
 					</div>
 					<div class="csc">
 						<a href="#" id="back-to-top" title="回到顶部"><img src="{{_asset('assets/images/csc-top.png') }}"/></a>
-						<!--<a target="_blank"  title="旺旺咨询" href="http://www.taobao.com/webww/ww.php?ver=3&touid=langhuangroup&siteid=cntaobao&status=2&charset=utf-8">
-							<img src="picture/csc-ww_4.png" />
-						</a>-->
-
 						<a target="_blank"  title="点击QQ咨询:903987773" href="http://wpa.qq.com/msgrd?v=3&uin=903987773&site=qq&menu=yes">
 							<img src="{{_asset('assets/images/fdsa2312safadsowq.gif')}}" />
 						</a>

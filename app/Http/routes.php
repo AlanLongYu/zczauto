@@ -239,7 +239,7 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
     Route::group(['middleware' => ['multi-site.auth:desktop']],function(){
         //Route::auth();
         #维修手册库
-        Route::get('/data/data', 'DataController@data');
+        Route::get('/data/data/{catid}', 'DataController@data');
         Route::post('/data/detail', 'DataController@detail');
         Route::get('/data/cardetail/{catid}', 'DataController@carDetail');
 

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Douyasi\Models\Nav;
+use Douyasi\Http\Requests\NavRequest;
 
 class NavController extends Controller
 {
@@ -32,7 +33,22 @@ class NavController extends Controller
          */
         public function create()
         {
-            return view('admin.back.nav.create');
+        	$navs = Nav::all();
+        	$topNav = [];
+        	$secondNav = [];
+        	$Nav = [];
+        	if(!is_null($navs)){
+        		foreach($navs AS $k => $v){
+        			if($v['p_id'] == 0){
+        				$topNav[] = $v['id'];
+        			}
+        			if(in_array($v['p_id'],$topNav)){
+        				$secondNav[] = $v['id'];
+        			}
+        			$Nav[$v['id']] = $v;
+        		}
+        	}
+            return view('admin.back.nav.create',compact('topNav','secondNav','Nav'));
         }
 
         /**
@@ -41,9 +57,19 @@ class NavController extends Controller
          * @param Request $request
          * @return Response
          */
-        public function store(Request $request)
+        public function store(NavRequest $request)
         {
-            //
+            $inputs = $request->all();
+	        $nav = new Nav;
+	        $nav->name = e($inputs['name']);
+	        $nav->sort = e($inputs['sort']);
+	        $nav->p_id = e(trim($inputs['p_id']));
+	        $nav->url = e(trim($inputs['url']));
+	        if($nav->save()) {
+	            return redirect()->to(site_path('nav', 'admin'))->with('message', '成功新增导航栏目！');
+	        } else {
+	            return redirect()->back()->withInput($request->input())->with('fail', '数据库操作返回异常！');
+	        }
         }
 
         /**
