@@ -80,7 +80,7 @@
                     </div><!-- /.tab-pane -->
 
                     <div class="tab-pane" id="tab_2">
-
+                      <ul id="treeDemo" class="ztree"></ul>
                     </div><!-- /.tab-pane -->
 
                     <button type="submit" class="btn btn-primary">新增导航</button>
@@ -93,7 +93,10 @@
 
 
 @section('extraPlugin')
-
+<link href="{{ _asset('/assets/css/metroStyle/metroStyle.css') }}" rel="stylesheet" type="text/css" />
+<script src="{{ _asset('/assets/js/ztree/jquery.ztree.core.js') }}"></script>
+<script src="{{ _asset('/assets/js/ztree/jquery.ztree.excheck.js') }}"></script>
+<script src="{{ _asset('/assets/js/ztree/jquery.ztree.exedit.js') }}"></script>
 <script type="text/javascript">
    $('.auto-to-pinyin').click(function () {
       var _name = $('input[name="name"]').val();
@@ -109,9 +112,87 @@
    });
    var displayCarModel = function(val){
       if(val.value != 0){
-        $("#tab_2").html('放醋');
         $(".tab_2").show();
       }
    }
+   //Ztree插件js
+    <!--
+    var setting = {
+      async: {
+        enable: true,
+        url:"/admin/car/type",
+        autoParam:["id", "name=n", "level=lv"],
+        otherParam:{"otherParam":"zTreeAsyncTest"},
+        dataFilter: filter
+      },
+      view: {expandSpeed:"",
+        addHoverDom: addHoverDom,
+        removeHoverDom: removeHoverDom,
+        selectedMulti: false
+      },
+      check: {
+        enable: true
+      },
+      edit: {
+        enable: true
+      },
+      
+      data: {
+        simpleData: {
+          enable: true
+        }
+      },
+      callback: {
+        beforeRemove: beforeRemove,
+        beforeRename: beforeRename
+      }
+    };
+
+    function filter(treeId, parentNode, childNodes) {
+      if (!childNodes) return null;
+      for (var i=0, l=childNodes.length; i<l; i++) {
+        childNodes[i].name = childNodes[i].name.replace(/\.n/g, '.');
+      }
+      return childNodes;
+    }
+    function beforeRemove(treeId, treeNode) {
+      var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+      zTree.selectNode(treeNode);
+      return confirm("确认删除 节点 -- " + treeNode.name + " 吗？");
+    }   
+    function beforeRename(treeId, treeNode, newName) {
+      if (newName.length == 0) {
+        setTimeout(function() {
+          var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+          zTree.cancelEditName();
+          alert("节点名称不能为空.");
+        }, 0);
+        return false;
+      }
+      return true;
+    }
+
+    var newCount = 1;
+    function addHoverDom(treeId, treeNode) {
+      var sObj = $("#" + treeNode.tId + "_span");
+      if (treeNode.editNameFlag || $("#addBtn_"+treeNode.tId).length>0) return;
+      var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
+        + "' title='add node' onfocus='this.blur();'></span>";
+      sObj.after(addStr);
+      var btn = $("#addBtn_"+treeNode.tId);
+      if (btn) btn.bind("click", function(){
+        var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+        zTree.addNodes(treeNode, {id:(100 + newCount), pId:treeNode.id, name:"new node" + (newCount++)});
+        return false;
+      });
+    };
+    function removeHoverDom(treeId, treeNode) {
+      $("#addBtn_"+treeNode.tId).unbind().remove();
+    };
+
+    $(document).ready(function(){
+      $.fn.zTree.init($("#treeDemo"), setting);
+    });
+    //-->
 </script>
 @stop

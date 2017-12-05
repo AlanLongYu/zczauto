@@ -112,6 +112,17 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
             Route::resource('carowner', 'CarownerController');
             Route::resource('soft', 'SoftController');
 
+            // Route::post('car/type','CarController');
+            Route::post('car/type',function(){
+                $res = [
+                    '1' => ['name'=> '中国车系'],
+                    '2' => ['name'=> '欧洲车系'],
+                    '3' => ['name'=> '美国车系'],
+                ];
+                echo json_encode($res);
+                exit;
+            });
+
 
 
             //内容管理
