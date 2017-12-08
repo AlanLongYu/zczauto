@@ -23,8 +23,8 @@
 	<div class="w-1000 relative">
 		<!--logo-->
 		<a href="http://www.zczauto.com/" class="logo">
-			<img src="{{ _asset('assets/images/logo.gif') }}" height="40" width="109">
-			<img src="{{ _asset('assets/images/logo.gif') }}" style="display:none;"/>
+			<img src="{{ _asset('assets/images/logo.png') }}" height="40" width="109">
+			<img src="{{ _asset('assets/images/logo.png') }}" style="display:none;"/>
 		</a>
 
 		<!--nav-->
