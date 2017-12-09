@@ -41,6 +41,7 @@ class BookController extends FrontController
         $filess = self::recurDir($fileDir);
         $lastFileTree = self::beautifulTree($filess);
         $xxx = [];
+        if(!empty($filess))
         foreach($filess AS $kkk => $vvv){
             if(is_array($vvv)){
                 foreach ($vvv as $kkkk => $vvvv) {
@@ -234,6 +235,7 @@ public static function beautifulTree($arr, $l = '-|')
     static $l = '';
     static $str = '';
     //遍历刚才得到的目录树
+    if(empty($arr)) return '';
     foreach($arr as $key=>$val) {
         //如果是个数组，也就代表它是个目录，那么就在它的子文件中加入-|来表示是下一级吧
         if(is_array($arr[$key])) {
