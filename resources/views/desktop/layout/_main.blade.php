@@ -75,6 +75,17 @@
 							$.post('/User/getGroupId',{'username':username},function(data){
 								if(data == 2) $(".vipbs-icon").show();
 							});
+							$(document).ready(function(){
+								$(".hoverwx").hover(
+										function(){
+											$(".wximg").show();	
+										}
+									,function(){
+										$(".wximg").hide();	
+									}	
+								);
+							});
+							
 						</script>
 					</dd>
 					<dd>
@@ -145,8 +156,8 @@
 						</a>
 
 						<a href="#" class="csc-wx relative" title="扫码微信咨询:zczauto">
-						<img src="{{ _asset('assets/images/csc-wx.png') }}"/>
-						<img src="{{ _asset('assets/images/csc-wx-code.png') }}" alt="扫描加客户微信" class="csc-wx-code"/>
+						<img class="hoverwx" src="{{ _asset('assets/images/csc-wx.png') }}"/>
+						<img src="{{ _asset('assets/images/csc-wx-code.png') }}" alt="扫描加客户微信" class="wximg csc-wx-code"/>
 						</a>
 					</div>
 				</div>
