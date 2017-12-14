@@ -329,7 +329,13 @@ input::-ms-clear {
 	cursor: pointer;
 }
 
+#header .icon-box a:hover{
+	color:#35b558;
+}
 
+#header .icon-box a:visited{
+	color: #000;
+}
 /*手机与用户子菜单公共*/
 .loginlist .submenu {
 	display: none;

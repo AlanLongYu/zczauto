@@ -61,66 +61,66 @@
                         <label>软件标题 <small class="text-red">*</small></label>
                         <input type="text" class="form-control" name="title" autocomplete="off" value="{{ old('title') }}" placeholder="标题" maxlength="80">
                       </div>
-                      <div class="form-group">
-                        <label>软件摘要 <small class="text-red">*</small><span class="text-green">min:10</span></label>
-                        <textarea class="form-control" name="description" rows="3" cols="200" autocomplete="off" placeholder="软件摘要">{{ old('description') }}</textarea>
-                      </div>
-                      <div class="form-group">
-                        <label>大小 <small class="text-red">*</small></label>
-                        <input type="text" class="form-control" name="size" autocomplete="off" value="{{ old('size') }}" placeholder="大小" maxlength="80">
-                      </div>
-
-                      <div class="form-group">
-                        <label>语言 <small class="text-red">*</small></label>
-                        <div class="input-group">
-                          <select data-placeholder="选择软件语言..." class="chosen-select" style="min-width:200px;" name="language">
-                          @foreach(config('ecms.language') as $k => $v)
-                            <option value="{{ $k }}">{{ $v }}</option>
-                          @endforeach
-                          </select>
+                        <div class="form-group">
+                          <label>软件摘要 <small class="text-red">*</small><span class="text-green">min:10</span></label>
+                          <textarea class="form-control" name="description" rows="3" cols="200" autocomplete="off" placeholder="软件摘要">{{ old('description') }}</textarea>
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <label>下载次数 <small class="text-red">*</small></label>
-                        <input type="text" class="form-control" name="downloadtimes" autocomplete="off" value="{{ old('downloadtimes') }}" placeholder="下载次数" maxlength="80">
-                      </div>
-                      <div class="form-group">
-                        <label>网址缩略名(slug) <small class="text-red">*</small> <span class="text-green">[a-z0-9\-_]{1,120}</span> <a href="javascript:void(0);" class="auto-to-pinyin"><i class="fa fa-fw fa-hand-o-down" title="自动转换"></i></a></label>
-                        <div class="input-group mono url_slug">
-                          <p>//example.org/{category}/<input type="text" id="slug" name="slug" autocomplete="off" value="{{ old('slug') }}" class="slug" maxlength="120" pattern="[a-z0-9_-]{1,120}">.html</p>
+                        <div class="form-group">
+                          <label>大小 <small class="text-red">*</small></label>
+                          <input type="text" class="form-control" name="size" autocomplete="off" value="{{ old('size') }}" placeholder="大小" maxlength="80">
                         </div>
-                      </div>
-                      
-                      </div>
-                      
-                      <div class="form-group">
-                        <label>缩略图  <a href="javascript:void(0);" class="uploadPic" data-id="thumb"><i class="fa fa-fw fa-picture-o" title="上传"></i></a>  <a href="javascript:void(0);" class="previewPic" data-id="thumb"><i class="fa fa-fw fa-eye" title="预览小图"></i></a></label>
-                        <input type="text" class="form-control" id="thumb" name="thumb" value="{{ old('thumb') }}" placeholder="缩略图地址：如{{ url('') }}/assets/img/yas_logo.png" readonly="readonly">
-                      </div>
-                      <div class="form-group">
-                        <label软件详情 <small class="text-red">*</small></label>
-                        <textarea class="form-control" id="ckeditor" name="content">{{ old('content') }}</textarea>
-                        @include('admin.scripts.endCKEditor'){{-- 引入CKEditor编辑器相关JS依赖 --}}
-                      </div>
 
-                      <div class="form-group">
-                        <label>下载地址 <small class="text-red">(http://..)*</small></label>
-                        <input type="text" class="form-control" name="url" autocomplete="off" value="{{ old('url') }}" placeholder="下载地址" maxlength="80">
-                      </div>
-                      <div class="form-group">
-                        <label>下载密码 <small class="text-red">*</small></label>
-                        <input type="text" class="form-control" name="secreat" autocomplete="off" value="{{ old('secreat') }}" placeholder="下载密码" maxlength="80">
-                      </div>
-
-                      <div class="form-group">
-                        <label>单选项 - 会员专享 <small class="text-red">*</small></label>
-                        <div class="input-group">
-                          <input type="radio" name="is_locked" value="1" checked>
-                          <label class="choice" for="radiogroup">是</label>
-                          <input type="radio" name="is_locked" value="0" >
-                          <label class="choice" for="radiogroup">否</label>
+                        <div class="form-group">
+                          <label>语言 <small class="text-red">*</small></label>
+                          <div class="input-group">
+                            <select data-placeholder="选择软件语言..." class="chosen-select" style="min-width:200px;" name="language">
+                            @foreach(config('ecms.language') as $k => $v)
+                              <option value="{{ $k }}">{{ $v }}</option>
+                            @endforeach
+                            </select>
+                          </div>
                         </div>
-                      </div>
+                        <div class="form-group">
+                          <label>下载次数 <small class="text-red">*</small></label>
+                          <input type="text" class="form-control" name="downloadtimes" autocomplete="off" value="{{ old('downloadtimes') }}" placeholder="下载次数" maxlength="80">
+                        </div>
+                        <div class="form-group">
+                          <label>网址缩略名(slug) <small class="text-red">*</small> <span class="text-green">[a-z0-9\-_]{1,120}</span> <a href="javascript:void(0);" class="auto-to-pinyin"><i class="fa fa-fw fa-hand-o-down" title="自动转换"></i></a></label>
+                          <div class="input-group mono url_slug">
+                            <p>//example.org/{category}/<input type="text" id="slug" name="slug" autocomplete="off" value="{{ old('slug') }}" class="slug" maxlength="120" pattern="[a-z0-9_-]{1,120}">.html</p>
+                          </div>
+                        </div>
+                        
+                        </div>
+                        
+                        <div class="form-group">
+                          <label>缩略图  <a href="javascript:void(0);" class="uploadPic" data-id="thumb"><i class="fa fa-fw fa-picture-o" title="上传"></i></a>  <a href="javascript:void(0);" class="previewPic" data-id="thumb"><i class="fa fa-fw fa-eye" title="预览小图"></i></a></label>
+                          <input type="text" class="form-control" id="thumb" name="thumb" value="{{ old('thumb') }}" placeholder="缩略图地址：如{{ url('') }}/assets/img/yas_logo.png" readonly="readonly">
+                        </div>
+                        <div class="form-group">
+                          <label软件详情 <small class="text-red">*</small></label>
+                          <textarea class="form-control" id="ckeditor" name="content">{{ old('content') }}</textarea>
+                          @include('admin.scripts.endCKEditor'){{-- 引入CKEditor编辑器相关JS依赖 --}}
+                        </div>
+
+                        <div class="form-group">
+                          <label>下载地址 <small class="text-red">(http://..)*</small></label>
+                          <input type="text" class="form-control" name="url" autocomplete="off" value="{{ old('url') }}" placeholder="下载地址" maxlength="80">
+                        </div>
+                        <div class="form-group">
+                          <label>下载密码 <small class="text-red">*</small></label>
+                          <input type="text" class="form-control" name="secreat" autocomplete="off" value="{{ old('secreat') }}" placeholder="下载密码" maxlength="80">
+                        </div>
+
+                        <div class="form-group">
+                          <label>单选项 - 会员专享 <small class="text-red">*</small></label>
+                          <div class="input-group">
+                            <input type="radio" name="is_locked" value="1" checked>
+                            <label class="choice" for="radiogroup">是</label>
+                            <input type="radio" name="is_locked" value="0" >
+                            <label class="choice" for="radiogroup">否</label>
+                          </div>
+                        </div>
 
                     </div><!-- /.tab-pane -->
 

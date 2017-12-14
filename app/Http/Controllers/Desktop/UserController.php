@@ -53,6 +53,13 @@ class UserController extends FrontController
 		return view('desktop.register');
 	}
 
+	public function checkReg(Request $request){
+		$phone = $request->input('phone');
+		$exists = \App\Member::where('phone',$phone)->get();
+		$res = ['data' => $exists->isEmpty()];
+		return response()->json($res);
+	}
+
 	//注册处理
 	public function doregister(Request $request)
 	{
@@ -89,6 +96,33 @@ class UserController extends FrontController
 			return redirect()->to(site_path('user/login', 'web'))->with('message', '注册成功');
 		}catch(Exception $e){
 			return redirect()->back()->withInput($request->input())->with('fail', $e->getMessage());
+		}	
+	}
+
+	//注册处理
+	public function registerajax(Request $request)
+	{
+		$phone = $request->input('phone');
+		$password = $request->input('password');
+		$exists = \App\Member::where('phone',$phone)->get();
+		if(!$exists->isEmpty()){
+			throw new Exception("注册失败,手机号已经注册", 100110);
+		}
+		
+		if(empty($password)){
+			throw new Exception("注册失败,密码不能为空", 100110);
+		}
+
+		try{
+			$memberModel = new \App\Member;
+			$memberModel->phone = e($phone);
+			$memberModel->password = bcrypt(trim($password));
+			if(!$memberModel->save()){
+				throw new Exception("注册失败,请联系管理员", 100110);
+			}
+			return response()->json(['code' => 200200,'msg' => '注册成功！']);
+		}catch(Exception $e){
+			return response()->json(['code' => $e->getCode(),'msg' => $e->getMessage()]);
 		}	
 	}
     

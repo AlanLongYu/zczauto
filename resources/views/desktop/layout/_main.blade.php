@@ -48,42 +48,6 @@
 						</li>
 					@endif
 				@endforeach
-	
-				<!--<li><a href="/" class="current">首页</a></li>
-				<li class="ziliao-search">资料查询<i class="arrow-icon"></i>
-					<div class="submenu">
-						<a href="/data/data"><i class="wxsck-icon"></i>维修手册库<span>1500+</span></a>		
-						<a href="/soft/index"><i class="wxrjk-icon"></i>维修软件库<span>15+</span></a>
-					</div>
-				</li>
-
-				<li class="weixiu-search">维修项目<i class="arrow-icon"></i>
-					<div class="submenu">
-						<a href="/data/data"><i class="wxsck-icon"></i>维修手册库<span>1500+</span></a>		
-						<a href="/soft/index"><i class="wxrjk-icon"></i>维修软件库<span>15+</span></a>
-					</div>
-				</li>
-
-				<li class="baoyang-search">保养项目<i class="arrow-icon"></i>
-					<div class="submenu">
-						<a href="/data/data"><i class="wxsck-icon"></i>维修手册库<span>1500+</span></a>		
-						<a href="/soft/index"><i class="wxrjk-icon"></i>维修软件库<span>15+</span></a>
-					</div>
-				</li>				
-				<!--<li><a href="/vip/vip_index" class="vip">VIP购买</a></li>-->
-				<!--<li><a href="/book/index" class="book">汽车书籍</a></li>-->
-				<!--<li><a href="/help/about" class="help">帮助</a></li>-->
-				<!--<li>技术学习<i class="arrow-icon"></i>
-					<div class="submenu">
-						<a href=""><i class="kck-icon"></i>基础入门课程<span>100+</span></a>
-						<a href=""><i class="zyljt-icon"></i>实战专业课程<span>200+</span></a>
-					</div>
-				</li>
-				<li >技术社区<i class="arrow-icon"></i>
-					<div class="submenu">
-						<a href="/Question/question"><i class="jswd-icon"></i>技术问答<span>1000+</span></a>
-					</div>
-				</li>-->
 			</ul>
 		</nav>
 		<!--nav end-->
@@ -119,9 +83,6 @@
 					<dd>
 						<a href="/user/user_vip"><i class="wdvip-icon"></i>我的VIP</a>
 					</dd>
-					<!--<dd>
-						<a href="/Ucenter/message"><i class="xxtz-icon"></i>消息通知</a>
-					</dd>-->
 					<dd>
 						<a href="/user/order"><i class="wddd-icon"></i>我的订单</a>
 					</dd>
@@ -151,19 +112,15 @@
 				<div class="info">
 					<div class="logo-footer">
 						<img src="{{ _asset('assets/images/logo-footer.png') }}">
-						<p>天下没有难修的汽车！</p>
+						<p>做最专业的汽车网站</p>
 					</div>
 					<dl>
 						<dt>资料查询</dt>
 						<dd><a target="_blank" href="/Data/data">维修手册库</a></dd>
 						<dd><a target="_blank" href="/Soft/soft">维修软件库</a></dd>
-						<dd><a target="_blank" href="/Vip/vip_index">VIP会员购买</a></dd>
+						<!--<dd><a target="_blank" href="/Vip/vip_index">VIP会员购买</a></dd>-->
 					</dl>
-					<!--<dl>
-						<dt>汽修学院</dt>
-						<dd><a target="_blank" href="">基础入门课程</a></dd>
-						<dd><a target="_blank" href="">实战专业课程</a></dd>
-					</dl>-->
+
 					<dl>
 						<dt>常见问题</dt>
 						<dd><a target="_blank" href="/help/start">手册库使用</a></dd>
@@ -176,14 +133,14 @@
 					</dl>
 
 					<div class="down">
-						<p class="hot-tel">服务热线: 13060020950</p>
+						<p class="hot-tel">服务热线: 18898598208</p>
 						<div class="downCon down-ios">
 							<img src="{{ _asset('assets/images/wxgzh.jpg') }}" class="twoCode">微信公众号
 						</div>
 					</div>
 					<div class="csc">
 						<a href="#" id="back-to-top" title="回到顶部"><img src="{{_asset('assets/images/csc-top.png') }}"/></a>
-						<a target="_blank"  title="点击QQ咨询:903987773" href="http://wpa.qq.com/msgrd?v=3&uin=903987773&site=qq&menu=yes">
+						<a target="_blank"  title="点击QQ咨询:1824839790" href="http://wpa.qq.com/msgrd?v=3&uin=1824839790&site=qq&menu=yes">
 							<img src="{{_asset('assets/images/fdsa2312safadsowq.gif')}}" />
 						</a>
 
