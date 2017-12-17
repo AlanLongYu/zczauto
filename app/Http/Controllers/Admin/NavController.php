@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Douyasi\Models\Nav;
+use Douyasi\Models\Car;
 use Douyasi\Http\Requests\NavRequest;
 
 class NavController extends Controller
@@ -48,7 +49,15 @@ class NavController extends Controller
         			$Nav[$v['id']] = $v;
         		}
         	}
-            return view('admin.back.nav.create',compact('topNav','secondNav','Nav'));
+            $items = [];
+            $cars = Car::orderBy('sort','ASC')->get();
+            foreach($cars->toArray() AS $key => $val){
+                $items[$val['id']] = $val;
+            }
+            //ztree 车系数据
+            $tree =  json_encode(Car::generateTree($items));
+
+            return view('admin.back.nav.create',compact('topNav','secondNav','Nav','cars','tree'));
         }
 
         /**

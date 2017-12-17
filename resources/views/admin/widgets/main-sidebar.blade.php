@@ -36,7 +36,7 @@
             <!--无子节点的一级导航节点-->
             <!--<li><a href="{{ site_url('dashboard', 'admin') }}"><i class="fa fa-dashboard"></i> <span>控制台</span> </a></li>-->
             <li><a href="{{ site_url('cache', 'admin') }}"><i class="fa fa-eraser"></i> <span>重建缓存</span> </a></li>
-            <li><a href="{{ site_url('nav', 'admin') }}"><i class="fa fa-automobile"></i> <span>车型配置</span> </a></li>
+            <li><a href="{{ site_url('car', 'admin') }}"><i class="fa fa-automobile"></i> <span>车型配置</span> </a></li>
             <li><a href="{{ site_url('nav', 'admin') }}"><i class="fa fa-paper-plane"></i> <span>导航管理</span> </a></li>
             <!--自定义二次开发导航区域 START-->
 

@@ -124,10 +124,17 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
             });
 
 
+            Route::post('car/ajaxAdd','CarModelController@ajaxAdd');
+            Route::post('car/ajaxEdit','CarModelController@ajaxEdit');
+            Route::post('car/ajaxDel','CarModelController@ajaxDel');
+
 
             //内容管理
             #导航
             Route::resource('nav', 'NavController');
+
+            #车型管理
+            Route::resource('car', 'CarModelController');
             #分类
             Route::resource('category', 'CategoryController');
             #文章

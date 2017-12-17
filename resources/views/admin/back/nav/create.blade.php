@@ -191,7 +191,7 @@
     };
 
     $(document).ready(function(){
-      $.fn.zTree.init($("#treeDemo"), setting);
+      $.fn.zTree.init($("#treeDemo"), setting,{!! $tree !!});
     });
     //-->
 </script>
