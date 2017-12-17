@@ -50,7 +50,7 @@ class CarModelController extends Controller
         			$Car[$v['id']] = $v;
         		}
         	}
-            return view('admin.back.Car.create',compact('topCar','secondCar','Car'));
+            return view('admin.back.car.create',compact('topCar','secondCar','Car'));
         }
 
         /**
