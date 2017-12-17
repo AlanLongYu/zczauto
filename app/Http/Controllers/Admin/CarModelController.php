@@ -19,6 +19,7 @@ class CarModelController extends Controller
         public function index()
         {
             $cars = Car::orderBy('sort','ASC')->get();
+            $items = [];
             foreach($cars->toArray() AS $key => $val){
             	$items[$val['id']] = $val;
         	}
