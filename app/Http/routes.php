@@ -133,6 +133,10 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
             #导航
             Route::resource('nav', 'NavController');
 
+            Route::post('nav/ajaxStore','NavController@ajaxStore');
+            Route::post('nav/ajaxDel','NavController@ajaxDel');
+            Route::post('nav/ajaxEdit','NavController@ajaxEdit');
+
             #车型管理
             Route::resource('car', 'CarModelController');
             #分类
@@ -261,7 +265,7 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
         #维修手册库
         Route::get('/data/data/{catid}', 'DataController@data');
         Route::post('/data/detail', 'DataController@detail');
-        Route::get('/data/cardetail/{catid}', 'DataController@carDetail');
+        Route::get('/data/cardetail/{catid}/{navId}', 'DataController@carDetail');
 
         Route::get('/data/document/{folder?}/{file}','DataController@document');
         Route::get('/data/document/{file}','DataController@document')->where('file', '.*$');

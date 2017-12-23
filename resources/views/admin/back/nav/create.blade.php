@@ -36,7 +36,7 @@
           @endif
 
               <h2 class="page-header">新增导航</h2>
-              <form method="post" action="{{ _route('admin:nav.store') }}" accept-charset="utf-8">
+              <form method="post" id="nav-add" action="{{ _route('admin:nav.store') }}" accept-charset="utf-8">
               {!! csrf_field() !!}
               <div class="nav-tabs-custom">
                   
@@ -83,7 +83,7 @@
                       <ul id="treeDemo" class="ztree"></ul>
                     </div><!-- /.tab-pane -->
 
-                    <button type="submit" class="btn btn-primary">新增导航</button>
+                    <button id="crateNav" type="submit" class="btn btn-primary">新增导航</button>
 
                   </div><!-- /.tab-content -->
                   
@@ -126,15 +126,15 @@
         dataFilter: filter
       },
       view: {expandSpeed:"",
-        addHoverDom: addHoverDom,
+        //addHoverDom: addHoverDom,
         removeHoverDom: removeHoverDom,
-        selectedMulti: false
+        selectedMulti: true
       },
       check: {
         enable: true
       },
       edit: {
-        enable: true
+        enable: false
       },
       
       data: {
@@ -187,6 +187,23 @@
       });
     };
     function removeHoverDom(treeId, treeNode) {
+      $.ajax({
+          url:"/admin/nav/ajaxDel",
+          type:"post",
+          data:{treeNode:treeNode},
+          dataType:"json",
+          success:function(data){
+            console.log(data);
+            if(data.code == 200){
+              return true;
+            }else{
+              alert(data.msg);
+              return false;
+              
+            }
+          }
+
+        });
       $("#addBtn_"+treeNode.tId).unbind().remove();
     };
 
@@ -194,5 +211,33 @@
       $.fn.zTree.init($("#treeDemo"), setting,{!! $tree !!});
     });
     //-->
+    $("#crateNav").click(function(event){
+      event.preventDefault();
+      var params = $("#nav-add").serialize();
+      console.log(params);
+      var zTreeObj = $.fn.zTree.getZTreeObj("treeDemo");
+      //选中的节点
+      var checkedNodes = zTreeObj.getCheckedNodes();
+      console.log(checkedNodes);
+      //ajax添加导航
+      $.ajax({
+          url:"/admin/nav/ajaxStore",
+          type:"post",
+          data:{params:params,checkedNodes:checkedNodes},
+          dataType:"json",
+          success:function(data){
+            console.log(data);
+            if(data.code == 200){
+                window.location.href='/'+data.redirectUrl;
+            }else{
+              alert(data.msg);
+              return false;
+            }
+          }
+
+        });
+      
+
+    });
 </script>
 @stop
