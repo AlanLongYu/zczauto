@@ -122,7 +122,7 @@
 						<dt>常见问题</dt>
 						<dd><a target="_blank" href="/help/start">手册库使用</a></dd>
 						<dd><a target="_blank" href="/help/softdown">软件库使用</a></dd>
-						<dd><a target="_blank" href="/help/member">如何购买VIP</a></dd>
+						<!--<dd><a target="_blank" href="/help/member">如何购买VIP</a></dd>-->
 					</dl>
 					<dl>
 						<dt>其他</dt>
@@ -150,7 +150,7 @@
 
 			</div>
 			<div class="copyright">
-				<span>Copyright © 2013-2017&nbsp;<strong><a href="http://www.zczauto.com/" target="_blank">zczauto.com</a></strong> All Rights Reversed. </span>粤ICP备75508102号-1号   Version:1.1.0
+				<span>Copyright © 2017-2020&nbsp;<strong><a href="http://www.zczauto.com/" target="_blank">zczauto.com</a></strong> All Rights Reversed. </span>粤ICP备75508102号-1号   Version:1.1.0
 			</div>
 		</div>
 
