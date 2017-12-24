@@ -122,7 +122,7 @@ class DataController extends FrontController
 
     public function document(Request $request)
     {
-        $file = url('/uploads/ziliao').'/'.e(trim($request->$navId)).'/';
+        $file = url('/uploads/ziliao').'/'.e(trim($request->navId)).'/';
         $folder = $request->folder;
         $file_name =  $request->file;
         if(!empty($folder)){

@@ -268,7 +268,7 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
         Route::get('/data/cardetail/{catid}/{navId}', 'DataController@carDetail');
 
         Route::get('/data/document/{folder?}/{file}','DataController@document');
-        Route::get('/data/document/{file}','DataController@document')->where('file', '.*$');
+        Route::get('/data/document/{navId}/{file}','DataController@document')->where('file', '.*$');
 
         #汽车书籍
         Route::get('/book/index', 'BookController@index');

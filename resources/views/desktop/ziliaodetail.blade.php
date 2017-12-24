@@ -35,7 +35,7 @@ $(function() {
 			return $(this).text();
 		}).get();
 		var iframe_url=encodeURI("{{$base_path}}"+"/{!! $afterFix !!}/"+folder.reverse().join("/")+'/'+file_name+'.pdf');
-		var iframe_url=encodeURI("{!! $afterFix !!}/"+folder.reverse().join("/")+'/'+file_name+'.pdf');
+		var iframe_url=encodeURI("{!! $navId !!}/{!! $afterFix !!}/"+folder.reverse().join("/")+'/'+file_name+'.pdf');
 console.log(iframe_url);
 	$("#iframe").attr("src","/data/document/"+iframe_url);
 		var group_id=0;			
