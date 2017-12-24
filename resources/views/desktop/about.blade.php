@@ -10,7 +10,7 @@
 			<li><a href="about"  class="active">关于我们</a></li>
 			<li><a href="start">维修手册库</a></li>
 			<li><a href="softdown">维修软件库</a></li>
-			<li><a href="member">VIP购买</a></li>
+			<!--<li><a href="member">VIP购买</a></li>-->
 			<li><a href="joinus">加入我们</a></li>
 			<li><a href="contact">联系我们</a></li>			
 		</ul>
@@ -30,11 +30,6 @@
 			<h3>可以用手机访问吗</h3>
 			<p>目前已是者车者汽车网第二次大改版，采用最新的H5技术，可在电脑、平板、手机等各种设备上使用，并且兼容苹果、安卓、windows操作系统，目前提供网页版，后续我们将推出苹果和安卓客户端</p>
 			<p><img src="{{_asset('/assets/images/heade-rwm.png')}}" title="手机扫描二维码访问本站" width="150px"/></p>
-		</section>
-		<section>
-			<h3>你们是哪里的</h3>
-			<p>我们在有天府之国之称的四川省成都市，公司全称为成都市金牛区琅环软件工作室，以下为营执照副本：</p><br/>
-			<p><img src="/Public/Home/img/help/yyzz.jpg" width="200px"/></p>
 		</section>
 
     </div>

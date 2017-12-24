@@ -113,6 +113,10 @@ class NavController extends Controller
             $nav->url = e(trim($paramsArr['url'])) ? e(trim($paramsArr['url'])) : '/data/data/'.$nav->id;
             $nav->save();
 
+            $insetNav = Nav::find($nav->id);
+            $insetNav->url = '/data/data/'.$nav->id;
+            $insetNav->save();
+
             //导航ID
             $navId = $nav->id;
             $inserts = [];
