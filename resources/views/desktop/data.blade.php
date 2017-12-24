@@ -16,7 +16,7 @@
 
 			<!--分类头-->
 			<div class="hd">
-				<h2><i class="icon-course-curr"></i><a href="/data/data">维修手册库</a></h2>
+				<h2><i class="icon-course-curr"></i><a href="/data/data/{{$navId}}">{{$currentName}}</a></h2>
 			</div>
 
 			<!--分类体-->
@@ -35,7 +35,7 @@
 										<dd>
 										@if(isset($cc['son']))
 											@foreach($cc['son'] AS $ccc)
-												<a href="/data/cardetail/{{$ccc['id']}}" class="car">{{$ccc['name']}}</a>
+												<a href="/data/cardetail/{{$ccc['id']}}/{{$navId}}" class="car">{{$ccc['name']}}</a>
 											@endforeach
 										@endif
 										</dd>
@@ -52,15 +52,15 @@
 			<!-- /bd -->                    
 		</div>
 		<div class="aside-search">
-			<div class="hd">
-				<h2><i class="icon-search"></i>搜索车型</h2>
+			<!--<div class="hd">
+				<h2><i class="icon-search"></i>搜索车型></h2>
 			</div>
 			<div class="bd">
 				<form class="bigsearch">
 					<input type="text" placeholder="请输入车型" class="stext"  id="search_inp" >
 					<input type="button" class="sbtn" value="" title="点击搜索" id="search_btn">
 				</form>
-			</div>
+			</div>-->
 		</div>
 
 	</div>

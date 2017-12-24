@@ -39,6 +39,7 @@ class CarownerController extends Controller
         foreach($categories->toArray() AS $key => $val){
             $items[$val['id']] = $val;
         }
+         // print_r($items);exit;
         $tree =  Category::generateTree($items);
         $arr = [];
         foreach ($tree as $k => $v) {

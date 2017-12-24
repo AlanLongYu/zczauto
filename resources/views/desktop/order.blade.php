@@ -9,8 +9,8 @@
     <nav class="aside left">
 		<ul>
 			<li><a href="user_info" class="">个人资料</a></li>
-			<li><a href="user_vip" class="">我的VIP</a></li>
-			<li><a href="order" class="active">我的订单</a></li>
+<!--			<li><a href="user_vip" class="">我的VIP</a></li>
+			<li><a href="order" class="active">我的订单</a></li>-->
 		</ul>
 	</nav>
 

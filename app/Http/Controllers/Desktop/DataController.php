@@ -9,6 +9,7 @@ use Auth;
 use App\Jobs\ChangeLocale;
 use Douyasi\Models\Article;
 use Douyasi\Models\Category;
+use Douyasi\Models\Nav;
 use Douyasi\Models\Ziliao;
 
 class DataController extends FrontController
@@ -22,40 +23,50 @@ class DataController extends FrontController
             return ;
         }
 		$categories = Category::where(['nav_id' => $catId]) ->orderBy('sort','desc')->get();
+        $nav = Nav::find(['id',$catId]);
+        foreach ($nav as  $n) {
+            $currentName = $n->name;
+        }
         $items = [];
         foreach($categories->toArray() AS $key => $val){
             $items[$val['id']] = $val;
         }
         $tree =  Category::generateTree($items);
-		return view('desktop.data',['categories' =>$tree]);
+		return view('desktop.data',['categories' =>$tree,'navId' => $catId,'currentName' => $currentName]);
 	}
 
 
 
     //汽车详情
-    public function carDetail($catid)
+    public function carDetail($catid,$navId)
     {
-        $cate = Category::where('id',$catid)->get();
+        $cate = Category::where('nav_id',$navId)->get();
         $items = [];
         foreach($cate->toArray() AS $k => $v){
             $items[$v['id']] = $v;
         }
-        
-        $categories = Category::orderBy('sort','desc')->get();
-        $items = [];
+        // print_R($items);exit;
+        //$categories = Category::orderBy('sort','desc')->get();
+        /*$items = [];
         foreach($categories->toArray() AS $key => $val){
             $items[$val['id']] = $val;
+        }*/
+        $nav = Nav::find(['id',$navId]);
+        foreach ($nav as  $n) {
+            $currentName = $n->name;
         }
-        foreach($cate AS $vv){
-            $parentArr = $items[$vv->p_id];
-            $ppArr = $items[$parentArr['p_id']];
-        }
+        $cate2 = Category::where('nav_id',$navId)->where('id',$catid)->get();
+
+         foreach($cate2 AS $vv){
+                 $parentArr = $items[$vv->p_id];
+                 $ppArr = $items[$parentArr['p_id']];
+         }
 
         $tree =  Category::generateTree($items);
-
-        $ziliao = Ziliao::where('category_id',$catid)->paginate(15);
+// print_r($cate2);exit;
+        $ziliao = Ziliao::where('category_id',$catid)->where('nav_id',$navId)->paginate(15);
         $breadcrumb = $ppArr['name'].'>'.$parentArr['name'].'>'.$items[$catid]['name'];
-        return view('desktop.ziliaolist',['ziliao' => $ziliao,'categories' =>$tree,'breadcrumb' => $breadcrumb]);
+        return view('desktop.ziliaolist',['currentName' => $currentName,'navId' => $navId,'ziliao' => $ziliao,'categories' =>$tree,'breadcrumb' => $breadcrumb]);
     }
 
     //最终线路图详情文章

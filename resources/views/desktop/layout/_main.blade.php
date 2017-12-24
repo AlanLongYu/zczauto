@@ -2,9 +2,9 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>首页-ZCZ汽车网 | 天下没有难修的汽车</title>
+    <title>首页-者车者汽车网 | 天下没有难修的汽车</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="@section('description') {{ isset($description) ? $description : 'ZCZ汽修网专注于提供汽车维修资料，本站有上千款车型维修手册及电路图在线查询、打印和下载，每日更新，汽车维修企业必备神器！' }} @show{{-- meta描述 --}}" />
+    <meta name="description" content="@section('description') {{ isset($description) ? $description : '者车者汽车网专注于提供汽车维修资料，本站有上千款车型维修手册及电路图在线查询、打印和下载，每日更新，汽车维修企业必备神器！' }} @show{{-- meta描述 --}}" />
     <meta name="keywords" content="汽车维修资料,汽车维修技术,汽车维修论坛,汽车论坛,汽车维修资料免费下载,汽修资料,汽车维修手册,汽车电路图,{{ cache('website_keywords') }}" />
     <meta name="author" content="{{ cache('system_author_website', 'http://www.zczauto.com/') }}" />
     <meta name="renderer" content="webkit">
@@ -59,22 +59,8 @@
 			<span class="login-icon relative loginlist" id="login-icon">
 				<dl class="submenu">
 					<dd>
-												<a href="/Ucenter/user_info" class="username-btn relative">lh_9480<i class="vipbs-icon" style="display:none" title="VIP会员专用标识"></i></a>
 						<script type="text/javascript">
-							var username='lh_9480';
-							//加载登录头像
-							$("#login-icon").removeClass("login-icon");
-							$.post('/User/getHead',{'username':username},function(data){
-								$("#login-icon").css({
-									'background': 'url(/Public/Home/img/Avatar/'+data+') 0 0 no-repeat',
-									'background-size':'25px',
-									'background-position': '0'									
-								});
-							});
-							//如果是VIP，则加载VIP标识							
-							$.post('/User/getGroupId',{'username':username},function(data){
-								if(data == 2) $(".vipbs-icon").show();
-							});
+						
 							$(document).ready(function(){
 								$(".hoverwx").hover(
 										function(){
@@ -92,10 +78,10 @@
 						<a href="/user/user_info"><i class="grzl-icon"></i>个人资料</a>
 					</dd>
 					<dd>
-						<a href="/user/user_vip"><i class="wdvip-icon"></i>我的VIP</a>
+<!--						<a href="/user/user_vip"><i class="wdvip-icon"></i>我的VIP</a>-->
 					</dd>
 					<dd>
-						<a href="/user/order"><i class="wddd-icon"></i>我的订单</a>
+						<!--<a href="/user/order"><i class="wddd-icon"></i>我的订单</a>-->
 					</dd>
 										<dd>
 						<a href="/user/logout"><i class="tcdl-icon"></i>退出登录</a>
@@ -136,7 +122,7 @@
 						<dt>常见问题</dt>
 						<dd><a target="_blank" href="/help/start">手册库使用</a></dd>
 						<dd><a target="_blank" href="/help/softdown">软件库使用</a></dd>
-						<dd><a target="_blank" href="/help/member">如何购买VIP</a></dd>
+						<!--<dd><a target="_blank" href="/help/member">如何购买VIP</a></dd>-->
 					</dl>
 					<dl>
 						<dt>其他</dt>
@@ -164,7 +150,7 @@
 
 			</div>
 			<div class="copyright">
-				<span>Copyright © 2013-2017&nbsp;<strong><a href="http://www.zczauto.com/" target="_blank">zczauto.com</a></strong> All Rights Reversed. </span>粤ICP备75508102号-1号   Version:1.1.0
+				<span>Copyright © 2017-2020&nbsp;<strong><a href="http://www.zczauto.com/" target="_blank">zczauto.com</a></strong> All Rights Reversed. </span>粤ICP备75508102号-1号   Version:1.1.0
 			</div>
 		</div>
 

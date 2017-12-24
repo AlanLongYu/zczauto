@@ -25,8 +25,10 @@ class UserController extends FrontController
     
 	//登录之后个人资料
 	public function info()
-	{
-		return view('desktop.user_info');
+	{	
+		$userInfo = Auth::guard('member')->user();
+		// print_r($userInfo);exit;
+		return view('desktop.user_info',['userInfo' => $userInfo]);
 	}
 	
 	

@@ -60,12 +60,12 @@ return [
             'nav_id' => 2,
             'child_icon' => '',
             'sub_menu' => [
-                [
+                /*[
                     'name' => '资料分类',
                     'route' => 'admin:category.index',
                     'nav_id' => '',
                     'can' => '',
-                ],
+                ],*/
                 [
                     'name' => '车主手册列表',
                     'nav_id' => 3,
@@ -91,20 +91,20 @@ return [
             'sub_menu' => [
                 [
                     'name' => '发动机空滤更换',
-                    'nav_id' => 5,
-                    'route' => 'admin:carowner.5',
-                    'can' => '',
-                ],
-                [
-                    'name' => '发动机机油更换',
                     'nav_id' => 6,
                     'route' => 'admin:carowner.6',
                     'can' => '',
                 ],
                 [
-                    'name' => '空调滤芯更换',
+                    'name' => '发动机机油更换',
                     'nav_id' => 7,
                     'route' => 'admin:carowner.7',
+                    'can' => '',
+                ],
+                [
+                    'name' => '空调滤芯更换',
+                    'nav_id' => 8,
+                    'route' => 'admin:carowner.8',
                     'can' => '',
                 ],
                 
@@ -115,31 +115,31 @@ return [
          [
             'name' => '维修项目管理',
             'icon' => 'fa-user-plus',
-            'nav_id' => 8,
+            'nav_id' => 9,
             'child_icon' => '',
             'sub_menu' => [
                 [
                     'name' => '节气门匹配',
-                    'nav_id' => 9,
-                    'route' => 'admin:carowner.9',
-                    'can' => '',
-                ],
-                [
-                    'name' => '胎压监测复位',
                     'nav_id' => 10,
                     'route' => 'admin:carowner.10',
                     'can' => '',
                 ],
                 [
-                    'name' => '防盗/钥匙匹配',
+                    'name' => '胎压监测复位',
                     'nav_id' => 11,
                     'route' => 'admin:carowner.11',
                     'can' => '',
                 ],
-                 [
-                    'name' => 'ADAS标定',
+                [
+                    'name' => '防盗/钥匙匹配',
                     'nav_id' => 12,
                     'route' => 'admin:carowner.12',
+                    'can' => '',
+                ],
+                 [
+                    'name' => 'ADAS标定',
+                    'nav_id' => 13,
+                    'route' => 'admin:carowner.13',
                     'can' => '',
                 ],
                 

@@ -13,7 +13,9 @@
 @stop
 
 @section('content')
-          <!-- Small boxes (Stat box) -->
+          <?php 
+          echo '欢迎光临者车者后台管理系统';
+          /*<!-- Small boxes (Stat box) -->
           <div class="row">
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
@@ -67,5 +69,5 @@
                 <a href="#" class="small-box-footer">更多信息 <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
-          </div><!-- /.row -->
+          </div><!-- /.row -->*/?>
 @stop

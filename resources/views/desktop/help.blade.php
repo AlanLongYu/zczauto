@@ -9,7 +9,7 @@
 			<li><a href="about"  class="active">关于我们</a></li>
 			<li><a href="start">维修手册库</a></li>
 			<li><a href="softdown">维修软件库</a></li>
-			<li><a href="member">VIP购买</a></li>
+<!--			<li><a href="member">VIP购买</a></li>-->
 			<li><a href="joinus">加入我们</a></li>
 			<li><a href="contact">联系我们</a></li>			
 		</ul>
@@ -18,8 +18,8 @@
     <div class="main right">
 		<h2>关于我们</h2>
 		<section>
-			<h3>ZCZ汽修网是做什么的</h3>
-			<p>ZCZ汽修网专注为中国汽车维修技师提供维修资料、技术培训和技术交流。我们的许多资料和课程都是免费的，我们只做有用的，立足维修实战，绝不夸夸其谈！</p>
+			<h3>者车者汽车网是做什么的</h3>
+			<p>者车者汽车网专注为中国汽车维修技师提供维修资料、技术培训和技术交流。我们的许多资料和课程都是免费的，我们只做有用的，立足维修实战，绝不夸夸其谈！</p>
 		</section>
 		<section>
 			<h3>您能在本站获得什么</h3>
