@@ -79,9 +79,12 @@ class DataController extends FrontController
         $breadcrumb = $data->breadcrumb;
         $tmpArr = explode('>',$breadcrumb);
         $afterFix = join('/',$tmpArr);
-        $fileDir = $base_dir.$afterFix;
         $ziliao = Ziliao::where('id',$id)->get();
-        
+        foreach ($ziliao as $z) {
+            $navId = $z->nav_id;
+        }
+        $navfix = $navId ? $navId.'/' : '';
+        $fileDir = $base_dir.$navfix.$afterFix;
         $categories = Category::orderBy('sort','desc')->get();
         $items = [];
         foreach($categories->toArray() AS $key => $val){
@@ -113,13 +116,13 @@ class DataController extends FrontController
         // print_r($xxx);//exit;
         
 
-        return view('desktop.ziliaodetail',['base_path' => url('uploads/ziliao'),'ziliao' => $ziliao,'categories' =>$tree,'breadcrumb' => $breadcrumb,'files'=>$xxx,'afterFix' =>$afterFix]);
+        return view('desktop.ziliaodetail',['base_path' => url('uploads/ziliao'),'navId' => $navId,'ziliao' => $ziliao,'categories' =>$tree,'breadcrumb' => $breadcrumb,'files'=>$xxx,'afterFix' =>$afterFix]);
     }
 	
 
     public function document(Request $request)
     {
-        $file = url('/uploads/ziliao').'/';
+        $file = url('/uploads/ziliao').'/'.e(trim($request->$navId)).'/';
         $folder = $request->folder;
         $file_name =  $request->file;
         if(!empty($folder)){
@@ -185,7 +188,7 @@ public static function recurDir($pathName)
     //取出文件
     if($temp) {
         foreach($temp as $f) {
-            $f = iconv("GBK","UTF-8",$f);
+            $f = strtoupper(substr(PHP_OS,0,3))==='WIN' ? iconv("GBK","UTF-8",$f) : $f;
             $result[] = $f;
         }
     }

@@ -222,7 +222,7 @@ class BookController extends FrontController
     //取出文件
     if($temp) {
         foreach($temp as $f) {
-            $f = iconv("GBK","UTF-8",$f);
+            $f = strtoupper(substr(PHP_OS,0,3))==='WIN' ? iconv("GBK","UTF-8",$f) : $f;
             $result[] = $f;
         }
     }
