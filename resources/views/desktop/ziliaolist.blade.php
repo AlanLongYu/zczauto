@@ -35,7 +35,7 @@
 										<dd>
 										@if(isset($cc['son']))
 											@foreach($cc['son'] AS $ccc)
-												<a href="/data/cardetail/{{$ccc['id']}}" class="car">{{$ccc['name']}}</a>
+												<a href="/data/cardetail/{{$ccc['id']}}/{{$navId}}" class="car">{{$ccc['name']}}</a>
 											@endforeach
 										@endif
 										</dd>
