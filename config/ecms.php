@@ -60,12 +60,12 @@ return [
             'nav_id' => 2,
             'child_icon' => '',
             'sub_menu' => [
-                [
+                /*[
                     'name' => '资料分类',
                     'route' => 'admin:category.index',
                     'nav_id' => '',
                     'can' => '',
-                ],
+                ],*/
                 [
                     'name' => '车主手册列表',
                     'nav_id' => 3,
