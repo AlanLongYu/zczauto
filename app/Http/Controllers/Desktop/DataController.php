@@ -64,7 +64,7 @@ class DataController extends FrontController
 
         $tree =  Category::generateTree($items);
 // print_r($cate2);exit;
-        $ziliao = Ziliao::where('category_id',$catid)->paginate(15);
+        $ziliao = Ziliao::where('category_id',$catid)->where('nav_id',$navId)->paginate(15);
         $breadcrumb = $ppArr['name'].'>'.$parentArr['name'].'>'.$items[$catid]['name'];
         return view('desktop.ziliaolist',['currentName' => $currentName,'navId' => $navId,'ziliao' => $ziliao,'categories' =>$tree,'breadcrumb' => $breadcrumb]);
     }
