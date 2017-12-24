@@ -18,10 +18,9 @@
 		<h2>联系我们</h2>
 		<section>
 			<h3>聊天工具</h3>
-			<p>微信：langhuanauto（推荐）</p>
-			<p>旺旺：langhuangroup</p>			
-			<p>QQ：903987773</p>
-			<p>手机：13060020950</p>
+			<p>微信：zczauto（推荐）</p>	
+			<p>QQ：1824839790</p>
+			<p>手机：18898598208</p>
 		</section>
 		<section>
 			<h3>微信公众号</h3>
