@@ -107,10 +107,6 @@
         <div id="footer">
 			<div class="info-block">
 				<div class="info">
-					<div class="logo-footer">
-						<img src="{{ _asset('assets/images/logo-footer.png') }}">
-						<p>做最专业的汽车网站</p>
-					</div>
 					<dl>
 						<dt>资料查询</dt>
 						<dd><a target="_blank" href="/Data/data">维修手册库</a></dd>
@@ -150,7 +146,7 @@
 
 			</div>
 			<div class="copyright">
-				<span>Copyright © 2017-2020&nbsp;<strong><a href="http://www.zczauto.com/" target="_blank">zczauto.com</a></strong> All Rights Reversed. </span>粤ICP备75508102号-1号   Version:1.1.0
+				<span>Copyright © 2017-2020&nbsp;<strong><a href="http://www.zczauto.com/" target="_blank">zczauto.com</a></strong> All Rights Reversed. </span>粤ICP备xxx号-x号   Version:1.1.0
 			</div>
 		</div>
 
