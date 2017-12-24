@@ -118,6 +118,7 @@ class CarownerController extends Controller
         $Ziliao = Ziliao::find($id);
         $Ziliao->category_id = e($inputs['cat_id']);
         $Ziliao->content = e($inputs['content']);
+        $Ziliao->name = e($inputs['name']);
         $Ziliao->sort_order = e($inputs['sort']);
         $Ziliao->thumb = e(trim($inputs['thumb']));
         $Ziliao->detail_url  = e(trim($inputs['detail_url']));
