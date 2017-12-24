@@ -110,7 +110,7 @@ class NavController extends Controller
             $nav->name = e(urldecode($paramsArr['name']));
             $nav->sort = e($paramsArr['sort']);
             $nav->p_id = e(trim($paramsArr['p_id']));
-            $nav->url = e(trim($paramsArr['url']));
+            $nav->url = e(trim($paramsArr['url'])) ? e(trim($paramsArr['url'])) : '/data/data/'.$nav->id;
             $nav->save();
 
             //导航ID
