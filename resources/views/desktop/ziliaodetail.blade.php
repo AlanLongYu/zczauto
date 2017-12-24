@@ -128,7 +128,7 @@ console.log(iframe_url);
 	</div>
 
 	<div class="main right">
-	<iframe src="/data/document/default.pdf" frameborder="0" scrolling="no" width="100%" height="100%" id="iframe" name="iframe"></iframe>
+	<iframe src="/data/file/default.pdf" frameborder="0" scrolling="no" width="100%" height="100%" id="iframe" name="iframe"></iframe>
 	</div>	
 
 </div>
