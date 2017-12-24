@@ -126,9 +126,14 @@ class NavController extends Controller
                     $inserts[] = ['slug' => time()*mt_rand(1,10000),'nav_id' => $navId,'p_id' => e(trim($node['p_id'])),'id' => $node['id'],'name' => $node['name']];
                 }
             }
-            $res = DB::table('categories')->insert(
-             $inserts
-            );
+            if(!empty($inserts)){
+            	$res = DB::table('categories')->insert(
+             		$inserts
+            	);
+            }else{
+            	$res =true;
+            }
+            
             if($nav->save() && $res) {
                 Session::flash('message', '成功新增导航栏目！');
                 return response()->json(['msg' => '成功新增导航栏目！','code' => 200,'redirectUrl' => site_path('nav', 'admin')]);
@@ -168,6 +173,7 @@ class NavController extends Controller
         public function ajaxEdit(Request $request)
         {
             $inputs = $request->all();
+            $inserts = [];
             $Category = Category::where(['nav_id' => e($inputs['navId'])])->get();
             try{
                 //$deleteId = $Category->delete();
@@ -180,9 +186,12 @@ class NavController extends Controller
                     $inserts[] = ['slug' => time()*mt_rand(1,10000),'nav_id' => e($inputs['navId']),'p_id' => e(trim($node['p_id'])),'id' => $node['id'],'name' => $node['name']];
                 }
             }
-            $res = DB::table('categories')->insert(
-             $inserts
-            );                
+	        if(!empty($inserts)){
+	        	$res = DB::table('categories')->insert(
+	         		$inserts
+	        	);   
+	        }
+                         
                 return response()->json(['code' => 200,'msg' => '删除车型成功']);
 
             }catch(\Exception $e){
