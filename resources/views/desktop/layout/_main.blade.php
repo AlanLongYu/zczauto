@@ -59,22 +59,8 @@
 			<span class="login-icon relative loginlist" id="login-icon">
 				<dl class="submenu">
 					<dd>
-												<a href="/Ucenter/user_info" class="username-btn relative">lh_9480<i class="vipbs-icon" style="display:none" title="VIP会员专用标识"></i></a>
 						<script type="text/javascript">
-							var username='lh_9480';
-							//加载登录头像
-							$("#login-icon").removeClass("login-icon");
-							$.post('/User/getHead',{'username':username},function(data){
-								$("#login-icon").css({
-									'background': 'url(/Public/Home/img/Avatar/'+data+') 0 0 no-repeat',
-									'background-size':'25px',
-									'background-position': '0'									
-								});
-							});
-							//如果是VIP，则加载VIP标识							
-							$.post('/User/getGroupId',{'username':username},function(data){
-								if(data == 2) $(".vipbs-icon").show();
-							});
+						
 							$(document).ready(function(){
 								$(".hoverwx").hover(
 										function(){
@@ -92,10 +78,10 @@
 						<a href="/user/user_info"><i class="grzl-icon"></i>个人资料</a>
 					</dd>
 					<dd>
-						<a href="/user/user_vip"><i class="wdvip-icon"></i>我的VIP</a>
+<!--						<a href="/user/user_vip"><i class="wdvip-icon"></i>我的VIP</a>-->
 					</dd>
 					<dd>
-						<a href="/user/order"><i class="wddd-icon"></i>我的订单</a>
+						<!--<a href="/user/order"><i class="wddd-icon"></i>我的订单</a>-->
 					</dd>
 										<dd>
 						<a href="/user/logout"><i class="tcdl-icon"></i>退出登录</a>
