@@ -51,7 +51,10 @@ class DataController extends FrontController
         foreach($categories->toArray() AS $key => $val){
             $items[$val['id']] = $val;
         }*/
-
+        $nav = Nav::find(['id',$navId]);
+        foreach ($nav as  $n) {
+            $currentName = $n->name;
+        }
         $cate2 = Category::where('nav_id',$navId)->where('id',$catid)->get();
 
          foreach($cate2 AS $vv){
@@ -60,10 +63,10 @@ class DataController extends FrontController
          }
 
         $tree =  Category::generateTree($items);
-// print_r($tree);exit;
+// print_r($cate2);exit;
         $ziliao = Ziliao::where('category_id',$catid)->paginate(15);
         $breadcrumb = $ppArr['name'].'>'.$parentArr['name'].'>'.$items[$catid]['name'];
-        return view('desktop.ziliaolist',['ziliao' => $ziliao,'categories' =>$tree,'breadcrumb' => $breadcrumb]);
+        return view('desktop.ziliaolist',['currentName' => $currentName,'navId' => $navId,'ziliao' => $ziliao,'categories' =>$tree,'breadcrumb' => $breadcrumb]);
     }
 
     //最终线路图详情文章
