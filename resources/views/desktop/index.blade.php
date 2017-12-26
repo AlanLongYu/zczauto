@@ -46,20 +46,6 @@
 				</div>
 			</div>			
 		</li>
-
-		<li class="fbg2" style="display: none;">
-			<div class="w-1000">
-				<div class="left">
-					<h1>全新VIP会员免费体验</h1>
-					<p>免费体验：2007年以前的资料全部免费！只需注册即可浏览/打印/下载！</p>
-					<p>更高性价比：1年VIP仅需260元,3年VIP仅需600元！即可浏览/打印/下载全部资料！</p>
-					<a href="/Vip/vip_index">立即购买VIP</a>
-				</div>
-				<img src="{{ _asset('assets/images/flash_b.png')}}"/>
-			</div>
-		</li>
-
-
 	</ul>
 	<ul class="switch">
 		<li class="current"><a href="javascript:void(0)"></a></li>
