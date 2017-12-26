@@ -14,7 +14,7 @@
 
 @section('content')
           <?php 
-          echo '欢迎光临者车者后台管理系统';
+          echo '欢迎光临精准资料网后台管理系统';
           /*<!-- Small boxes (Stat box) -->
           <div class="row">
             <div class="col-lg-3 col-xs-6">

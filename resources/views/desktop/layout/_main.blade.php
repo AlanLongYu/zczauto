@@ -2,10 +2,10 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>首页-者车者汽车网 | 天下没有难修的汽车</title>
+    <title>首页-精准资料网 | 天下没有难修的汽车</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="@section('description') {{ isset($description) ? $description : '者车者汽车网专注于提供汽车维修资料，本站有上千款车型维修手册及电路图在线查询、打印和下载，每日更新，汽车维修企业必备神器！' }} @show{{-- meta描述 --}}" />
-    <meta name="keywords" content="汽车维修资料,汽车维修技术,汽车维修论坛,汽车论坛,汽车维修资料免费下载,汽修资料,汽车维修手册,汽车电路图,{{ cache('website_keywords') }}" />
+    <meta name="description" content="@section('description') {{ isset($description) ? $description : '精准资料网专注于个人收集汽车资料学习交流，本站有上千款车型精准资料在线查询、打印和下载，每日更新，汽车爱好者学习交流必备神器！' }} @show{{-- meta描述 --}}" />
+    <meta name="keywords" content="汽车资料学习,汽车维修技术探讨,汽车资料下载,汽车爱好者学习资料查询{{ cache('website_keywords') }}" />
     <meta name="author" content="{{ cache('system_author_website', 'http://www.zczauto.com/') }}" />
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
@@ -126,7 +126,7 @@
 					</dl>
 
 					<div class="down">
-						<p class="hot-tel">服务热线: 18898598208</p>
+						<p class="hot-tel">联系电话: 18898598208</p>
 						<div class="downCon down-ios">
 							<img src="{{ _asset('assets/images/wxgzh.jpg') }}" class="twoCode">微信公众号
 						</div>
@@ -137,9 +137,9 @@
 							<img src="{{_asset('assets/images/fdsa2312safadsowq.gif')}}" />
 						</a>
 
-						<a href="#" class="csc-wx relative" title="扫码微信咨询:zczauto">
+						<a href="#" class="csc-wx relative" title="扫码微信咨询交流:zczauto">
 						<img class="hoverwx" src="{{ _asset('assets/images/csc-wx.png') }}"/>
-						<img src="{{ _asset('assets/images/csc-wx-code.png') }}" alt="扫描加客户微信" class="wximg csc-wx-code"/>
+						<img src="{{ _asset('assets/images/csc-wx-code.png') }}" alt="扫描加微信" class="wximg csc-wx-code"/>
 						</a>
 					</div>
 				</div>
