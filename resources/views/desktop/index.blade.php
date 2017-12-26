@@ -46,6 +46,18 @@
 				</div>
 			</div>			
 		</li>
+
+		<li class="fbg2" style="display:list-item;">
+			<div class="w-1000">
+				<img src="{{ _asset('assets/images/flash_a.png')}}"/>
+				<div class="right">
+					<h1>第3代汽车维修资料库震撼推出</h1>
+					<p>者车者汽车网，致力于为中国汽车维修技师提供最专业的汽车技术资料平台！第3代汽修资料库，集在线浏览、打印、下载三位一体，超1500+车型原厂权威资料，适用于电脑、平板、电脑多终端，让你从此修车不求人!</p>
+					<a href="/user/register">立即注册体验</a>
+				</div>
+			</div>			
+		</li>
+
 	</ul>
 	<ul class="switch">
 		<li class="current"><a href="javascript:void(0)"></a></li>
