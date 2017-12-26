@@ -71,6 +71,22 @@
                         <label>描述信息 <small class="text-red">*</small></label>
                         <textarea class="form-control" name="content" rows="3" cols="200" autocomplete="off" placeholder="请输入文本">{{ old('content',isset($ziliaos) ? $ziliaos->content : '') }}</textarea>
                       </div>
+
+                       <div class="form-group">
+                        <label>单选项 - PDF查看方式 <small class="text-red">*</small></label>
+                        <div class="input-group">
+                          <input type="radio" name="way" value="0" {{  isset($ziliaos) ? ($ziliaos->way == 0 ? 'checked' : '') : '' }}>
+                          <label class="choice" for="radiogroup">按钮形式</label>
+                          <input type="radio" name="way" value="1" {{  isset($ziliaos) ? ($ziliaos->way == 1 ? 'checked' : '') : '' }}>
+                          <label class="choice" for="radiogroup">百度云库</label>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label id="way-content">{{ $ziliaos->way ==1 ? '百度云库Url及密码' : '按钮内容'}} <small class="text-red">*</small></label>
+                          <textarea class="form-control" id="buttonOrWangPan" name="buttonOrWangPan" rows="3" cols="200" autocomplete="off" placeholder="请输入按钮内容">{{ old('buttonOrWangPan',isset($ziliaos) ? $ziliaos->way_contents : '') }}</textarea>
+                      </div>
+                      
                       <div class="form-group">
                         <label>缩略图  <a href="javascript:void(0);" class="uploadPic" data-id="thumb"><i class="fa fa-fw fa-picture-o" title="上传"></i></a>  <a href="javascript:void(0);" class="previewPic" data-id="thumb"><i class="fa fa-fw fa-eye" title="预览小图"></i></a></label>
                         <input type="text" class="form-control" id="thumb" name="thumb" value="{{ old('thumb',isset($ziliaos) ? $ziliaos->thumb : '') }}" placeholder="图片地址：如{{ url('') }}/assets/img/yas_logo.png" readonly="readonly">
@@ -99,22 +115,9 @@
 
 @section('extraPlugin')
 
-<script type="text/javascript">
-   $('.auto-to-pinyin').click(function () {
-      var _name = $('input[name="name"]').val();
-      var _url = "{{ _route('api:pinyin') }}";
-      var _param = {
-        'content' : _name
-      };
-      $.get(_url, _param, function (_data) {
-        if (_data.status) {
-          $('input[name="slug"]').val(_data.slug);
-        }
-      });
-   });
-</script>
 <!--引入Layer组件-->
 <script src="{{ _asset(ref('layer.js')) }}"></script>
+<script src="{{ _asset(ref('icheck.js')) }}" type="text/javascript"></script>
 <script type="text/javascript">
    $('.auto-to-pinyin').click(function () {
       var _name = $('input[name="name"]').val();
@@ -128,6 +131,26 @@
         }
       });
    });
+
+   $(document).ready(function(){
+
+      $('input[name="way"]').iCheck({
+          radioClass: 'iradio_flat-blue',
+          increaseArea: '20%', // optional
+        });
+
+      $('input').on('ifChecked', function(event){ //ifCreated 事件应该在插件初始化之前绑定 
+          var checked = $(this).val();
+          if(checked == 1){
+            $("#way-content").text('百度云库Url及密码');
+            $("#buttonOrWangPan").attr('placeholder','请输入百度云库Url及密码');
+          }else{
+            $("#way-content").text('按钮内容');
+            $("#buttonOrWangPan").attr('placeholder','请输入按钮内容');
+          }
+      }); 
+      
+  });
 
    //高亮菜单
 $('ul.treeview-menu>li').find('a[href="{{ _route("admin:carowner") }}/{{$navId}}"]').closest('li').addClass('active');  //二级链接高亮

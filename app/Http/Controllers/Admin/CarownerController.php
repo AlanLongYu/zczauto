@@ -102,6 +102,8 @@ class CarownerController extends Controller
         $Ziliao->sort_order = e($inputs['sort']);
         $Ziliao->thumb = e(trim($inputs['thumb']));
         $Ziliao->detail_url  = e(trim($inputs['detail_url']));
+        $Ziliao->way  = e(trim($inputs['way']));
+        $Ziliao->way_contents  = e(trim($inputs['buttonOrWangPan']));
         if($Ziliao->save()) {
             return redirect()->to(site_path('carowner/'.e($inputs['navId']), 'admin'))->with('message', '成功新增资料！');
         } else {
@@ -122,6 +124,9 @@ class CarownerController extends Controller
         $Ziliao->sort_order = e($inputs['sort']);
         $Ziliao->thumb = e(trim($inputs['thumb']));
         $Ziliao->detail_url  = e(trim($inputs['detail_url']));
+
+        $Ziliao->way  = e(trim($inputs['way']));
+        $Ziliao->way_contents  = e(trim($inputs['buttonOrWangPan']));
         if($Ziliao->save()) {
             return redirect()->to(site_path('carowner/'.$inputs['navId'], 'admin'))->with('message', '成功修改资料！');
         } else {

@@ -86,7 +86,15 @@
 	                @if(isset(explode('|',$v->content)[2]))
 	                <li class="desc"><p>{{explode('|',$v->content)[2]}}</p></li>
 	                @endif
-	                <li class="desc"><input type="submit" value="维修手册 | 线路图" class="car_btn"/></li>
+	                <li class="desc">
+	                	@if($v->way == 0)
+	                	<input type="submit" value="{!! nl2br($v->way_contents) == '' ? '维修手册 | 线路图' : nl2br($v->way_contents)  !!}" class="car_btn"/>
+	                	@else
+	                	<div>
+	                		{!! nl2br($v->way_contents) !!}
+	                	</div>
+	                	@endif
+	                </li>
 	                                    
 	            </ul>
 	        </form>	
