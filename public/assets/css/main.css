@@ -570,11 +570,11 @@ input::-ms-clear {
 #footer .info-block .info {
 	position: relative;
 	/*width: 1000px;*/
-	height: 70px;
+	height: 40px;
 	margin: 0 auto;
 	border-bottom: 1px solid #f5f5f5;
 	padding-left: 150px;
-	padding-top: 25px;
+	padding-top: 5px;
 	box-sizing: border-box;
 }
 
@@ -605,7 +605,7 @@ input::-ms-clear {
 	width: 135px;
 	color: #808080;
 	float: left;
-	margin-left: 20px;
+	margin-left: 30px;
 }
 
 #footer .info dl dt {
@@ -637,7 +637,7 @@ input::-ms-clear {
 	right: 190px;
 	top: 25px;
 	display: inline-block;
-	width: 175px;
+	width: 166px;
 	text-align: left;
 }
 
@@ -659,6 +659,7 @@ input::-ms-clear {
 	font-size: 13px;
 	padding-left: 40px;
 	cursor: pointer;
+	bottom: 20px;
 }
 
 #footer .down .down-ios {
