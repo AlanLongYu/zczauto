@@ -169,7 +169,7 @@ class UserController extends FrontController
             event(new UserLogin(Auth::guard('member')->user()));  //触发登录事件
             return response()->json(['code' => 20200,'msg' => '登录成功']);
         }else{
-        	return response()->json(['code' => 20120,'msg' => '“用户名”、“密码”错误或帐号已被锁定']);
+        	return response()->json(['code' => 20120,'msg' => '“手机号”、“密码”错误或帐号已被锁定']);
         }
 	}
 	

@@ -51,7 +51,19 @@
 			</ul>
 		</nav>
 		<!--nav end-->
-
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".hoverwx").hover(
+						function(){
+							$(".wximg").show();	
+						}
+					,function(){
+						$(".wximg").hide();	
+					}	
+				);
+			});
+			
+		</script>
 		<!--login-->
 		<div class="icon-box">
 			
@@ -59,20 +71,6 @@
 			<span class="login-icon relative loginlist" id="login-icon">
 				<dl class="submenu">
 					<dd>
-						<script type="text/javascript">
-						
-							$(document).ready(function(){
-								$(".hoverwx").hover(
-										function(){
-											$(".wximg").show();	
-										}
-									,function(){
-										$(".wximg").hide();	
-									}	
-								);
-							});
-							
-						</script>
 					</dd>
 					<dd>
 						<a href="/user/user_info"><i class="grzl-icon"></i>个人资料</a>

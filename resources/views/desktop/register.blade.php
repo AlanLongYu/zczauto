@@ -15,7 +15,7 @@
 			<span class="other">我已经注册，现在就 
 			<a href="/user/login">登录</a>
 			</span> 
-		欢迎注册ZCZAUTO汽车网
+		欢迎注册精准资料网
 		</h1>
 		<form id="form_regist" autocomplete="off" name="form_regist" method="post">
 			<input type="hidden" id="method" name="method" value="register">
