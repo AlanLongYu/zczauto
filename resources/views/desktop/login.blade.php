@@ -14,7 +14,7 @@
 			<span class="other">还没有帐号？现在就 
 			<a href="/user/register">注册</a>
 			</span> 
-		欢迎登录ZCZ汽车网
+		欢迎登录精准资料网
 		</h1>
 		<form action="/user/login" id="form_login" autocomplete="off" name="form_regist" method="post">
 			<table class="regtable">

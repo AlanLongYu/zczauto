@@ -17,8 +17,23 @@ $(document).ready(function(){
             $('#password').focus();
             return false; 
         }
-
-        $("#form_login").submit();
+        $.ajax({
+            type:"post",
+            url: '/user/loginAjax',
+            dataType:"json",  //数据类型
+            data:{'username':username,'password':password},
+            success:function(data){
+                if(data.code == 20200){
+                    window.location.href = '/';
+                    return ;
+                }else{
+                    $("#msgs").html(data.msg);
+                    $("#msgs").css('color','red');
+                    $("#msgs").show();
+                    return false;
+                }
+            }
+        });
 
     }); 
 

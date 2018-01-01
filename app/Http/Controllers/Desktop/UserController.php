@@ -155,6 +155,23 @@ class UserController extends FrontController
                              ->withErrors(['attempt' => '“用户名”、“密码”错误或帐号已被锁定，请重新登录或联系超管！']);  //回传错误信息
         }
 	}
+
+	public function loginAjax(request $request)
+	{
+		//会员登录认证凭证
+        $credentials = [
+            'phone'  => e($request->input('username')),
+            'password'  => e($request->input('password')),
+            'is_locked' => 0,
+        ];
+        $flag = Auth::guard('member')->attempt($credentials, $request->has('remember'));
+        if ($flag) {
+            event(new UserLogin(Auth::guard('member')->user()));  //触发登录事件
+            return response()->json(['code' => 20200,'msg' => '登录成功']);
+        }else{
+        	return response()->json(['code' => 20120,'msg' => '“用户名”、“密码”错误或帐号已被锁定']);
+        }
+	}
 	
 	//退出
 	public function logout(){

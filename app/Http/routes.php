@@ -240,6 +240,9 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
     # 登录处理函数
     Route::post('/user/login', 'UserController@dologin');
 
+    # 登录ajax处理函数
+    Route::post('/user/loginAjax', 'UserController@loginAjax');
+
     # 退出逻辑
     Route::get('/user/logout', 'UserController@logout');
     
