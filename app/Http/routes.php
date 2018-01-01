@@ -207,7 +207,7 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
     Route::get('/soft/detail/{id}', 'SoftController@detail');
 	
 	#VIP购买
-    Route::get('/vip/vip_index', 'VipController@vip_index');
+    //Route::get('/vip/vip_index', 'VipController@vip_index');
 	
 	
 	#帮助页面
@@ -220,13 +220,17 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
     Route::get('/help/softdown', 'HelpController@softdown');
 	
 	#帮助-VIP购买
-    Route::get('/help/member', 'HelpController@vip');
+    //Route::get('/help/member', 'HelpController@vip');
 	
 	#加入我们
     Route::get('/help/joinus', 'HelpController@joinus');
 	
 	#联系我们
     Route::get('/help/contact', 'HelpController@contact');
+
+    #免责声明
+    Route::get('/help/disclaimer', 'HelpController@disclaimer');
+    
     
     #注册
     Route::get('/user/register', 'UserController@register');

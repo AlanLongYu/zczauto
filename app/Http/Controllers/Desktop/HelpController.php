@@ -88,6 +88,19 @@ class HelpController extends FrontController
 		#友情链接
         return view('desktop.contact');
     }
+
+    /**
+     *免责声明
+     */
+    public function disclaimer()
+    {
+		#导航
+		#轮播
+		#静态
+		#最新公告
+		#友情链接
+        return view('desktop.disclaimer');
+    }
 	
 	
 }

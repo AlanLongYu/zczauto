@@ -11,6 +11,7 @@
 			<li><a href="start">维修手册库</a></li>
 			<li><a href="softdown">维修软件库</a></li>
 			<!--<li><a href="member">VIP购买</a></li>-->
+			<li><a href="disclaimer">免责申明</a></li>
 			<li><a href="joinus">加入我们</a></li>
 			<li><a href="contact">联系我们</a></li>			
 		</ul>

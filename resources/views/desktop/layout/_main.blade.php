@@ -104,27 +104,26 @@
 
         <div id="footer">
 			<div class="info-block">
-				<div class="info">
+				<div class="info" style="background-color:black;padding:0 auto;color:#fff;">
 					<dl>
-						<dt>资料查询</dt>
-						<dd><a target="_blank" href="/Data/data">维修手册库</a></dd>
-						<dd><a target="_blank" href="/Soft/soft">维修软件库</a></dd>
-						<!--<dd><a target="_blank" href="/Vip/vip_index">VIP会员购买</a></dd>-->
+						<dt><a target="_blank" href="/help/about">关于我们</a></dt>
 					</dl>
 
 					<dl>
-						<dt>常见问题</dt>
-						<dd><a target="_blank" href="/help/start">手册库使用</a></dd>
-						<dd><a target="_blank" href="/help/softdown">软件库使用</a></dd>
-						<!--<dd><a target="_blank" href="/help/member">如何购买VIP</a></dd>-->
+						<dt><a target="_blank" href="/help/start">网站帮助</a></dt>
+					</dl>
+
+					<dl>
+						<dt><a target="_blank" href="/help/disclaimer">免责声明</a></dt>
 					</dl>
 					<dl>
-						<dt>其他</dt>
-						<dd><a target="_blank" href="/help/about">关于我们</a></dd>
+						<dt><a target="_blank" href="/help/joinus">加入我们</a></dt>
+					</dl>
+					<dl>
+						<dt><a target="_blank" href="/help/contact">联系我们</a></dt>
 					</dl>
 
 					<div class="down">
-						<p class="hot-tel">联系电话: 18898598208</p>
 						<div class="downCon down-ios">
 							<img src="{{ _asset('assets/images/wxgzh.jpg') }}" class="twoCode">微信公众号
 						</div>
