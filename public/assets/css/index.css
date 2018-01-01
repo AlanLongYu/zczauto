@@ -80,7 +80,10 @@
 }
 .fbg1 div a:hover,
 .fbg2 div a:hover,
-.fbg3 div a:hover{background-color:#ff9900;}
+.fbg3 div a:hover{
+	background-color:blue;
+	/*background-color:#ff9900;*/
+}
 
 /*flash2*/
 .fbg2 div img{

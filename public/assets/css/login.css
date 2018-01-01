@@ -25,7 +25,10 @@
     cursor: pointer;
 	font-family:'微软雅黑';
 }
-.butncss:hover{background: #ff9900;}
+.butncss:hover{
+	/*background: #ff9900;*/
+	background: blue;
+}
 
 
 

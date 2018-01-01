@@ -69,7 +69,7 @@
 <a href="#" id="registerok" data-reveal-id="myModal" style="display:none"></a>
 <div id="myModal" class="reveal-modal">
 	<h6>恭喜您，注册成功，马上转到登录页！</h6>
-	<p>hello！欢迎您成为者车者汽车网一员！</p>
+	<p>hello！欢迎您成为精准资料网一员！</p>
 </div>
 
 @endsection

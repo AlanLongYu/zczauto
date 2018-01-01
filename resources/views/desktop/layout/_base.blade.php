@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>首页-ZCZ汽车网 | 天下没有难修的汽车</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="@section('description') {{ isset($description) ? $description : '者车者汽车网专注于提供汽车维修资料，本站有上千款车型维修手册及电路图在线查询、打印和下载，每日更新，汽车维修企业必备神器！' }} @show{{-- meta描述 --}}" />
+    <meta name="description" content="@section('description') {{ isset($description) ? $description : '精准资料网专注于提供汽车维修资料学习和讨论交流，本站有上千款车型维修手册及电路图在线查询、打印和下载，每日更新，汽车爱好者的必备神器！' }} @show{{-- meta描述 --}}" />
     <meta name="keywords" content="汽车维修资料,汽车维修技术,汽车维修论坛,汽车论坛,汽车维修资料免费下载,汽修资料,汽车维修手册,汽车电路图,{{ cache('website_keywords') }}" />
     <meta name="author" content="{{ cache('system_author_website', 'http://www.zczauto.com/') }}" />
     <meta name="renderer" content="webkit">

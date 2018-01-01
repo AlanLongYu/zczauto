@@ -13,7 +13,7 @@
 		<table class="duibi">
 				<tr>
 					<th width="200">对比项目</th>
-					<th width="208" class="focus">者车者汽车网</th>
+					<th width="208" class="focus">精准资料网</th>
 					<th width="208">其它资料库</th>
 					<th width="208">淘宝资料店</th>
 				</tr>

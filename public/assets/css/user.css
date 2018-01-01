@@ -107,7 +107,8 @@
 	text-align:center;
 }
 .main .green-btn:hover{
-	background-color: #ff9900;
+	background-color: blue;
+	/*background-color: #ff9900;*/
 }
 
 /*我的订单页面*/
