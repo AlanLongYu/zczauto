@@ -251,6 +251,8 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
         //Route::auth();
          #会员中心
         Route::get('user_info', 'UserController@info');
+        #保存资料
+        Route::post('saveprofile', 'UserController@saveprofile');
         #会员中心-我的VIP
         Route::get('user_vip', 'UserController@vip');
         

@@ -20,7 +20,7 @@ class UserController extends FrontController
      */
     public function __construct()
     {
-        $this->middleware('multi-site.guest:desktop', ['except' => ['logout','info','vip','order']]);
+        $this->middleware('multi-site.guest:desktop', ['except' => ['logout','info','vip','order','saveprofile']]);
     }
     
 	//登录之后个人资料
@@ -171,6 +171,31 @@ class UserController extends FrontController
         }else{
         	return response()->json(['code' => 20120,'msg' => '“手机号”、“密码”错误或帐号已被锁定']);
         }
+	}
+
+
+	#保存资料
+	public function saveprofile(request $request)
+	{
+		$params = $request->all();
+		$username = e($params['username']);
+		$truename = e($params['truename']);
+		$email = e($params['email']);
+		$id = e($params['id']);
+		if($id != Auth::guard('member')->user()->id){
+			return redirect()->back()
+                             ->withInput()
+                             ->withErrors(['fail' => '用户不匹配']);
+		}else{
+			$memberModel = new \App\Member;
+			$memberInfo = $memberModel->find($id);
+			$memberInfo -> username = e($params['username']);
+			$memberInfo -> nickname = e($params['username']);
+			$memberInfo -> realname = $truename;
+			$memberInfo -> email = $email;
+			$memberInfo -> save();
+			return redirect()->back()->with('message','保存成功!');
+		}
 	}
 	
 	//退出

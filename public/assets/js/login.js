@@ -38,39 +38,11 @@ $(document).ready(function(){
     }); 
 
 
-    //找加密码时验证手机号
-    $("#findPwdButton").click(function(){
-        //alert(123);
-        var findphone=$('#findphone').val();  
-        //手机号正则表达式
-        var reg=/^1[34578]\d{9}$/;
-        //验证手机号
-        if(!reg.test(findphone)){           
-            $('#msg_phone').html('手机号码格式不正确');
-            $('#msg_phone').css({'color':'red','fontSize':'14px'});
-        }else{
-            $.post(
-                'checkPhone',   
-                {'phone':findphone},
-                function(data){
-                    if (data == 1) {
-                        $('#msg_phone').html('<span style="color:green">手机号码正确<span>');
-                        //发送手机验证码
-                        var findphone=$('#findphone').val();  
-                        $.post('sms',{'phone':findphone,'sms_type':'findpwd'},function(data){
-                            if(data){
-                                $("#smsok").click();
-                            }else{
-                                $('#msgs').html('短信发送失败');
-                                $('#msgs').css('color','red');
-                            }
-                        });
-                     }else{
-                        $('#msg_phone').html('<span style="color:red">手机号码不存在<span>');
-                    }
-                }
-            );
-        }
+    //找回密码时验证手机号
+    $("#findpwd").click(function(e){
+        e.preventDefault();
+        alert('请微信或致电：18898598208 联系管理员');
+        return false;
     });
 
 
