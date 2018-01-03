@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>YASCMF - YAS Content Management Framework</title>
+        <title>精准资料网</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <link href="{{ _asset(ref('bootstrap.css')) }}" rel="stylesheet" type="text/css" />
@@ -27,8 +27,8 @@
                     <!-- Content Header (Page header) -->
                     <section class="content-header">
                         <h1>
-                          芽丝内容管理框架
-                          <small>YASCMF</small>
+                          精准资料网
+                          <small>管理中心</small>
                         </h1>
                     </section>
 
@@ -45,9 +45,9 @@
             <footer class="main-footer">
                 <div class="container">
                     <div class="pull-right hidden-xs">
-                        <b>版本:</b> v5.2.1
+                        <b>版本:</b> v1.1
                     </div>
-                    <strong>Copyright &copy; 2011-{{ date('Y') }}  <a href="http://www.yascmf.com/">{{ trans('yascmf.full_name') }}</a></strong>  ( <code>{{ yascmf_version() }}</code> )
+                    <strong>Copyright &copy; 2018-{{ date('Y') }}  <a href="http://www.zczauto.com/">{{ trans('yascmf.full_name') }}</a></strong>  ( <code>{{ yascmf_version() }}</code> )
                 </div><!-- /.container -->
             </footer>
         </div><!-- ./wrapper -->

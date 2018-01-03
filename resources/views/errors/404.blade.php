@@ -6,6 +6,6 @@
 <body style="font-family:'Courier New', Courier, monospace; text-align: center;">
     <h1>404 Not Found!<h1>
     <p style="font-size: 16px;">Go To <a href="http://{{ request()->header('HOST') }}" style="color: #999;">{{ request()->header('HOST') }}</a></p>
-    <p style="font-size:14px;">powered by <a href="http://lfy.test.com" style="color: #333;">LFY</a></p>
+    <p style="font-size:14px;">powered by <a href="http://www.zczauto.com" style="color: #333;">LFY</a></p>
 </body>
 </html>
