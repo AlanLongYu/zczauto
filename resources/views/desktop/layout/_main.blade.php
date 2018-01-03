@@ -10,6 +10,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="{{ _asset('assets/images/favicon.ico') }}" type="image/x-icon" />
     <link rel="stylesheet" href="{{ _asset('assets/css/main.css') }}" />
 	<script type="text/javascript" src="{{ _asset('assets/js/jquery-1.8.1.min.js') }}"></script>
     @section('htmlHead')
@@ -75,20 +76,15 @@
 					<dd>
 						<a href="/user/user_info"><i class="grzl-icon"></i>个人资料</a>
 					</dd>
-					<dd>
-<!--						<a href="/user/user_vip"><i class="wdvip-icon"></i>我的VIP</a>-->
-					</dd>
-					<dd>
-						<!--<a href="/user/order"><i class="wddd-icon"></i>我的订单</a>-->
-					</dd>
+					
 										<dd>
 						<a href="/user/logout"><i class="tcdl-icon"></i>退出登录</a>
 					</dd>				</dl>
 			</span>
 			@else
-				<a href="/user/register" class="reg-btn">注册</a>
+				<a href="/user/register" class="reg-btn" style="color: black;">注册</a>
 						&nbsp;|&nbsp;
-				<a href="/user/login" class="login-btn">登录</a>
+				<a href="/user/login" class="login-btn" style="color: black;">登录</a>
 			@endif
 
 		</div>
@@ -143,7 +139,7 @@
 
 			</div>
 			<div class="copyright">
-				<span>Copyright © 2017-2020&nbsp;<strong><a href="http://www.zczauto.com/" target="_blank">zczauto.com</a></strong> All Rights Reversed. </span>粤ICP备xxx号-x号   Version:1.1.0
+				<span>Copyright © 2018-2020&nbsp;<strong><a href="http://www.zczauto.com/" target="_blank">zczauto.com</a></strong> All Rights Reversed. </span>粤ICP备xxx号-x号   Version:1.1.0
 			</div>
 		</div>
 
