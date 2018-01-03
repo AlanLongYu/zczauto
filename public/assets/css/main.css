@@ -707,8 +707,9 @@ input::-ms-clear {
 /*===========客户中心=========*/
 #footer .csc{
 	position: fixed;
-    left: 50%;
-    margin-left: 500px;
+    /*left: 50%;
+    margin-left: 500px;*/
+    left:95%;
     bottom: 80px;
     width: 35px;
     text-align: center;
