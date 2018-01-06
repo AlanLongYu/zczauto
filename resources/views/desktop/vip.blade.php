@@ -7,8 +7,8 @@
     <nav class="aside left">
 		<ul>
 			<li><a href="about" >关于我们</a></li>
-			<li><a href="start">维修手册库</a></li>
-			<li><a href="softdown">维修软件库</a></li>
+			<li><a href="start">网站帮助</a></li>
+			<!--<li><a href="softdown">维修软件库</a></li>-->
 			<li><a href="disclaimer">免责申明</a></li>
 <!--			<li><a href="member" class="active">VIP购买</a></li>-->
 			<li><a href="joinus">加入我们</a></li>

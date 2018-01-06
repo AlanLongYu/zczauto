@@ -7,22 +7,21 @@
     <nav class="aside left">
 		<ul>
 			<li><a href="about">关于我们</a></li>
-			<li><a href="start"  class="active">维修手册库</a></li>
-			<li><a href="softdown">维修软件库</a></li>
+			<li><a href="start"  class="active">网站帮助</a></li>
+			<!--<li><a href="softdown">维修软件库</a></li>-->
 			<li><a href="disclaimer">免责申明</a></li>
-<!--			<li><a href="member">VIP购买</a></li>-->
 			<li><a href="joinus">加入我们</a></li>
 			<li><a href="contact">联系我们</a></li>			
 		</ul>
 	</nav>
     <div class="main right">
-		<h2>维修手册库使用教程</h2>
+		<h2>网站帮助-使用教程</h2>
 		<section>
 			<h3>第1步：选择车型</h3>
 			<p>方式1> 分类导航选择：鼠标放在国别分类上时，会自动显示出生产厂家和车型，点击车型名称即可进入车型列表</p>
-			<p><img src="/assets/images/start_01.png" width="90%"/></p><br/>
+			<!--<p><img src="/assets/images/start_01.png" width="90%"/></p><br/>
 			<p>方式2> 搜索选择：在车型搜索框中直接输入车型搜索即可</p>
-			<p><img src="/assets/images/start_02.png" /></p><br/>
+			<p><img src="/assets/images/start_02.png" /></p><br/>-->
 		</section>
 		<section>
 			<h3>第2步：确定年款</h3>
