@@ -12,7 +12,7 @@
 <div class="loginpage w-1000">
 	<div class="register relative">
 		<h1>
-			<span class="other">我已经注册，现在就 
+			<span class="other">我已经注册，立即 
 			<a href="/user/login">登录</a>
 			</span> 
 		欢迎注册精准资料网

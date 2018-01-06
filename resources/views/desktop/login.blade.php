@@ -11,7 +11,7 @@
 <div class="loginpage w-1000">
 	<div class="login relative">
 		<h1>
-			<span class="other">还没有帐号？现在就 
+			<span class="other">还没有帐号？立即 
 			<a href="/user/register">注册</a>
 			</span> 
 		欢迎登录精准资料网
