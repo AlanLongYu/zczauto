@@ -86,7 +86,7 @@ html {overflow-x:hidden;overflow-y:hidden;}/*禁止出现滚动条*/
         <div class="pull-right hidden-xs">
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2011-{{ date('Y') }}  <a href="/">{{ trans('yascmf.full_name') }}</a></strong>
+        <strong>Copyright &copy; 2011-{{ date('Y') }}  <a href="/admin/dashboard">{{ trans('yascmf.full_name') }}</a></strong>
       </footer>
 
 @stop
