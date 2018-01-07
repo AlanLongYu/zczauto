@@ -102,21 +102,21 @@
 			<div class="info-block">
 				<div class="info" style="background-color:black;padding:0 auto;color:#fff;">
 					<dl>
-						<dt><a target="_blank" href="/help/about">关于我们</a></dt>
+						<dt><a  href="/help/about">关于我们</a></dt>
 					</dl>
 
 					<dl>
-						<dt><a target="_blank" href="/help/start">网站帮助</a></dt>
+						<dt><a  href="/help/start">网站帮助</a></dt>
 					</dl>
 
 					<dl>
-						<dt><a target="_blank" href="/help/disclaimer">免责声明</a></dt>
+						<dt><a  href="/help/disclaimer">免责声明</a></dt>
 					</dl>
 					<dl>
-						<dt><a target="_blank" href="/help/joinus">加入我们</a></dt>
+						<dt><a  href="/help/joinus">加入我们</a></dt>
 					</dl>
 					<dl>
-						<dt><a target="_blank" href="/help/contact">联系我们</a></dt>
+						<dt><a  href="/help/contact">联系我们</a></dt>
 					</dl>
 
 					<div class="down">
