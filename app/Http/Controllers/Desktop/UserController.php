@@ -113,7 +113,7 @@ class UserController extends FrontController
 	        $validator = Validator::make($request->all(), $rules);
 	        if ($validator->fails())
 	        {
-	            throw new \Exception("验证码错误", 100110);
+	            throw new \Exception("验证码错误", 100111);
 	        }
 
 			$exists = \App\Member::where('phone',$phone)->get();
