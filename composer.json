@@ -1,7 +1,7 @@
 {
     "name": "yascmf/base",
-    "description": "YAS Content Management Framework based on Laravel.",
-    "keywords": ["YASCMF", "Base", "YʌS", "CMS", "framework", "Laravel"],
+    "description": "精准资料网 based on Laravel.",
+    "keywords": ["精准资料网", "zczauto", "zcz", "jingzhun", "jingzhunziliao", "Laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -13,7 +13,8 @@
         "overtrue/laravel-socialite": "~1.0",
         "douyasi/laravel-editor-md": "dev-master",
         "overtrue/wechat": "~3.1",
-        "mews/captcha": "^2.1"
+        "mews/captcha": "^2.1",
+        "doctrine/instantiator": "^1.0.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
