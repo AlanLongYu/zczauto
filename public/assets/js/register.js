@@ -152,6 +152,9 @@ $(function(){
                 }else{
                     $('#msg_sms').html(data.msg);
                     $('#msg_sms').css('color','red');
+                    if(data.code==100111){
+                        $("#captcha_imgs").trigger("click");
+                    }
                     return false;
                 }
             }
