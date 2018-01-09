@@ -139,7 +139,7 @@
 
 			</div>
 			<div class="copyright">
-				<span>Copyright © 2018-2020&nbsp;<strong><a href="http://www.zczauto.com/" target="_blank">zczauto.com</a></strong> All Rights Reversed. </span>粤ICP备xxx号-x号   Version:1.1.0
+				<span>Copyright © 2018-2020&nbsp;<strong><a href="http://www.zczauto.com/" target="_blank">zczauto.com</a></strong> All Rights Reversed. </span><a href="http://www.miibeian.gov.cn/publish/query/indexFirst.action" target="_blank">粤ICP备18003468号-1 </a>   Version:1.1.0
 			</div>
 		</div>
 
