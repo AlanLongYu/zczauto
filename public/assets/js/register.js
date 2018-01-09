@@ -2,7 +2,7 @@ $(document).ready(function(){
     $("#captcha_imgs").click(function(){
         var img_src = $(this).find("img").attr("src")+'&t='+Math.random();
         $(this).find("img").attr("src",img_src);
-    })
+    });
 })
 
 function checkPhone(){
@@ -120,6 +120,7 @@ $(function(){
     });
 
     $('#captcha').blur(function(){ 
+        $("#msg_sms").hide();
         checkCaptcha(); 
     });
 
@@ -137,7 +138,7 @@ $(function(){
         var password=$('#password').val();
         var phone=$('#phone').val();
         var captcha = $("#captcha").val();
-        
+        $("#msg_sms").html('');
        
         $.post(
             '/user/registerajax',
@@ -152,6 +153,7 @@ $(function(){
                 }else{
                     $('#msg_sms').html(data.msg);
                     $('#msg_sms').css('color','red');
+                    $("#msg_sms").show();
                     if(data.code==100111){
                         var img_src = $("#captcha_imgs").find("img").attr("src")+'&t='+Math.random();
                         $("#captcha_imgs").find("img").attr("src",img_src);
