@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Desktop;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use Crypt;
 use Auth;
@@ -106,24 +107,32 @@ class UserController extends FrontController
 	{
 		$phone = $request->input('phone');
 		$password = $request->input('password');
-		$exists = \App\Member::where('phone',$phone)->get();
-		if(!$exists->isEmpty()){
-			throw new Exception("注册失败,手机号已经注册", 100110);
-		}
-		
-		if(empty($password)){
-			throw new Exception("注册失败,密码不能为空", 100110);
-		}
-
+		$captcha = $request->input('captcha');
 		try{
+			$rules = ['captcha' => 'required|captcha'];
+	        $validator = Validator::make($request->all(), $rules);
+	        if ($validator->fails())
+	        {
+	            throw new \Exception("验证码错误", 100110);
+	        }
+
+			$exists = \App\Member::where('phone',$phone)->get();
+			if(!$exists->isEmpty()){
+				throw new \Exception("注册失败,手机号已经注册", 100110);
+			}
+			
+			if(empty($password)){
+				throw new \Exception("注册失败,密码不能为空", 100110);
+			}
+
 			$memberModel = new \App\Member;
 			$memberModel->phone = e($phone);
 			$memberModel->password = bcrypt(trim($password));
 			if(!$memberModel->save()){
-				throw new Exception("注册失败,请联系管理员", 100110);
+				throw new \Exception("注册失败,请联系管理员", 100110);
 			}
 			return response()->json(['code' => 200200,'msg' => '注册成功！']);
-		}catch(Exception $e){
+		}catch(\Exception $e){
 			return response()->json(['code' => $e->getCode(),'msg' => $e->getMessage()]);
 		}	
 	}

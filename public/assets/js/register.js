@@ -1,3 +1,10 @@
+$(document).ready(function(){
+    $("#captcha_imgs").click(function(){
+        var img_src = $(this).find("img").attr("src")+'&t='+Math.random();
+        $(this).find("img").attr("src",img_src);
+    })
+})
+
 function checkPhone(){
     //获取用户输入的手机号码
     var phone=$('#phone').val();   
@@ -56,6 +63,16 @@ function checkPhone(){
             return true;
         }
     }
+
+    function checkCaptcha(){
+        var captcha=$('#captcha').val();
+        if(captcha==''){ 
+            $('#msg_captcha').html('请输入验证码'); 
+            $('#msg_captcha').css('color','red');
+            $('#captcha').focus();
+            return false;
+        }
+    }
         
     //密码确认框
     function checkPassword2(){
@@ -102,6 +119,10 @@ $(function(){
         checkPassword2(); 
     });
 
+    $('#captcha').blur(function(){ 
+        checkCaptcha(); 
+    });
+
 
     //注册提交时验证
     $('#form_regist').submit(function(event){
@@ -110,15 +131,17 @@ $(function(){
         if(checkPhone()===false){return false;}
         if(checkPassword()===false){return false;}
         if(checkPassword2()===false){return false;}
+        if(checkCaptcha()===false){return false;}
 
         //全部通过时，再获取所有用户输入值
         var password=$('#password').val();
         var phone=$('#phone').val();
+        var captcha = $("#captcha").val();
         
        
         $.post(
             '/user/registerajax',
-            {'phone':phone,'password':password},
+            {'phone':phone,'password':password,"captcha":captcha},
             function(data){
                 if(data.code==200200){
                     $("#registerok").click();

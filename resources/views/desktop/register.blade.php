@@ -44,6 +44,20 @@
 						</td>
 					</tr>
 					<tr>
+						<td class="title">验证码：</td>
+						<td>
+							<input type="text" class="textcss" placeholder="验证码" id="captcha" name="captcha">
+							<a id="captcha_imgs" href="javascript:void(0);">{!! captcha_img() !!}</a>
+							<span class="msgs" id="msg_captcha">请输入验证码</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="title"></td>
+						<td>
+							<span class="msgs" id="msg_sms"></span>
+						</td>
+					</tr>
+					<tr>
 						<td class="title">&nbsp;</td>
 						<td>
 							<input type="submit" value="注 册" class="butncss" id="regSubmitButton">
