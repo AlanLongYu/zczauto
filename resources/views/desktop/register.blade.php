@@ -48,7 +48,7 @@
 						<td>
 							<input type="text" class="textcss" style="width:137px;" placeholder="验证码" id="captcha" name="captcha">
 							<a id="captcha_imgs" href="javascript:void(0);"><img src="{{captcha_src()}}" style="position: absolute;" alt="验证码"></a>
-							<span class="msgs" style="margin-left: 126px;" id="msg_captcha">请输入验证码</span>
+							<span class="msgs" style="margin-left: 126px;" id="msg_captcha">点击验证码图片可更换</span>
 						</td>
 					</tr>
 					<tr>
