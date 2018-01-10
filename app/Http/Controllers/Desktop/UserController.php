@@ -173,6 +173,14 @@ class UserController extends FrontController
             'password'  => e($request->input('password')),
             'is_locked' => 0,
         ];
+        $captcha = e($request->input('captcha'));
+		$rules = ['captcha' => 'required|captcha'];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails())
+        {
+            return response()->json(['code' => 20110,'msg' => '验证码错误']);
+        }
+
         $flag = Auth::guard('member')->attempt($credentials, $request->has('remember'));
         if ($flag) {
             event(new UserLogin(Auth::guard('member')->user()));  //触发登录事件
