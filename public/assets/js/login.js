@@ -41,7 +41,7 @@ $(document).ready(function(){
     //找回密码时验证手机号
     $("#findpwd").click(function(e){
         e.preventDefault();
-        alert('请微信或致电：18898598208 联系管理员');
+        alert('请微信或致电：13922865250 联系管理员');
         return false;
     });
 
