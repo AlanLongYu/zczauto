@@ -35,6 +35,14 @@
 						</td>
 					</tr>
 					<tr>
+						<td class="title">验证码：</td>
+						<td class="verify_box">
+							<input type="text" class="textcss short" id="captcha" name="captcha" maxlength="4" placeholder="右侧验证码">
+							<img src="{{captcha_src()}}" alt="验证码" onclick="this.src=this.src+'&t='+Math.random()" title="看不清？点击更换另一个验证码。" id="verify_img">
+							<span class="msgs" id="msg_captcha">点击验证码图片可更换</span>
+						</td>
+					</tr>
+					<tr>
 						<td>&nbsp;</td>
 						<td class="nopass">
 							<input type="checkbox" id="txtAutologin" name="txtAutologin" checked>7天内免登录&nbsp; |&nbsp; 
