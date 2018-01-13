@@ -38,6 +38,7 @@
 	<ul class="picbox">	
 		<li class="fbg1 current" style="display:list-item;">
 			<div class="w-1000">
+				<img src="{{ _asset('assets/images/flash_a.png')}}"/>
 				<div class="right">
 					<h1>第6代汽修资料库更新</h1>
 					<p>精准资料网，致力于汽修技术资料学习交流！第6代汽修资料库，集在线浏览、打印、下载三位一体，超1000+车型原厂权威资料，适用于电脑、平板、电脑多终端!</p>
