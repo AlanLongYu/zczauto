@@ -2,10 +2,10 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>首页-精准资料网 | 天下没有难修的汽车</title>
+    <title>首页-精准资料网 | 用车养车修车的好帮手</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="@section('description') {{ isset($description) ? $description : '精准资料网专注于个人收集汽车资料学习交流，本站有上千款车型精准资料在线查询、打印和下载，每日更新，汽车爱好者学习交流必备神器！' }} @show{{-- meta描述 --}}" />
-    <meta name="keywords" content="汽车资料学习,汽车维修技术探讨,汽车资料下载,汽车爱好者学习资料查询{{ cache('website_keywords') }}" />
+    <meta name="keywords" content="精准资料网,精准资料,汽车资料学习,汽车维修技术,汽车资料下载,汽车爱好者{{ cache('website_keywords') }}" />
     <meta name="author" content="{{ cache('system_author_website', 'http://www.zczauto.com/') }}" />
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
@@ -74,7 +74,7 @@
 					<dd>
 					</dd>
 					<dd>
-						<a href="/user/user_info"><i class="grzl-icon"></i>个人资料</a>
+						<a href="/user/user_info"><i class="grzl-icon"></i>个人中心</a>
 					</dd>
 					
 										<dd>
@@ -119,11 +119,6 @@
 						<dt><a  href="/help/contact">联系我们</a></dt>
 					</dl>
 
-					<div class="down">
-						<div class="downCon down-ios">
-							<img src="{{ _asset('assets/images/wxgzh.jpg') }}" class="twoCode">微信公众号
-						</div>
-					</div>
 					<div class="csc">
 						<a href="#" id="back-to-top" title="回到顶部"><img src="{{_asset('assets/images/csc-top.png') }}"/></a>
 						<a target="_blank"  title="点击QQ咨询:1824839790" href="http://wpa.qq.com/msgrd?v=3&uin=1824839790&site=qq&menu=yes">

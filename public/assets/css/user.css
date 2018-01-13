@@ -82,7 +82,7 @@
 .main ul li .inputbox input{
     width: 200px;
     height: 30px;
-    border: 1px solid #e4e4e4;
+    border: 1px solid #ccc;
     text-indent: 10px;
 }
 .main ul li .inputbox .ex-tips{

@@ -8,14 +8,14 @@
 <div class="w-1000 clearfix">
     <nav class="aside left">
 		<ul>
-			<li><a href="user_info" class="active">个人资料</a></li>
+			<li><a href="user_info" class="active">个人中心</a></li>
 <!--			<li><a href="user_vip" class="">我的VIP</a></li>
 			<li><a href="order" class="">我的订单</a></li>-->
 		</ul>
 	</nav>
 
     <div class="main right">
-		<h2>个人资料</h2>
+		<h2>个人中心</h2>
 		<section class="basic">
 			<h3>基本信息</h3>
 			<form id="basicForm" action="/user/saveprofile" method="post">
@@ -38,17 +38,28 @@
 						</div>
 					</li>
 					<li>
-						<label for="truename">真实姓名</label>
+						<label for="email">有效使用期</label>
 						<div class="inputbox">
-							<input type="text" name="truename" value="{{ Auth::guard('member')->user()->realname}}" maxlength="30">
-							<span class="ex-tips">仅用户自己可见</span>
+							<span>{{substr(Auth::guard('member')->user()->created_at,0,10)}} 到 {{ Auth::guard('member')->user()->vip_dayss ?: date('Y-m-d',strtotime("+1 year",strtotime(Auth::guard('member')->user()->created_at)))}}</span>
+							<span class="ex-tips">会员有效使用期限</span>
 						</div>
 					</li>
 					<li>
-						<label for="email">邮箱</label>
+						<label for="email">剩余天数</label>
 						<div class="inputbox">
-							<input type="text" name="email" value="{{ Auth::guard('member')->user()->email}}" maxlength="30">
-							<span class="ex-tips">仅用户自己可见</span>
+							<span>{{ Auth::guard('member')->user()->vip_dayss ?: round((strtotime("+1 year",strtotime(Auth::guard('member')->user()->created_at)) -time())/86400)}}</span>
+							<span class="ex-tips">会员使用剩余天数</span>
+						</div>
+					</li>
+					<li>
+						<div class="inputbox">
+							<input type="hidden" name="truename" value="{{ Auth::guard('member')->user()->realname}}" maxlength="30">
+						</div>
+					</li>
+					
+					<li>
+						<div class="inputbox">
+							<input type="hidden" name="email" value="{{ Auth::guard('member')->user()->email}}" maxlength="30">
 						</div>
 					</li>
 				</ul>

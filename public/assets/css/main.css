@@ -568,12 +568,11 @@ input::-ms-clear {
 }
 
 #footer .info-block .info {
-	position: relative;
-	/*width: 1000px;*/
+	
 	height: 40px;
 	margin: 0 auto;
 	border-bottom: 1px solid #f5f5f5;
-	padding-left: 150px;
+	padding-left: 300px;
 	padding-top: 5px;
 	box-sizing: border-box;
 }
