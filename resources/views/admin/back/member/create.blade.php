@@ -70,6 +70,10 @@
                       <label>会员截止日期</label>
                       <input type="text" class="form-control" name="end_date" minlength="10" 　maxlength="10" placeholder＝"会员截止日期"="" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',skin:'twoer'})" value="{{ old('end_date', isset($user) ? substr($user->end_date,0,10) : null) }}">
                     </div>
+                    <div class="form-group">
+                      <label>会员24小时内可打印下载的最大次数</label>
+                      <input type="text" class="form-control" name="max_number" autocomplete="off" value="{{ old('max_number', isset($user) && $user->role==1 ? $user->max_number : null) }}" placeholder="24小时内最大可打印和下载次数">
+                    </div>
                       <div class="form-group">
                         <label>初始化登录密码 <small class="text-red">*</small> <span class="text-green small">只能6-16位数字、字母和部分特殊符号（0-9a-zA-Z~@#%）组合</span></label>
                         <input type="password" class="form-control" name="password" autocomplete="off" value="" placeholder="登录密码">
