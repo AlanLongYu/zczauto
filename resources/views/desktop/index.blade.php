@@ -69,7 +69,7 @@
 
 <!--卖点开始-->
 <div class="card">
-	<h2><span>核心特性</span></h2>
+	<h2><span>核心特色</span></h2>
 	<div class="div-card w-1000 clearfix">
 		<img src="{{ _asset('assets/images/core1.png')}}" alt="" />
 		<img src="{{ _asset('assets/images/core2.png')}}" alt="" />
