@@ -41,7 +41,7 @@
 								<div class="submenu">
 									@foreach($navs AS $secondNav)
 										@if($secondNav->p_id == $nav->id)
-											<a href="{{$secondNav -> url}}"><i class="wxsck-icon"></i>{{$secondNav->name}}<span></span></a>		
+											<a href="{{$secondNav -> url}}">{{$secondNav->name}}<span></span></a>		
 										@endif
 									@endforeach
 								</div>

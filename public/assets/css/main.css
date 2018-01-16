@@ -405,7 +405,7 @@ input::-ms-clear {
 /*用户图标*/
 #header .icon-box #login-icon {
 	background: url("../images/login-icon.png") 0 0 no-repeat;
-	background-size: 17px;
+	background-size: 25px;
 	background-position: 0;
 }
 
