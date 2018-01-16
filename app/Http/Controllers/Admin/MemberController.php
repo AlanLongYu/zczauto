@@ -169,7 +169,7 @@ class MemberController extends BackController
 
         SystemLogger::write($log);
         */
-        return redirect()->to(site_path('user', 'admin'))->with('message', '修改管理员成功！');
+        return redirect()->to(site_path('member', 'admin'))->with('message', '修改会员成功！');
 
     }
 

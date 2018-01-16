@@ -3,13 +3,13 @@
 @section('content-header')
 @parent
           <h1>
-            用户管理
+            会员管理
             <small>管理员</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="{{ site_url('dashboard', 'admin') }}"><i class="fa fa-dashboard"></i> 主页</a></li>
-            <li><a href="{{ _route('admin:user.index') }}">用户管理 - 管理员</a></li>
-            <li class="active">修改管理员</li>
+            <li><a href="{{ _route('admin:user.index') }}">用户管理 - 会员</a></li>
+            <li class="active">修改会员</li>
           </ol>
 @stop
 
@@ -38,20 +38,19 @@
               <div class="box box-primary">
 
                 <div class="box-header with-border">
-                  <h3 class="box-title">修改管理员资料</h3>
-                  <p>以下展示ID为1 的管理员个人资料，您可修改昵称、真实姓名与登录密码等信息。登录密码项留空，则不修改登录密码。</p>
+                  <h3 class="box-title">修改会员资料</h3>
+                  <p>您可修改会员昵称、真实姓名与登录密码等信息。登录密码项留空，则不修改登录密码。</p>
                   <div class="basic_info bg-info">
                      <ul>
-                        <li>登录名：<span class="text-primary">{{ $user->username }}</span></li>
                         <li>昵称：<span class="text-primary">{{ $user->nickname }}</span></li>
                         <li>真实姓名：<span class="text-primary">{{ $user->realname }}</span></li>
-                        <li>电子邮件：<span class="text-primary">{{ $user->email }}</span></li>
+                        <li>会员等级：<span class="text-primary">{!! $user->role == 1 ? '<span style="color:red;">黄金会员</span>' : '普通会员' !!}</span></li>
                         <li>手机号码：<b>{{ $user->phone }}</b></li>
                     </ul>
                   </div>
                 </div><!-- /.box-header -->
 
-                <form method="post" action="{{ _route('admin:user.update', $user->id) }}" accept-charset="utf-8">
+                <form method="post" action="{{ _route('admin:member.update', $user->id) }}" accept-charset="utf-8">
                 {!! method_field('put') !!}
                 {!! csrf_field() !!}
                   <div class="box-body">
@@ -62,6 +61,10 @@
                     <div class="form-group">
                       <label>真实姓名 <small class="text-red">*</small></label>
                       <input type="text" class="form-control" name="realname" autocomplete="off" value="{{ old('realname', isset($user) ? $user->realname : null) }}" placeholder="真实姓名">
+                    </div>
+                    <div class="form-group">
+                      <label>手机号 <small class="text-red">*</small></label>
+                      <input type="text" class="form-control required" required name="phone" autocomplete="off" value="{{ old('phone', isset($user) ? $user->phone : null) }}" placeholder="手机号">
                     </div>
 
                     <div class="form-group">
@@ -82,6 +85,18 @@
                           @endforeach
                         </select>
                       </div>
+                    </div>
+                    <div class="form-group">
+                      <label>会员开始日期</label>
+                      <input type="text" class="form-control" name="start_date" minlength="10" 　maxlength="10" placeholder＝"会员开始日期"="" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',skin:'twoer'})" value="{{ old('start_date', isset($user) ? substr($user->start_date,0,10) : null) }}">
+                    </div>
+                    <div class="form-group">
+                      <label>会员截止日期</label>
+                      <input type="text" class="form-control" name="end_date" minlength="10" 　maxlength="10" placeholder＝"会员截止日期"="" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',skin:'twoer'})" value="{{ old('end_date', isset($user) ? substr($user->end_date,0,10) : null) }}">
+                    </div>
+                    <div class="form-group">
+                      <label>会员24小时内可打印下载的最大次数</label>
+                      <input type="text" class="form-control" name="max_number" autocomplete="off" value="{{ old('max_number', isset($user) && $user->role==1 ? $user->max_number : null) }}" placeholder="24小时内最大可打印和下载次数">
                     </div>
                     <div class="form-group">
                       <label>登录密码</label>
@@ -107,6 +122,8 @@
 
   <!--引入iCheck组件-->
   <script src="{{ _asset(ref('icheck.js')) }}" type="text/javascript"></script>
+  <!--引入My97DatePicker日期插件-->
+  <script src="{{ _asset(ref('my97datepicker.js')) }}" type="text/javascript"></script>
   <!--引入Chosen组件-->
   @include('admin.scripts.endChosen')
 

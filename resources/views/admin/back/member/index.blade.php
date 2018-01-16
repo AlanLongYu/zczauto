@@ -50,6 +50,7 @@
                         <th>手机号</th>
                         <th>真实姓名</th>
                         <th>角色</th>
+                        <th>当日最大打印下载量</th>
                         <th>状态</th>
                         <th>最后一次登陆时间</th>
                       </tr>
@@ -66,8 +67,15 @@
                         <td class="text-green">
                           {{ $user->realname }}
                         </td>
-                        <td class="text-red">
-                         
+                        <td class="@if($user->role ==1) text-red @endif">
+                          @if($user->role ==1)
+                          <b>黄金VIP会员<b>
+                          @else
+                          普通会员
+                          @endif
+                        </td>
+                        <td class="@if($user->role ==1) text-red @endif">
+                          <b>{{$user->max_number}}</b>
                         </td>
                         <td class="text-yellow">
                           @if($user->is_locked)

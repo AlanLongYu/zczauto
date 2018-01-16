@@ -48,6 +48,8 @@ class MemberRepository extends BaseRepository
         $member->password = bcrypt(e($inputs['password']));
         $member->email = e($inputs['email']);
         $member->realname = e($inputs['realname']);
+        $member->phone = e($inputs['phone']);
+        $member->max_number = e($inputs['max_number']);
 
         if ($member->save()) {
             return $member;
@@ -69,14 +71,19 @@ class MemberRepository extends BaseRepository
     {
         $member->nickname = e($inputs['nickname']);
         $member->realname = e($inputs['realname']);
+        $member->phone = e($inputs['phone']);
         $member->is_locked = e($inputs['is_locked']);
+        $member->max_number = e($inputs['max_number']);
         if ((!empty($inputs['password'])) && (!empty($inputs['password_confirmation']))) {
             $member->password = bcrypt(e($inputs['password']));
         }
+        $member->role = e($inputs['role']);
+        $member->start_date = e($inputs['start_date']) ? e($inputs['start_date']).' 00:00:00' : null;
+        $member->end_date = e($inputs['end_date']) ? e($inputs['end_date']).' 23:59:59' : null;
         if ($member->save()) {
 
             //确保一个管理员只拥有一个角色
-            $roles = $member->roles;
+            /*$roles = $member->roles;
             if ($roles->isEmpty()) {  //判断角色结果集是否为空
                 $member->roles()->attach($inputs['role']);  //空角色，则直接同步角色
             } else {
@@ -91,7 +98,7 @@ class MemberRepository extends BaseRepository
                         $member->roles()->attach($inputs['role']);  //同步角色
                     }
                 }
-            }
+            }*/
             //上面这一大段代码就是保证一个管理员只拥有一个角色
         }
     }

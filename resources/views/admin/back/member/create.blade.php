@@ -50,7 +50,7 @@
                     <div class="tab-pane active" id="tab_1">
                       <div class="form-group">
                         <label>手机号码 <span class="text-green small">用于通讯联络，请填写国内真实的手机号码</span></label>
-                       <input type="text" class="form-control" name="phone" autocomplete="off" value="{{ old('phone') }}" placeholder="手机号码">
+                       <input type="text" class="form-control required" required name="phone" autocomplete="off" value="{{ old('phone') }}" placeholder="手机号码">
                       </div>
                       <div class="form-group">
                         <label>会员等级 <small class="text-red">*</small></label>
@@ -62,6 +62,14 @@
                           </select>
                         </div>
                       </div>
+                      <div class="form-group">
+                      <label>会员开始日期</label>
+                      <input type="text" class="form-control" name="start_date" minlength="10" 　maxlength="10" placeholder＝"会员开始日期"="" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',skin:'twoer'})" value="{{ old('start_date', isset($user) ? substr($user->start_date,0,10) : null) }}">
+                    </div>
+                    <div class="form-group">
+                      <label>会员截止日期</label>
+                      <input type="text" class="form-control" name="end_date" minlength="10" 　maxlength="10" placeholder＝"会员截止日期"="" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',skin:'twoer'})" value="{{ old('end_date', isset($user) ? substr($user->end_date,0,10) : null) }}">
+                    </div>
                       <div class="form-group">
                         <label>初始化登录密码 <small class="text-red">*</small> <span class="text-green small">只能6-16位数字、字母和部分特殊符号（0-9a-zA-Z~@#%）组合</span></label>
                         <input type="password" class="form-control" name="password" autocomplete="off" value="" placeholder="登录密码">
@@ -100,6 +108,9 @@
 
   <!--引入iCheck组件-->
   <script src="{{ _asset(ref('icheck.js')) }}" type="text/javascript"></script>
+  <!--引入My97DatePicker日期插件-->
+  <script src="{{ _asset(ref('my97datepicker.js')) }}" type="text/javascript"></script>
+
   <!--引入Chosen组件-->
   @include('admin.scripts.endChosen')
 

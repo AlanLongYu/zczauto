@@ -40,14 +40,20 @@
 					<li>
 						<label for="email">有效使用期</label>
 						<div class="inputbox">
-							<span>{{substr(Auth::guard('member')->user()->created_at,0,10)}} 到 {{ Auth::guard('member')->user()->vip_dayss ?: date('Y-m-d',strtotime("+1 year",strtotime(Auth::guard('member')->user()->created_at)))}}</span>
+							<span>
+							@if(Auth::guard('member')->user()->role ==1)
+							{{Auth::guard('member')->user()->start_date ? substr(Auth::guard('member')->user()->start_date,0,10) : '-'}} 到 {{ Auth::guard('member')->user()->end_date ? substr(Auth::guard('member')->user()->end_date,0,10): ''}}
+							@else
+								- 到 -
+							@endif
+							</span>
 							<span class="ex-tips">会员有效使用期限</span>
 						</div>
 					</li>
 					<li>
 						<label for="email">剩余天数</label>
 						<div class="inputbox">
-							<span>{{ Auth::guard('member')->user()->vip_dayss ?: round((strtotime("+1 year",strtotime(Auth::guard('member')->user()->created_at)) -time())/86400)}}</span>
+							<span>{{ Auth::guard('member')->user()->role==1 ? round((strtotime(Auth::guard('member')->user()->end_date) -time())/86400) : 0}}</span>
 							<span class="ex-tips">会员使用剩余天数</span>
 						</div>
 					</li>
