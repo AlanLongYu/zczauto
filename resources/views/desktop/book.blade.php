@@ -36,13 +36,12 @@ $(function() {
 
 		var iframe_url=folder.length >0 ? encodeURI("{{$base_path}}"+"/"+folder.reverse().join("/")+'/'+file_name+'.pdf') : encodeURI("{{$base_path}}"+'/'+file_name+'.pdf');;
 
-	$("#iframe").attr("src","/book/info/"+iframe_url);
-		var group_id=0;			
+		var role="{{Auth::guard('member')->user()->role}}";			
 		if(!login){
 			alert("请登录后再操作");
 			return;
 		}
-		if(group_id==1){
+		/*if(role==1){
 			$.post('downfile',{},function(data){
 				if(data=='yes'){
 					$("#iframe").attr("src","/data/document/"+iframe_url);
@@ -51,10 +50,12 @@ $(function() {
 				}
 			});	
 			return;
-		}
-		if(group_id==2){
-			$("#iframe").attr("src","/Home/Read/document.html?file="+iframe_url);
+		}*/
+		if(role==1 || file_name =='default'){
+			$("#iframe").attr("src","/book/info/"+iframe_url);
 			return;
+		}else{
+			alert('请添加站长微信(zczauto)成为高级会员或致电：13922865250');
 		}
 		
 	});

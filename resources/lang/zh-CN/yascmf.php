@@ -19,7 +19,7 @@ return [
     'full_name'      => '飞宇网络科技后台管理系统框架 - 正式版',
     'author'         => 'Jason',
     'author_url'     => '',
-    'description'    => 'ZCZ汽车管理系统天下没有难修的汽车',
+    'description'    => '精准资料网-用车养车修车的好帮手',
     'github_url'     => '',
     'top_nav' => [
         'intro'   => '简介',
