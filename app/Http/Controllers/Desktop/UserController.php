@@ -91,7 +91,9 @@ class UserController extends FrontController
 
 		try{
 			$memberModel = new \App\Member;
-			$memberModel->phone = e($phone);
+            $memberModel->phone = e($phone);
+            $memberModel->role = 2;//默认为普通会员
+			$memberModel->max_number = 0;//默认为普通会员不能下载打印
 			$memberModel->password = bcrypt(trim($password));
 			if(!$memberModel->save()){
 				throw new Exception("注册失败,请联系管理员", 100110);
@@ -126,7 +128,9 @@ class UserController extends FrontController
 			}
 
 			$memberModel = new \App\Member;
-			$memberModel->phone = e($phone);
+            $memberModel->phone = e($phone);
+			$memberModel->role = 2;//默认为普通会员
+            $memberModel->max_number = 0;//默认为普通会员不能下载打印
 			$memberModel->password = bcrypt(trim($password));
 			if(!$memberModel->save()){
 				throw new \Exception("注册失败,请联系管理员", 100110);

@@ -24,6 +24,7 @@ class HomeController extends FrontController
 		#静态
 		#最新公告
 		#友情链接
+        \App\Member::where('end_date','<=',date('Y-m-d H:i:s'))->update(['role' => 2,'max_number' => 0]);
         return view('desktop.index', compact('articles'));
     }
 
