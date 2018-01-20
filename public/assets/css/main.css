@@ -550,7 +550,11 @@ input::-ms-clear {
 
 }
 
-
+.info{
+	background-color:black;
+	padding:0 auto;
+	color:#fff;
+}
 /*=====================页脚模板footer====================*/
 /*页脚总体样式*/
 #footer div,
