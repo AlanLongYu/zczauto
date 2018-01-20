@@ -70,9 +70,7 @@ function limited(){
 <div class="w-1000 relative read_container">
 	<div class="aside left">
 		<div class="crumbs">
-			<span>
-				<img src="{{ _asset('/assets/img/read/prev.png')}}" title="点击重选车型" id="prev"/>
-				{{$breadcrumb}}			</span>
+			<span>{{$breadcrumb}}</span>
 		</div>
 		<div id="sidetree">
 			<div id="sidetreecontrol">
