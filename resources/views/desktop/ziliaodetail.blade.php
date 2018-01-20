@@ -36,7 +36,13 @@ $(function() {
 		}).get();
 		var true_folder = folder.reverse().join("/");
 		var iframe_url=encodeURI("{!! $navId !!}/{!! $afterFix !!}/"+true_folder+'/'+file_name+'.pdf');
-		$("#iframe").attr("src","/data/document/"+iframe_url+'&embedded=true');
+		var role="{{Auth::guard('member')->user()->role}}";
+		if(role==1 || file_name =='default'){		
+			$("#iframe").attr("src","/data/document/"+iframe_url+'&embedded=true');
+			return;
+		}else{
+			alert('账号未激活，请联系微信zczauto');
+		}
 		
 	});
 
