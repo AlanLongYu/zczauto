@@ -31,7 +31,7 @@ class BookController extends FrontController
 		 //获取上传的资料目录
         // $base_dir = str_replace('\\','/',public_path('uploads')).'/ziliao/';
         $base_dir = public_path('uploads').'/book/';
-        $breadcrumb = '汽车书籍';
+        $breadcrumb = '其他资料';
         $fileDir = $base_dir;
         $categories =[];
         $items = [];

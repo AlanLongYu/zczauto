@@ -338,7 +338,7 @@ input::-ms-clear {
 }
 /*跑马灯新闻公告*/
 .marquee{
-	height: 24px;color:red;margin: 3px auto;width: 1000px;overflow: hidden;
+	height: 24px;color:#000;margin: 3px auto;width: 1000px;overflow: hidden;
 }
 
 .blue-bg{
