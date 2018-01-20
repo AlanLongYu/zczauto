@@ -6,7 +6,7 @@
     <title>首页-精准资料网 | 用车养车修车的好帮手</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="@section('description') {{ isset($description) ? $description : '精准资料网专注于个人收集汽车资料学习交流，本站有上千款车型精准资料在线查询、打印和下载，每日更新，汽车爱好者学习交流必备神器！' }} @show{{-- meta描述 --}}" />
-    <meta name="keywords" content="精准资料网,精准资料,汽车资料学习,汽车维修技术,汽车资料下载,汽车爱好者{{ cache('website_keywords') }}" />
+    <meta name="keywords" content="{{ cache('website_keywords') }}" />
     <meta name="author" content="{{ cache('system_author_website', 'http://www.zczauto.com/') }}" />
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
