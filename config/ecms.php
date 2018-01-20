@@ -55,28 +55,22 @@ return [
         ],*/
         
         [
-            'name' => '资料库管理',
+            'name' => '资料分类',
             'icon' => 'fa-folder',
             'nav_id' => 2,
             'child_icon' => '',
             'sub_menu' => [
-                /*[
-                    'name' => '资料分类',
-                    'route' => 'admin:category.index',
-                    'nav_id' => '',
-                    'can' => '',
-                ],*/
                 [
-                    'name' => '车主手册列表',
-                    'nav_id' => 3,
-                    'route' => 'admin:carowner.3',
-                    'can' => '',
-                ],
-                [
-                    'name' => '维修手册列表',
+                    'name' => '维修手册',
                     'nav_id' => 4,
                     //'route' => 'admin:ziliao.index.4',
                     'route' => 'admin:carowner.4',
+                    'can' => '',
+                ],
+                [
+                    'name' => '精选资料',
+                    'nav_id' => 3,
+                    'route' => 'admin:carowner.3',
                     'can' => '',
                 ],
                 
@@ -89,7 +83,7 @@ return [
             'nav_id' => 5,
             'child_icon' => '',
             'sub_menu' => [
-                [
+                /*[
                     'name' => '发动机空滤更换',
                     'nav_id' => 6,
                     'route' => 'admin:carowner.6',
@@ -106,6 +100,12 @@ return [
                     'nav_id' => 8,
                     'route' => 'admin:carowner.8',
                     'can' => '',
+                ],*/
+                [
+                    'name' => '保养复位',
+                    'nav_id' => 20,
+                    'route' => 'admin:carowner.20',
+                    'can' => '',
                 ],
                 
             ],
@@ -119,12 +119,12 @@ return [
             'child_icon' => '',
             'sub_menu' => [
                 [
-                    'name' => '节气门匹配',
+                    'name' => '摄像头/雷达标定',
                     'nav_id' => 10,
                     'route' => 'admin:carowner.10',
                     'can' => '',
                 ],
-                [
+                /*[
                     'name' => '胎压监测复位',
                     'nav_id' => 11,
                     'route' => 'admin:carowner.11',
@@ -141,7 +141,7 @@ return [
                     'nav_id' => 13,
                     'route' => 'admin:carowner.13',
                     'can' => '',
-                ],
+                ],*/
                 
             ],
         ],
