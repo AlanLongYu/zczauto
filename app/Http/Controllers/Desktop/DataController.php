@@ -97,7 +97,7 @@ class DataController extends FrontController
         $filess = self::recurDir($fileDir);
         $lastFileTree = self::beautifulTree($filess);
         $xxx = [];
-        if(!empty($filess))
+        //if(!empty($filess))
             //$arr = self::arr_foreach ($filess);
         //print_r($arr);exit;
         // foreach($filess AS $kkk => $vvv){

@@ -676,7 +676,7 @@ function slug_url($category_slug, $article_slug = null, $scheme_less = true, $su
 
 function arr_foreach($arr){
         if(!is_array($arr)){
-            return [];
+            return '';
         }
         foreach ($arr as $key => $val ){
             if(is_array($val)){
