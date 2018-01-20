@@ -172,6 +172,9 @@ Route::group(['prefix' => $_ap, 'namespace' => 'Admin', 'middleware' => ['block:
         //系统管理
         Route::get('option', 'OptionController@getOption');
         Route::put('option', 'OptionController@putOption');
+
+        Route::get('news', 'NewsController@getNews');
+        Route::put('news', 'NewsController@putNews');
         Route::resource('log', 'LogController');
     });
 

@@ -336,6 +336,11 @@ input::-ms-clear {
 #header .icon-box a:visited{
 	color: #000;
 }
+/*跑马灯新闻公告*/
+.marquee{
+	height: 24px;color:red;margin: 3px 0;
+}
+
 /*手机与用户子菜单公共*/
 .loginlist .submenu {
 	display: none;

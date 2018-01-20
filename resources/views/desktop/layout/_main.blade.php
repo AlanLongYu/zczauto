@@ -13,21 +13,17 @@
     <link rel="shortcut icon" href="{{ _asset('assets/images/favicon.ico') }}" type="image/x-icon" />
     <link rel="stylesheet" href="{{ _asset('assets/css/main.css') }}" />
 	<script type="text/javascript" src="{{ _asset('assets/js/jquery-1.8.1.min.js') }}"></script>
+	<script type="text/javascript" src="{{ _asset('assets/js/jquery.marquee.min.js') }}"></script>
     @section('htmlHead')
     @show{{-- head区域 --}}
 </head>
 <body class="paper">
-
-
-
-        <div id="header">
+<div id="header">
 	<div class="w-1000 relative">
 		<!--logo-->
 		<a href="http://www.zczauto.com/" class="logo">
 			<img src="{{ _asset('assets/images/logo.png') }}" height="40" width="109">
-			<img src="{{ _asset('assets/images/logo.png') }}" style="display:none;"/>
 		</a>
-
 		<!--nav-->
 		<nav>
 			<ul class="header-nav">
@@ -62,81 +58,84 @@
 						$(".wximg").hide();	
 					}	
 				);
+
+				var $mq = $(".marquee").marquee({speed:100});
+				$(".marquee").hover(function(){
+					$mq.marquee('pause');
+				},function(){
+					$mq.marquee('resume');
+				});
 			});
 			
 		</script>
 		<!--login-->
 		<div class="icon-box">
-			
 			@if(Auth::guard('member')->check())
 			<span class="login-icon relative loginlist" id="login-icon">
 				<dl class="submenu">
 					<dd>
-					</dd>
-					<dd>
 						<a href="/user/user_info"><i class="grzl-icon"></i>个人中心</a>
 					</dd>
 					
-										<dd>
+					<dd>
 						<a href="/user/logout"><i class="tcdl-icon"></i>退出登录</a>
-					</dd>				</dl>
+					</dd>				
+				</dl>
 			</span>
 			@else
 				<a href="/user/register" class="reg-btn" style="color: black;">注册</a>
 						&nbsp;|&nbsp;
 				<a href="/user/login" class="login-btn" style="color: black;">登录</a>
 			@endif
-
 		</div>
 		<!--login-->
-		
-		
 	</div>
 </div>
+<div class="marquee">{{isset($news) ? $news->content : ''}}</div>
         
-        @section('mainContent')
-        @show{{-- 主体内容 --}}
+@section('mainContent')
+@show{{-- 主体内容 --}}
 
 
-        <div id="footer">
-			<div class="info-block">
-				<div class="info" style="background-color:black;padding:0 auto;color:#fff;">
-					<dl>
-						<dt><a  href="/help/about">关于我们</a></dt>
-					</dl>
+<div id="footer">
+	<div class="info-block">
+		<div class="info" style="background-color:black;padding:0 auto;color:#fff;">
+			<dl>
+				<dt><a  href="/help/about">关于我们</a></dt>
+			</dl>
 
-					<dl>
-						<dt><a  href="/help/start">网站帮助</a></dt>
-					</dl>
+			<dl>
+				<dt><a  href="/help/start">网站帮助</a></dt>
+			</dl>
 
-					<dl>
-						<dt><a  href="/help/disclaimer">免责声明</a></dt>
-					</dl>
-					<dl>
-						<dt><a  href="/help/joinus">加入我们</a></dt>
-					</dl>
-					<dl>
-						<dt><a  href="/help/contact">联系我们</a></dt>
-					</dl>
+			<dl>
+				<dt><a  href="/help/disclaimer">免责声明</a></dt>
+			</dl>
+			<dl>
+				<dt><a  href="/help/joinus">加入我们</a></dt>
+			</dl>
+			<dl>
+				<dt><a  href="/help/contact">联系我们</a></dt>
+			</dl>
 
-					<div class="csc">
-						<a href="#" id="back-to-top" title="回到顶部"><img src="{{_asset('assets/images/csc-top.png') }}"/></a>
-						<a target="_blank"  title="点击QQ咨询:1824839790" href="http://wpa.qq.com/msgrd?v=3&uin=1824839790&site=qq&menu=yes">
-							<img src="{{_asset('assets/images/fdsa2312safadsowq.gif')}}" />
-						</a>
+			<div class="csc">
+				<a href="#" id="back-to-top" title="回到顶部"><img src="{{_asset('assets/images/csc-top.png') }}"/></a>
+				<a target="_blank"  title="点击QQ咨询:1824839790" href="http://wpa.qq.com/msgrd?v=3&uin=1824839790&site=qq&menu=yes">
+					<img src="{{_asset('assets/images/fdsa2312safadsowq.gif')}}" />
+				</a>
 
-						<a href="#" class="csc-wx relative" title="扫码微信咨询交流:zczauto">
-						<img class="hoverwx" src="{{ _asset('assets/images/csc-wx.png') }}"/>
-						<img src="{{ _asset('assets/images/csc-wx-code.png') }}" alt="扫描加微信" class="wximg csc-wx-code"/>
-						</a>
-					</div>
-				</div>
-
-			</div>
-			<div class="copyright">
-				<span>Copyright © 2018-2020&nbsp;<strong><a href="http://www.zczauto.com/" target="_blank">zczauto.com</a></strong> All Rights Reversed. </span><a href="http://www.miibeian.gov.cn/publish/query/indexFirst.action" target="_blank">粤ICP备18003468号-1 </a>   Version:1.1.0
+				<a href="#" class="csc-wx relative" title="扫码微信咨询交流:zczauto">
+				<img class="hoverwx" src="{{ _asset('assets/images/csc-wx.png') }}"/>
+				<img src="{{ _asset('assets/images/csc-wx-code.png') }}" alt="扫描加微信" class="wximg csc-wx-code"/>
+				</a>
 			</div>
 		</div>
+
+	</div>
+	<div class="copyright">
+		<span>Copyright © 2018-2030&nbsp;<strong><a href="http://www.zczauto.com/" target="_blank">zczauto.com</a></strong> All Rights Reversed. </span><a href="http://www.miibeian.gov.cn/publish/query/indexFirst.action" target="_blank">粤ICP备18003468号-1 </a>   Version:1.1.0
+	</div>
+</div>
 
 @section('afterFooter')
 @show{{-- 页脚区域 --}}
