@@ -674,6 +674,31 @@ function slug_url($category_slug, $article_slug = null, $scheme_less = true, $su
     }
 }
 
+function arr_foreach($arr){
+        if(!is_array($arr)){
+            return [];
+        }
+        foreach ($arr as $key => $val ){
+            if(is_array($val)){
+            	$tmp_key = explode('/',$key);
+            	echo '<li class="expandable">
+			 		<div class="hitarea expandable-hitarea"></div>
+			 		<span class="folder">'.$tmp_key[count($tmp_key) -1].'</span>
+					<ul style="display: none;">';
+				 	arr_foreach($val);
+					echo '
+				 	</ul>
+				</li>';
+            	
+                
+            }else{
+            	$tmp_val = explode('/',$val);
+                echo "<li><span class='file'>".substr($tmp_val[count($tmp_val) -1],0,-4)."</span></li>";
+            }
+        }
+
+    }
+
 /*
 # ----------------------------------------
 # YASCMF 自定义标签及其辅助方法 END

@@ -98,41 +98,64 @@ class DataController extends FrontController
         $lastFileTree = self::beautifulTree($filess);
         $xxx = [];
         if(!empty($filess))
-        foreach($filess AS $kkk => $vvv){
-            if(is_array($vvv)){
-                foreach ($vvv as $kkkk => $vvvv) {
-                    $tmp_key = substr($kkk,strrpos($kkk,'/')+1);
-                     // $xxx[$tmp_key][$kkkk]['name'] = substr($vvvv,strrpos($vvvv,'/')+1,-4);
-                      $xxx[$tmp_key][$kkkk] = substr($vvvv,strrpos($vvvv,'/')+1,-4);
-                     //$xxx[$tmp_key][$kkkk]['url'] = url('uploads/ziliao').'/'.$tmp_key.'/'.$afterFix.'/'.$xxx[$tmp_key][$kkkk]['name'].'.pdf';
-                }
-            }else{
-                $xxx[$kkk] = substr($vvv,strrpos($vvv,'/')+1,-4);
-                // $xxx[$kkk]['name'] = substr($vvv,strrpos($vvv,'/')+1,-4);
-                //$xxx[$kkk]['url'] = url('uploads/ziliao').'/'.$afterFix.'/'.$xxx[$kkk]['name'].'.pdf';
-            }
-        }
+            //$arr = self::arr_foreach ($filess);
+        //print_r($arr);exit;
+        // foreach($filess AS $kkk => $vvv){
+        //     if(is_array($vvv)){
+        //         foreach ($vvv as $kkkk => $vvvv) {
+        //             $tmp_key = substr($kkk,strrpos($kkk,'/')+1);
+        //              // $xxx[$tmp_key][$kkkk]['name'] = substr($vvvv,strrpos($vvvv,'/')+1,-4);
+        //               $xxx[$tmp_key][$kkkk] = substr($vvvv,strrpos($vvvv,'/')+1,-4);
+        //              //$xxx[$tmp_key][$kkkk]['url'] = url('uploads/ziliao').'/'.$tmp_key.'/'.$afterFix.'/'.$xxx[$tmp_key][$kkkk]['name'].'.pdf';
+        //         }
+        //     }else{
+        //         $xxx[$kkk] = substr($vvv,strrpos($vvv,'/')+1,-4);
+        //         // $xxx[$kkk]['name'] = substr($vvv,strrpos($vvv,'/')+1,-4);
+        //         //$xxx[$kkk]['url'] = url('uploads/ziliao').'/'.$afterFix.'/'.$xxx[$kkk]['name'].'.pdf';
+        //     }
+        // }
         //echo url('uploads/ziliao').'/'.$afterFix;exit;
         // print_r($xxx);//exit;
         
 
-        return view('desktop.ziliaodetail',['base_path' => url('uploads/ziliao'),'navId' => $navId,'ziliao' => $ziliao,'categories' =>$tree,'breadcrumb' => $breadcrumb,'files'=>$xxx,'afterFix' =>$afterFix]);
+        return view('desktop.ziliaodetail',['base_path' => url('uploads/ziliao'),'navId' => $navId,'ziliao' => $ziliao,'categories' =>$tree,'breadcrumb' => $breadcrumb,'files'=>$filess,'afterFix' =>$afterFix]);
     }
 	
 
+    public static function arr_foreach($arr){
+        if(!is_array($arr)){
+            return [];
+        }
+        foreach ($arr as $key => $val ){
+            $tmpArr = explode('/',$key);
+            $firstPath = $tmpArr[count($tmpArr) -1];
+            if(is_array($val)){
+                $tmp_key = substr($key,strrpos($key,'/')+1);
+                $xxx[$tmp_key][$key] = substr($val,strrpos($val,'/')+1,-4);
+                self::arr_foreach ($val);
+            }else{
+                $xxx[$key] = substr($val,strrpos($val,'/')+1,-4);
+            }
+        }
+
+        return $xxx;
+
+    }
+
     public function document(Request $request)
-    {
+    {   
         $navFix = !empty($request->navId) ? e(trim($request->navId)).'/' : '';
         $file = url('/uploads/ziliao').'/'.$navFix;
         // echo $file;exit;
-        $folder = $request->folder;
-        $file_name =  $request->file;
+        $folder = str_replace('//','/',$request->folder);
+        $file_name =  explode('&',$request->file)[0];
         if(!empty($folder)){
             $file .= $folder.'/'.$file_name;
         }else{
             $file .=$file_name; 
         }
-         //echo $file;
+        //$file = str_replace('//','/',$file);
+        //echo $file;exit;
         return view('desktop.document',['file' => $file]);
         // return view('desktop.viewer',['file' => $file]);
     }
@@ -142,16 +165,14 @@ class DataController extends FrontController
         $navFix = !empty($request->navId) ? e(trim($request->navId)).'/' : '';
         $file = url('/uploads/ziliao').'/'.$navFix;
         //echo $file;exit;
-        $folder = $request->folder;
-        $file_name =  $request->file;
+        $folder = str_replace('//','/',$request->folder);
+        $file_name =  explode('&',$request->file)[0];
         if(!empty($folder)){
             $file .= $folder.'/'.$file_name;
         }else{
             $file .=$file_name; 
         }
-        // echo $file;
         return view('desktop.document',['file' => $file]);
-        // return view('desktop.viewer',['file' => $file]);
     }
     /**
      * YASCMF landing page

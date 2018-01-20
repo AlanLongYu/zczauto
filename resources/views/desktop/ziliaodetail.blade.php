@@ -34,46 +34,17 @@ $(function() {
 		var folder=$(this).parents("ul").prev("span.folder").map(function(){
 			return $(this).text();
 		}).get();
-		var iframe_url=encodeURI("{{$base_path}}"+"/{!! $afterFix !!}/"+folder.reverse().join("/")+'/'+file_name+'.pdf');
-		var iframe_url=encodeURI("{!! $navId !!}/{!! $afterFix !!}/"+folder.reverse().join("/")+'/'+file_name+'.pdf');
-console.log(iframe_url);
-	$("#iframe").attr("src","/data/document/"+iframe_url);
-		var group_id=0;			
-		if(group_id==0){
-			//alert("请登录后再操作");
-			//return;
-		}
-		if(group_id==1){
-			$.post('downfile',{},function(data){
-				if(data=='yes'){
-					$("#iframe").attr("src","/data/document/"+iframe_url);
-				}else if(data=='no'){
-					alert("亲！您的积分不够了喔！");
-				}
-			});	
-			return;
-		}
-		if(group_id==2){
-			$("#iframe").attr("src","/Home/Read/document.html?file="+iframe_url);
-			return;
-		}
+		var true_folder = folder.reverse().join("/");
+		var iframe_url=encodeURI("{!! $navId !!}/{!! $afterFix !!}/"+true_folder+'/'+file_name+'.pdf');
+		$("#iframe").attr("src","/data/document/"+iframe_url+'&embedded=true');
 		
 	});
 
-
-
-	//重新选择车型跳转
-	$("#prev").click(function(){
-		location.href="/Home/Data/data";
-	});
-
-	
-
 })
-	//告知下载次数已到
-	function limited(){
-		$("#limited").click();
-	}
+//告知下载次数已到
+function limited(){
+	$("#limited").click();
+}
 </script>
 
 
@@ -104,19 +75,7 @@ console.log(iframe_url);
 			<div id="read_menu">
 				<h4>{{$breadcrumb}}</h4>
 				<ul id='tree' class='filetree'>
-				 @foreach($files AS $kkk => $vvv)
-				 	@if(is_array($vvv))
-				 		<li class="expandable"><div class="hitarea expandable-hitarea"></div><span class="folder">{{$kkk}}</span>
-							<ul style="display: none;">
-					 	@foreach($vvv AS $kkkk => $vvvv)
-								<li><span class="file">{{$vvvv}}</span></li>
-					 	@endforeach
-					 		</ul>
-						</li>
-				 	@else
-				 		<li><span class='file'>{{$vvv}}</span></li>
-				 	@endif
-				 @endforeach
+					{{arr_foreach($files)}}
 				</ul>
 				<!--
 				<span class="file">表示文档
@@ -128,7 +87,7 @@ console.log(iframe_url);
 	</div>
 
 	<div class="main right">
-	<iframe src="/data/file/default.pdf" frameborder="0" scrolling="no" width="100%" height="100%" id="iframe" name="iframe"></iframe>
+	<iframe src="/data/file/default.pdf&embedded=true" frameborder="0" scrolling="no" width="100%" height="100%" id="iframe" name="iframe"></iframe>
 	</div>	
 
 </div>

@@ -90,8 +90,12 @@
 	                	@if($v->way == 0)
 	                	<input type="submit" value="{!! nl2br($v->way_contents) == '' ? '维修手册 | 线路图' : nl2br($v->way_contents)  !!}" class="car_btn"/>
 	                	@else
-	                	<div>
+	                	<div class="blue-bg">
+	                		@if(Auth::guard('member')->user()->role == 2)
+	                		账号未激活，请联系微信zczauto
+	                		@else
 	                		{!! nl2br($v->way_contents) !!}
+	                		@endif
 	                	</div>
 	                	@endif
 	                </li>

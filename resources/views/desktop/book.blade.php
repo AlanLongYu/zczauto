@@ -55,7 +55,7 @@ $(function() {
 			$("#iframe").attr("src","/book/info/"+iframe_url);
 			return;
 		}else{
-			alert('请添加站长微信(zczauto)成为高级会员或致电：13922865250');
+			alert('账号未激活，请联系微信zczauto');
 		}
 		
 	});
@@ -128,7 +128,7 @@ $(function() {
 	</div>
 
 	<div class="main right">
-	<iframe src="/data/file/default.pdf" frameborder="0" scrolling="no" width="100%" height="100%" id="iframe" name="iframe"></iframe>
+	<iframe src="/data/file/default.pdf&embedded=true" frameborder="0" scrolling="no" width="100%" height="100%" id="iframe" name="iframe"></iframe>
 	</div>	
 
 </div>
