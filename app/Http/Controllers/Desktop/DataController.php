@@ -156,7 +156,7 @@ class DataController extends FrontController
         }
         //$file = str_replace('//','/',$file);
         //echo $file;exit;
-        if(Auth::guard('member')->user()->role != 1){
+        if(Auth::guard('member')->user()->role != 1 && $file_name != 'default.pdf'){
             return abort(403);
         } 
         return view('desktop.document',['file' => $file]);
@@ -175,7 +175,7 @@ class DataController extends FrontController
         }else{
             $file .=$file_name; 
         }
-        if(Auth::guard('member')->user()->role != 1){
+        if(Auth::guard('member')->user()->role != 1 && $file_name != 'default.pdf'){
             return abort(403);
         }
         return view('desktop.document',['file' => $file]);
