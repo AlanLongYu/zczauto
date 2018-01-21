@@ -156,6 +156,9 @@ class DataController extends FrontController
         }
         //$file = str_replace('//','/',$file);
         //echo $file;exit;
+        if(Auth::guard('member')->user()->role != 1){
+            return abort(403);
+        } 
         return view('desktop.document',['file' => $file]);
         // return view('desktop.viewer',['file' => $file]);
     }
@@ -171,6 +174,9 @@ class DataController extends FrontController
             $file .= $folder.'/'.$file_name;
         }else{
             $file .=$file_name; 
+        }
+        if(Auth::guard('member')->user()->role != 1){
+            return abort(403);
         }
         return view('desktop.document',['file' => $file]);
     }

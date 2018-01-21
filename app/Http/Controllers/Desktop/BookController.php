@@ -70,6 +70,9 @@ class BookController extends FrontController
 		
 		
         $file =  $request->file;
+        if(Auth::guard('member')->user()->role != 1){
+            return abort(403);
+        } 
         return view('desktop.document',['file' => $file]);
 	}
 	
