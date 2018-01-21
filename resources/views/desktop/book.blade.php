@@ -102,19 +102,7 @@ $(function() {
 			<div id="read_menu">
 				<h4>{{$breadcrumb}}</h4>
 				<ul id='tree' class='filetree'>
-				 @foreach($files AS $kkk => $vvv)
-				 	@if(is_array($vvv))
-				 		<li class="expandable"><div class="hitarea expandable-hitarea"></div><span class="folder">{{$kkk}}</span>
-							<ul style="display: none;">
-					 	@foreach($vvv AS $kkkk => $vvvv)
-								<li><span class="file">{{$vvvv}}</span></li>
-					 	@endforeach
-					 		</ul>
-						</li>
-				 	@else
-				 		<li><span class='file'>{{$vvv}}</span></li>
-				 	@endif
-				 @endforeach
+				 {{arr_foreach($files)}}
 				</ul>
 				<!--
 				<span class="file">表示文档

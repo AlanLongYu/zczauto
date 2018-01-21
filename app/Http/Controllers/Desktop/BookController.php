@@ -40,7 +40,7 @@ class BookController extends FrontController
         
         $filess = self::recurDir($fileDir);
         $lastFileTree = self::beautifulTree($filess);
-        $xxx = [];
+        /*$xxx = [];
         if(!empty($filess))
         foreach($filess AS $kkk => $vvv){
             if(is_array($vvv)){
@@ -55,12 +55,12 @@ class BookController extends FrontController
                 // $xxx[$kkk]['name'] = substr($vvv,strrpos($vvv,'/')+1,-4);
                 //$xxx[$kkk]['url'] = url('uploads/ziliao').'/'.$afterFix.'/'.$xxx[$kkk]['name'].'.pdf';
             }
-        }
+        }*/
         //echo url('uploads/ziliao').'/'.$afterFix;exit;
         // print_r($xxx);//exit;
         
 
-        return view('desktop.book',['base_path' => url('uploads/book'),'ziliao' => [],'categories' =>$tree,'breadcrumb' => $breadcrumb,'files'=>$xxx,'afterFix' =>'','login'=>Auth::guard('member')->check()]);
+        return view('desktop.book',['base_path' => url('uploads/book'),'ziliao' => [],'categories' =>$tree,'breadcrumb' => $breadcrumb,'files'=>$filess,'afterFix' =>'','login'=>Auth::guard('member')->check()]);
 	}
 	
 	
