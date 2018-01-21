@@ -77,7 +77,7 @@ function limited(){
 				<a href="?#">折叠目录</a> | <a href="?#">展开目录</a>
 			</div>
 			<div id="read_menu">
-				<h4>{{$breadcrumb}}</h4>
+				<h4>{{$last}}</h4>
 				<ul id='tree' class='filetree'>
 					{{arr_foreach($files)}}
 				</ul>
