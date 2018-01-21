@@ -78,11 +78,11 @@ class DataController extends FrontController
         $id = $data->data_id;
         $breadcrumb = $data->breadcrumb;
         $tmpArr = explode('>',$breadcrumb);
-        $last = end($tmpArr);
         $afterFix = join('/',$tmpArr);
         $ziliao = Ziliao::where('id',$id)->get();
         foreach ($ziliao as $z) {
             $navId = $z->nav_id;
+            $last = $z->name;
         }
         $navfix = $navId ? $navId.'/' : '';
         $fileDir = $base_dir.$navfix.$afterFix;
@@ -117,7 +117,6 @@ class DataController extends FrontController
         // }
         //echo url('uploads/ziliao').'/'.$afterFix;exit;
         // print_r($xxx);//exit;
-        
 
         return view('desktop.ziliaodetail',['base_path' => url('uploads/ziliao'),'navId' => $navId,'ziliao' => $ziliao,'categories' =>$tree,'breadcrumb' => $breadcrumb,'last' => $last,'files'=>$filess,'afterFix' =>$afterFix]);
     }

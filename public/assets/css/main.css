@@ -342,7 +342,7 @@ input::-ms-clear {
 }
 
 .blue-bg{
-	background-color: #2d78f4;color:#fff;padding-left: 48px;
+	background-color: #2d78f4;color:#fff;padding-left: 0;text-align:center;width:220px;height: 32px;
 }
 
 /*手机与用户子菜单公共*/
