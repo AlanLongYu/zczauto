@@ -53,7 +53,7 @@
 					<li>
 						<label for="email">剩余天数</label>
 						<div class="inputbox">
-							<span>{{ Auth::guard('member')->user()->role==1 ? round((strtotime(Auth::guard('member')->user()->end_date) -time())/86400) : 0}}</span>
+							<span>{{ Auth::guard('member')->user()->role==1 ? ceil((strtotime(Auth::guard('member')->user()->end_date) -time())/86400) : 0}}</span>
 							<span class="ex-tips">会员使用剩余天数</span>
 						</div>
 					</li>
