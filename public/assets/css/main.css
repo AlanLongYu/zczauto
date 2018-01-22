@@ -550,6 +550,10 @@ input::-ms-clear {
 	#header .icon-box .app-icon {
 		display:none;
 	}
+
+	.marquee{
+		width: auto;
+	}
 	
 
 }
