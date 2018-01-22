@@ -542,6 +542,7 @@ input::-ms-clear {
 	/*右侧图标*/
 	#header .icon-box {
 		width: 25px;
+		display:none;
 	}
 	#header .icon-box span {
 		margin-left: 10px;
