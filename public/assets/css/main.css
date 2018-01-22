@@ -516,8 +516,9 @@ input::-ms-clear {
 @media only screen and (max-width: 480px) {
 	/*logo*/
 	#header .logo {
-		width: 40px;
-		margin:0 10px;	
+		/*width: 40px;
+		margin:0 10px;	*/
+		display: none;
 	}
 
 	#header .logo img:first-child {
