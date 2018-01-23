@@ -64,7 +64,9 @@
     </dl>
 </span>
 @else
-    <a href="/user/login" class="login-btn">登录</a>
+     <a href="/user/register" class="reg-btn" style="color: black;">注册</a>
+            &nbsp;|&nbsp;
+    <a href="/user/login" class="login-btn" style="color: black;">登录</a>
 @endif
 </div>
 <!--login-->
