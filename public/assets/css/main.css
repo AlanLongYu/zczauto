@@ -480,6 +480,7 @@ input::-ms-clear {
 	padding: 0 10px;
 	display: inline-block;
 	text-align: center;
+	color: #666;
 }
 .loginlist .submenu dd a.reg-btn:hover,
 .loginlist .submenu dd a.login-btn:hover {
@@ -499,7 +500,7 @@ input::-ms-clear {
 		width: 100%;
 	}
 	#header nav li:hover .submenu { 
-		display: none;
+		/*display: none;*/
 	}
 	.loginlist:hover .submenu{ 
 		display: none;
@@ -541,8 +542,8 @@ input::-ms-clear {
 
 	/*右侧图标*/
 	#header .icon-box {
-		width: 25px;
-		display:none;
+		width: 30px;
+		/*display:none;*/
 	}
 	#header .icon-box span {
 		margin-left: 10px;

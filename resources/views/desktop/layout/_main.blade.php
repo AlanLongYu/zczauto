@@ -24,7 +24,7 @@
     <div class="w-1000 relative">
 	<!--logo-->
 	    <a href="http://www.zczauto.com/" class="logo">
-	        <img src="{{ _asset('assets/images/logo.png') }}" height="40" width="109">
+	        <img src="{{ _asset('assets/images/logo.png') }}">
 	    </a>
 <!--nav-->
 <nav>
@@ -64,9 +64,7 @@
     </dl>
 </span>
 @else
-    <a href="/user/register" class="reg-btn" style="color: black;">注册</a>
-            &nbsp;|&nbsp;
-    <a href="/user/login" class="login-btn" style="color: black;">登录</a>
+    <a href="/user/login" class="login-btn">登录</a>
 @endif
 </div>
 <!--login-->
