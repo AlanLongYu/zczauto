@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="baidu-site-verification" content="2tLIzOBbNK" />
-    <title>首页-精准资料网 | 用车养车修车的好帮手</title>
+    <title>{{isset($title) ? $title.'-' : ''}}精准资料网 | 用车养车修车的好帮手</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="@section('description') {{ isset($description) ? $description : '精准资料网专注于个人收集汽车资料学习交流，本站有上千款车型精准资料在线查询、打印和下载，每日更新，汽车爱好者学习交流必备神器！' }} @show{{-- meta描述 --}}" />
     <meta name="keywords" content="{{ cache('website_keywords') }}" />

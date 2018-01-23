@@ -17,7 +17,7 @@ class HelpController extends FrontController
 		#静态
 		#最新公告
 		#友情链接
-        return view('desktop.help');
+        return view('desktop.help',['title' => '关于我们']);
     }
 	
 	
@@ -31,7 +31,7 @@ class HelpController extends FrontController
 		#静态
 		#最新公告
 		#友情链接
-        return view('desktop.start');
+        return view('desktop.start',['title' => '网站帮助']);
     }
 	
 	
@@ -72,7 +72,7 @@ class HelpController extends FrontController
 		#静态
 		#最新公告
 		#友情链接
-        return view('desktop.join');
+        return view('desktop.join',['title' => '加入我们']);
     }
 	
 	
@@ -86,7 +86,7 @@ class HelpController extends FrontController
 		#静态
 		#最新公告
 		#友情链接
-        return view('desktop.contact');
+        return view('desktop.contact',['title' => '联系我们']);
     }
 
     /**
@@ -99,7 +99,7 @@ class HelpController extends FrontController
 		#静态
 		#最新公告
 		#友情链接
-        return view('desktop.disclaimer');
+        return view('desktop.disclaimer',['title' => '免责声明']);
     }
 	
 	

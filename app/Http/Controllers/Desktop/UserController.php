@@ -53,7 +53,7 @@ class UserController extends FrontController
 	public function register()
 	{
 		
-		return view('desktop.register');
+		return view('desktop.register',['title' => '注册']);
 	}
 
 	public function checkReg(Request $request){
@@ -144,7 +144,7 @@ class UserController extends FrontController
     //登录
 	public function login(Request $request)
 	{	
-		return view('desktop.login');
+		return view('desktop.login',['title' => '登录']);
 	}
 
 	//执行登录
