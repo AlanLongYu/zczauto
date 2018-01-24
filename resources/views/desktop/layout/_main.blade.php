@@ -32,7 +32,7 @@
 @foreach($navs AS $nav)
 @if($nav->p_id == 0)
 <li>
-	<a href="{{$nav->url}}" class="current">{{$nav->name}}</a>
+	<a href="{{empty($nav->url) ? 'javascript:void(0);' : $nav->url}}" class="current">{{$nav->name}}</a>
 @if(in_array($nav->id,[2,5,9]))
 	<i class="arrow-icon"></i>
 <div class="submenu">
