@@ -273,7 +273,7 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
 
 
     #需要登录验证的其他路由组
-    Route::group(['middleware' => ['multi-site.auth:desktop']],function(){
+    //Route::group(['middleware' => ['multi-site.auth:desktop']],function(){
         //Route::auth();
         #维修手册库
         Route::get('/data/data/{catid}', 'DataController@data');
@@ -288,7 +288,7 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
         Route::get('/book/index', 'BookController@index');
         Route::get('/book/info/{file}','BookController@detail')->where('file', '.*$');
 
-    });
+    //});
 	
 
 });

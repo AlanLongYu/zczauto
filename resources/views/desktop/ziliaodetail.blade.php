@@ -36,12 +36,21 @@ $(function() {
 		}).get();
 		var true_folder = folder.reverse().join("/");
 		var iframe_url=encodeURI("{!! $navId !!}/{!! $afterFix !!}/"+true_folder+'/'+file_name+'.pdf');
-		var role="{{Auth::guard('member')->user()->role}}";
+		var role="{{Auth::guard('member')->check() ? Auth::guard('member')->user()->role : 2}}";
 		if(role==1 || file_name =='default'){		
 			$("#iframe").attr("src","/data/document/"+iframe_url+'&embedded=true');
 			return;
 		}else{
-			alert('账号未激活，请联系微信zczauto');
+			var logined = "{{Auth::guard('member')->check()}}";
+			if(!logined){
+				alert('您好,请您登录后再进行查看');
+				window.location.href='/user/login';
+				return ;
+			}else{
+				alert('账号未激活，请联系微信zczauto');
+				return;
+			}
+			
 		}
 		
 	});
