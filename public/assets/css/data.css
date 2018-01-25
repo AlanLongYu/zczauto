@@ -364,7 +364,7 @@
 
 @media only screen and (max-width: 480px) {
 	.aside-search{
-		position:absolute;
+		/*position:absolute;*/
 		left:0;
 		top:0;
 		margin:10px 0;
@@ -375,10 +375,11 @@
 	.aside-search > .bd{width:100%;}
 	.bigsearch{
 		height:30px;
-		width: 200px;
+		width: 120px;
 		margin:5px auto;
 	}
-	.bigsearch .stext {width: 150px;}
+	.bigsearch .stext {width: 80px;}
+	.bigsearch .sbtn{width: 30px;}
 }
 
 
