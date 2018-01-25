@@ -364,22 +364,22 @@
 
 @media only screen and (max-width: 480px) {
 	.aside-search{
-		/*position:absolute;*/
+		position:absolute;
 		left:0;
 		top:0;
 		margin:10px 0;
-		/*width:100%;*/
+		width:100%;
 		height:42px;
 	}
 	.aside-search > .hd{display:none;}
 	.aside-search > .bd{width:100%;}
 	.bigsearch{
 		height:30px;
-		width: 120px;
+		width: 200px;
 		margin:5px auto;
+		margin-left: 5px;
 	}
-	.bigsearch .stext {width: 80px;}
-	.bigsearch .sbtn{width: 30px;}
+	.bigsearch .stext {width: 150px;}
 }
 
 
