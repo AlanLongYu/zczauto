@@ -252,6 +252,7 @@ Route::group(['prefix' => $_dp, 'namespace' => 'Desktop', 'middleware' => ['bloc
 
     # 退出逻辑
     Route::get('/user/logout', 'UserController@logout');
+    Route::post('/data/search', 'DataController@search');
     
     #需要登录验证的路由组
     Route::group(['prefix' => 'user', 'middleware' => ['multi-site.auth:desktop']],function(){

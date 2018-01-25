@@ -35,6 +35,30 @@ class DataController extends FrontController
 		return view('desktop.data',['categories' =>$tree,'navId' => $catId,'currentName' => $currentName]);
 	}
 
+    public function search(Request $request)
+    {
+        if(empty($request->all())){
+           return response()->json(['code' => 20110,'msg' => '对不起，参数错误','data' => []]);
+        }
+        $keyword = $request->keyword;
+        if(empty($keyword)){
+            return response()->json(['code' => 20111,'msg' => '对不起，参数错误','data' => []]);
+        }
+        /*$catId = 4;
+        $categories = Category::where(['nav_id' => $catId]) ->orderBy('sort','ASC')->get();
+        $nav = Nav::find(['id',$catId]);
+        foreach ($nav as  $n) {
+            $currentName = $n->name;
+        }
+        $items = [];
+        foreach($categories->toArray() AS $key => $val){
+            $items[$val['id']] = $val;
+        }
+        $tree =  Category::generateTree($items);*/
+        $ziliao = Ziliao::where('name','like','%'.$keyword.'%')->orWhere('content','like','%'.$keyword.'%')->get();
+        return view('desktop.search',['keyword' => $request->keyword,'ziliao' => $ziliao,'count' => $ziliao->count()]);
+    }
+
 
 
     //汽车详情

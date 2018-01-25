@@ -51,17 +51,18 @@
 			</div> 
 			<!-- /bd -->                    
 		</div>
-		<!--<div class="aside-search">
+		<div class="aside-search">
 			<div class="hd">
 				<h2><i class="icon-search"></i>搜索车型</h2>
 			</div>
 			<div class="bd">
-				<form class="bigsearch">
+				<form class="bigsearch" onsubmit="return false;">
+					<input type="hidden" name="navId" value="{{$navId}}" id="navId">
 					<input type="text" placeholder="请输入车型" class="stext"  id="search_inp" >
 					<input type="button" class="sbtn" value="" title="点击搜索" id="search_btn">
 				</form>
 			</div>
-		</div>-->
+		</div>
 
 	</div>
 	
