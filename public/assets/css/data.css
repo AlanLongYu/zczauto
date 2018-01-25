@@ -346,6 +346,7 @@
     background-position: right 0;
     cursor: pointer;
 	border:none;
+	float: right;
 }
 
 /*移动端*/
@@ -375,9 +376,8 @@
 	.aside-search > .bd{width:100%;}
 	.bigsearch{
 		height:30px;
-		width: 200px;
-		margin:5px auto;
-		margin-left: 5px;
+		width: auto;
+		margin:5px 5px;
 	}
 	.bigsearch .stext {width: 150px;}
 }
