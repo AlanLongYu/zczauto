@@ -378,6 +378,7 @@
 		height:30px;
 		width: auto;
 		margin:5px 5px;
+		border-radius:3px;
 	}
 	.bigsearch .stext {width: -webkit-fill-available;}
 	.bigsearch .sbtn{

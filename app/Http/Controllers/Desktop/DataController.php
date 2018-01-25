@@ -55,7 +55,10 @@ class DataController extends FrontController
             $items[$val['id']] = $val;
         }
         $tree =  Category::generateTree($items);*/
-        $ziliao = Ziliao::where('name','like','%'.$keyword.'%')->orWhere('content','like','%'.$keyword.'%')->get();
+        $ziliao = Ziliao::where(function($query) use ($request){
+            $query->where('nav_id','=',$request->cat_id);
+            $query->where('name','like','%'.$request->keyword.'%')->orWhere('content','like','%'.$request->keyword.'%');
+        })->get();
         return view('desktop.search',['keyword' => $request->keyword,'ziliao' => $ziliao,'count' => $ziliao->count()]);
     }
 
