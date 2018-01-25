@@ -17,7 +17,7 @@
 <script>		
 $(function() {
 	//树形目录样式
-	var login = {{$login}};
+	var login = "{{Auth::guard('member')->check()}}";
 	$("#tree").treeview({
 		collapsed: true,
 		animated: "medium",
@@ -36,7 +36,7 @@ $(function() {
 
 		var iframe_url=folder.length >0 ? encodeURI("{{$base_path}}"+"/"+folder.reverse().join("/")+'/'+file_name+'.pdf') : encodeURI("{{$base_path}}"+'/'+file_name+'.pdf');;
 
-		var role="{{Auth::guard('member')->user()->role}}";			
+		var role="{{Auth::guard('member')->check() ? Auth::guard('member')->user()->role : 2}}";			
 		if(!login){
 			alert("请登录后再操作");
 			return;
