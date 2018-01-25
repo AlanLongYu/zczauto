@@ -379,7 +379,11 @@
 		width: auto;
 		margin:5px 5px;
 	}
-	.bigsearch .stext {width: 150px;}
+	.bigsearch .stext {width: -webkit-fill-available;}
+	.bigsearch .sbtn{
+		position: absolute;
+		right: 10px;
+	}
 }
 
 
