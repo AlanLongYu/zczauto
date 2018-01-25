@@ -199,10 +199,14 @@ class DataController extends FrontController
         }else{
             $file .=$file_name; 
         }
-        if(Auth::guard('member')->user()->role != 1 && $file_name != 'default.pdf'){
+        if((!Auth::guard('member')->check()) && $file_name != 'default.pdf'){
+            return redirect()->to('/user/login');
+        }
+        //
+        if(Auth::guard('member')->check() && Auth::guard('member')->user()->role != 1 && $file_name != 'default.pdf'){
             return abort(403);
         }
-        return view('desktop.document',['file' => $file]);
+        return view('desktop.document',['file' => $file,'logined' =>Auth::guard('member')->check() ]);
     }
     /**
      * YASCMF landing page
