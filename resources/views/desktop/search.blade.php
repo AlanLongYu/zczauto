@@ -26,10 +26,14 @@
 	            	<input type="submit" value="{!! nl2br($v->way_contents) == '' ? '维修手册 | 线路图' : nl2br($v->way_contents)  !!}" class="car_btn"/>
 	            	@else
 	            	<div class="blue-bg">
-	            		@if(Auth::guard('member')->user()->role == 2)
+	            		@if(Auth::guard('member')->check() && Auth::guard('member')->user()->role == 2)
 	            		账号未激活，请联系微信zczauto
 	            		@else
-	            		{!! nl2br($v->way_contents) !!}
+		            		@if(Auth::guard('member')->check())
+		            			{!! nl2br($v->way_contents) !!}
+		            		@else
+		            			尚未登录，请登录后查看
+		            		@endif
 	            		@endif
 	            	</div>
 	            	@endif
