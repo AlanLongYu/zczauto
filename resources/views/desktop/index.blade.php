@@ -1,38 +1,10 @@
 @extends('desktop.layout._main')
 
 
-@section('mainContent')
-
-<script type="text/javascript">
-	function IsPC() {
-		var userAgentInfo = navigator.userAgent;
-		var Agents = ["Android", "iPhone",
-					"SymbianOS", "Windows Phone",
-					"iPad", "iPod"];
-		var flag = true;
-		for (var v = 0; v < Agents.length; v++) {
-			if (userAgentInfo.indexOf(Agents[v]) > 0) {
-				flag = false;
-				break;
-			}
-		}
-		return flag;
-	}
-	if(!IsPC()){
-		$(".header-nav li,#login-icon").click(function(){
-			$(this).children(".submenu").toggle();
-		});
-	}
-</script>
-
-
- 
+@section('mainContent') 
 <link rel="stylesheet" type="text/css" href="{{ _asset('assets/css/index.css') }}">
 <script type="text/javascript" src="{{ _asset('assets/js/index.js') }}"></script>
 <script type="text/javascript" src="{{ _asset('assets/js/roll.js') }}"></script>
-
-
-
 <!--flash开始-->
 <div class="flash relative">
 	<ul class="picbox">	
