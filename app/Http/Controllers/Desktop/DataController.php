@@ -104,20 +104,35 @@ class DataController extends FrontController
         $base_dir = public_path('uploads').'/ziliao/';
         $id = $data->data_id;
         $breadcrumb = $data->breadcrumb;
-        $tmpArr = explode('>',$breadcrumb);
-        $afterFix = join('/',$tmpArr);
+
         $ziliao = Ziliao::where('id',$id)->get();
         foreach ($ziliao as $z) {
             $navId = $z->nav_id;
             $last = $z->name;
+            $catId = $z->category_id;
         }
-        $navfix = $navId ? $navId.'/' : '';
-        $fileDir = $base_dir.$navfix.$afterFix;
+
         $categories = Category::orderBy('sort','ASC')->get();
         $items = [];
         foreach($categories->toArray() AS $key => $val){
             $items[$val['id']] = $val;
+            if($navId == $val['nav_id'] && $val['id'] == $catId){
+                $breadcrumb3 = $val['name'];
+                $p_id = $val['p_id'];
+            }
         }
+        $pp_id = $items[$p_id]['p_id'];
+        $breadcrumb2 = $items[$p_id]['name'];
+        $breadcrumb1 = $items[$pp_id]['name'];
+        if(empty($breadcrumb)){
+            $breadcrumb = $breadcrumb1.'>'.$breadcrumb2.'>'.$breadcrumb3;
+        }
+        $tmpArr = explode('>',$breadcrumb);
+        $afterFix = join('/',$tmpArr);
+        
+        $navfix = $navId ? $navId.'/' : '';
+        $fileDir = $base_dir.$navfix.$afterFix;
+        
         $tree =  Category::generateTree($items);
         //foreach()
         //print_r($tree);exit;
