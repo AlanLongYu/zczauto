@@ -693,6 +693,9 @@ function arr_foreach($arr){
                 
             }else{
             	$tmp_val = explode('/',$val);
+                if(strtolower(substr($tmp_val[count($tmp_val) -1],0,-4)) == 'default'){
+                    continue;
+                }
                 echo "<li><span class='file'>".substr($tmp_val[count($tmp_val) -1],0,-4)."</span></li>";
             }
         }
