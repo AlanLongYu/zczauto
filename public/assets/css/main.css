@@ -131,7 +131,7 @@ input::-ms-clear {
 #header .logo img {
 	float: left;
 	width: 109px;
-	margin-top: 10px;
+	margin-top: 12.5px;
 	border:0 none;
 }
 
@@ -339,6 +339,9 @@ input::-ms-clear {
 /*跑马灯新闻公告*/
 .marquee{
 	height: 24px;color:#FF0000;margin: 3px auto;width: 1000px;overflow: hidden;
+}
+.black{
+    color: black;
 }
 
 .blue-bg{

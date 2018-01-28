@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="{{ _asset('assets/css/main.css') }}" />
     <script type="text/javascript" src="{{ _asset('assets/js/jquery-1.8.1.min.js') }}"></script>
     <script type="text/javascript" src="{{ _asset('assets/js/jquery.marquee.min.js') }}"></script>
-    <script type="text/javascript" src="{{ _asset('assets/js/main.js') }}"></script>
     @section('htmlHead')
     @show{{-- head区域 --}}
 </head>
@@ -64,9 +63,9 @@
     </dl>
 </span>
 @else
-     <a href="/user/register" class="reg-btn" style="color: black;">注册</a>
+     <a href="/user/register" class="reg-btn black">注册</a>
             &nbsp;|&nbsp;
-    <a href="/user/login" class="login-btn" style="color: black;">登录</a>
+    <a href="/user/login" class="login-btn black">登录</a>
 @endif
 </div>
 <!--login-->
@@ -120,5 +119,6 @@
 
 @section('afterFooter')
 @show{{-- 页脚区域 --}}
+<script type="text/javascript" src="{{ _asset('assets/js/main.js') }}"></script>
 </body>
 </html>
