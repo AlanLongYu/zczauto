@@ -80,6 +80,7 @@
 <div id="footer">
     <div class="info-block">
         <div class="info">
+          <div class="black">
             <dl>
                 <dt><a  href="/help/about">关于我们</a></dt>
             </dl>
@@ -97,20 +98,19 @@
             <dl>
                 <dt><a  href="/help/contact">联系我们</a></dt>
             </dl>
-
-            <div class="csc">
-                <a href="#" id="back-to-top" title="回到顶部"><img src="{{_asset('assets/images/csc-top.png') }}"/></a>
-                <a target="_blank"  title="点击QQ咨询:1824839790" href="http://wpa.qq.com/msgrd?v=3&uin=1824839790&site=qq&menu=yes">
-                    <img src="{{_asset('assets/images/fdsa2312safadsowq.gif')}}" />
-                </a>
-
-                <a href="#" class="csc-wx relative" title="扫码微信咨询交流:zczauto">
-                <img class="hoverwx" src="{{ _asset('assets/images/csc-wx.png') }}"/>
-                <img src="{{ _asset('assets/images/csc-wx-code.png') }}" alt="扫描加微信" class="wximg csc-wx-code"/>
-                </a>
             </div>
         </div>
+    </div>
+    <div class="csc">
+        <a href="#" id="back-to-top" title="回到顶部"><img src="{{_asset('assets/images/csc-top.png') }}"/></a>
+        <a target="_blank"  title="点击QQ咨询:1824839790" href="http://wpa.qq.com/msgrd?v=3&uin=1824839790&site=qq&menu=yes">
+            <img src="{{_asset('assets/images/fdsa2312safadsowq.gif')}}" />
+        </a>
 
+        <a href="#" class="csc-wx relative" title="扫码微信咨询交流:zczauto">
+        <img class="hoverwx" src="{{ _asset('assets/images/csc-wx.png') }}"/>
+        <img src="{{ _asset('assets/images/csc-wx-code.png') }}" alt="扫描加微信" class="wximg csc-wx-code"/>
+        </a>
     </div>
     <div class="copyright">
         <span>Copyright © &nbsp;<strong><a href="http://www.zczauto.com/" target="_blank">zczauto.com</a></strong> All Rights Reversed. </span><a href="http://www.miibeian.gov.cn/publish/query/indexFirst.action" target="_blank">粤ICP备18003468号-1 </a>   Version:1.2.0
