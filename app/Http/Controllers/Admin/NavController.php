@@ -76,7 +76,9 @@ class NavController extends Controller
 	        $nav->name = e($inputs['name']);
 	        $nav->sort = e($inputs['sort']);
 	        $nav->p_id = e(trim($inputs['p_id']));
-	        $nav->url = e(trim($inputs['url']));
+            $nav->url = e(trim($inputs['url']));
+	        $nav->content = $inputs['content'];
+
 	        if($nav->save()) {
 	            return redirect()->to(site_path('nav', 'admin'))->with('message', '成功新增导航栏目！');
 	        } else {
@@ -105,12 +107,12 @@ class NavController extends Controller
             if(empty($paramsArr['name'])){
                 return response()->json(['msg' => '导航名称不能为空','code' => 600]);
             }
-            
             $nav = new Nav;
             $nav->name = e(urldecode($paramsArr['name']));
             $nav->sort = e($paramsArr['sort']);
             $nav->p_id = e(trim($paramsArr['p_id']));
             $nav->url = e(trim($paramsArr['url'])) ? e(trim($paramsArr['url'])) : '/data/data/'.$nav->id;
+            $nav->content = $inputs['content'];
             $nav->save();
 
             $insetNav = Nav::find($nav->id);
@@ -292,6 +294,7 @@ class NavController extends Controller
 	        $nav->sort = e($inputs['sort']);
 	        $nav->p_id = e($inputs['p_id']);
 	        $nav->url = e(trim($inputs['url']));
+            $nav->content = $inputs['content'];
 	        if($nav->save()) {
 	            return redirect()->to(site_path('nav', 'admin'))->with('message', '成功修改导航栏！');
 	        } else {

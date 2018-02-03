@@ -74,6 +74,11 @@
                         <input type="text" class="form-control" name="url" placeholder="导航Url" maxlength="255" value="{{ old('url') }}">
                       </div>
                       <div class="form-group">
+                        <label>页面编辑</label>
+                        <textarea class="form-control" id="ckeditor" name="content">{{ old('content') }}</textarea>
+                        @include('admin.scripts.endCKEditor'){{-- 引入CKEditor编辑器相关JS依赖 --}}
+                      </div>
+                      <div class="form-group">
                         <label>导航排序 <small class="text-red">*</small> <span class="text-green">000-999</span></label>
                         <input type="text" class="form-control" name="sort" placeholder="导航排序" value="{{ old('sort', 999) }}">
                       </div>
@@ -127,7 +132,7 @@
       },
       view: {expandSpeed:"",
         //addHoverDom: addHoverDom,
-        removeHoverDom: removeHoverDom,
+        //removeHoverDom: removeHoverDom,
         selectedMulti: true
       },
       check: {
@@ -214,6 +219,8 @@
     $("#crateNav").click(function(event){
       event.preventDefault();
       var params = $("#nav-add").serialize();
+      var content=CKEDITOR.instances.ckeditor.getData(); 
+      //console.log(content);
       console.log(params);
       var zTreeObj = $.fn.zTree.getZTreeObj("treeDemo");
       //选中的节点
@@ -223,7 +230,7 @@
       $.ajax({
           url:"/admin/nav/ajaxStore",
           type:"post",
-          data:{params:params,checkedNodes:checkedNodes},
+          data:{params:params,checkedNodes:checkedNodes,content:content},
           dataType:"json",
           success:function(data){
             console.log(data);

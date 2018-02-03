@@ -73,6 +73,11 @@
                         <input type="text" class="form-control" name="url" placeholder="导航Url" maxlength="255" value="{{ $Nav->url }}">
                       </div>
                       <div class="form-group">
+                        <label>页面编辑</label>
+                        <textarea class="form-control" id="ckeditor" name="content">{{ old('content',isset($Nav) ? $Nav->content : null) }}</textarea>
+                        @include('admin.scripts.endCKEditor'){{-- 引入CKEditor编辑器相关JS依赖 --}}
+                      </div>
+                      <div class="form-group">
                         <label>导航排序 <small class="text-red">*</small> <span class="text-green">000-999</span></label>
                         <input type="text" class="form-control" name="sort" placeholder="导航排序" value="{{ $Nav->sort }}">
                       </div>

@@ -14,6 +14,10 @@
 	margin-bottom:20px;
 }
 
+.main p{
+	padding: 5px 10px;
+}
+
 /*移动端*/
 @media only screen and (max-width: 800px) {
 	.w-1000{width:100%;}

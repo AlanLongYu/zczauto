@@ -26,13 +26,14 @@ class DataController extends FrontController
         $nav = Nav::find(['id',$catId]);
         foreach ($nav as  $n) {
             $currentName = $n->name;
+            $rightContent = $n->content;
         }
         $items = [];
         foreach($categories->toArray() AS $key => $val){
             $items[$val['id']] = $val;
         }
         $tree =  Category::generateTree($items);
-		return view('desktop.data',['categories' =>$tree,'navId' => $catId,'currentName' => $currentName]);
+		return view('desktop.data',['categories' =>$tree,'navId' => $catId,'currentName' => $currentName,'rightContent' => $rightContent]);
 	}
 
     public function search(Request $request)
