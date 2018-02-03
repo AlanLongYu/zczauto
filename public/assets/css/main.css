@@ -630,6 +630,7 @@ input::-ms-clear {
 	color: #808080;
 	float: left;
 	margin-left: 30px;
+    text-align: center;
 }
 
 #footer .info dl dt {
