@@ -34,7 +34,7 @@ class CarownerController extends Controller
             return redirect()->to(site_path('carowner', 'admin'))->with('fail', '参数错误');
         }
     	$ziliaos = Ziliao::paginate(15);
-        $categories = Category::where(['nav_id' => $navId])->get();
+        $categories = Category::where(['nav_id' => $navId])->orderBy('nav_id','ASC')->orderBy('p_id','ASC')->orderBy('id','ASC')->get();
         $items = [];
         foreach($categories->toArray() AS $key => $val){
             $items[$val['id']] = $val;
@@ -64,7 +64,7 @@ class CarownerController extends Controller
         $ziliaos = Ziliao::find($id);
         is_null($ziliaos) AND abort(404);
         $navId = $ziliaos -> nav_id;
-        $categories = Category::where(['nav_id' => $navId])->get();
+        $categories = Category::where(['nav_id' => $navId])->orderBy('nav_id','ASC')->orderBy('p_id','ASC')->orderBy('id','ASC')->get();
         $items = [];
         foreach($categories->toArray() AS $key => $val){
             $items[$val['id']] = $val;

@@ -53,7 +53,7 @@ class NavController extends Controller
         		}
         	}
             $items = [];
-            $cars = Car::orderBy('sort','ASC')->get();
+            $cars = Car::orderBy('id','ASC')->get();
             foreach($cars->toArray() AS $key => $val){
                 $items[$val['id']] = $val;
             }
@@ -239,7 +239,7 @@ class NavController extends Controller
 
 
             $items = [];
-            $cars = Car::orderBy('sort','ASC')->get();
+            $cars = Car::orderBy('id','ASC')->get();
             foreach($cars->toArray() AS $key => $val){
                 $items[$val['id']] = $val;
             }

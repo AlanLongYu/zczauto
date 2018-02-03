@@ -22,7 +22,7 @@ class DataController extends FrontController
             echo 'alert("对不起，参数错误")';
             return ;
         }
-		$categories = Category::where(['nav_id' => $catId]) ->orderBy('sort','ASC')->get();
+		$categories = Category::where(['nav_id' => $catId]) ->orderBy('nav_id','ASC')->orderBy('p_id','ASC')->orderBy('id','ASC')->get();
         $nav = Nav::find(['id',$catId]);
         foreach ($nav as  $n) {
             $currentName = $n->name;
@@ -67,7 +67,7 @@ class DataController extends FrontController
     //汽车详情
     public function carDetail($catid,$navId)
     {
-        $cate = Category::where('nav_id',$navId)->orderBy('sort','ASC')->get();
+        $cate = Category::where('nav_id',$navId)->orderBy('nav_id','ASC')->orderBy('p_id','ASC')->orderBy('id','ASC')->get();
         $items = [];
         foreach($cate->toArray() AS $k => $v){
             $items[$v['id']] = $v;
