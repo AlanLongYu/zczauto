@@ -26,7 +26,7 @@ class UserRequest extends Request
         //update
         if($this->segment(3)){
             $rules = [
-                'nickname'              => 'required|alpha_dash|min:4|max:10',
+                //'nickname'              => 'required|alpha_dash|min:4|max:10',
                 'realname'              => 'required|min:2|max:5|regex:/^[\x{4e00}-\x{9fa5}]{2,5}$/u',  //中文正则匹配可能有遗漏
                 'password'              => 'min:6|max:16|regex:/^[a-zA-Z0-9~@#%_]{6,16}$/i',  //登录密码只能英文字母(a-zA-Z)、阿拉伯数字(0-9)、特殊符号(~@#%)
                 'password_confirmation' => 'same:password',
@@ -57,10 +57,10 @@ class UserRequest extends Request
     public function messages()
     {
         return [
-            'nickname.required'   => '请填写昵称',
-            'nickname.alpha_dash' => '昵称包含特殊字符',
-            'nickname.min'        => '昵称过短，长度不得少于4',
-            'nickname.max'        => '昵称过长，长度不得超出10',
+            //'nickname.required'   => '请填写昵称',
+            //'nickname.alpha_dash' => '昵称包含特殊字符',
+           // 'nickname.min'        => '昵称过短，长度不得少于4',
+            //'nickname.max'        => '昵称过长，长度不得超出10',
 
             'username.unique'        => '此登录名已存在，请尝试其它名字组合',
             'username.required'      => '请填写登录名',
