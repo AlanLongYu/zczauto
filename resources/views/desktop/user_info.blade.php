@@ -47,14 +47,14 @@
 								- 到 -
 							@endif
 							</span>
-							<span class="ex-tips">会员有效使用期限</span>
+							<span class="ex-tips">账号有效使用期限</span>
 						</div>
 					</li>
 					<li>
 						<label for="email">剩余天数</label>
 						<div class="inputbox">
 							<span>{{ Auth::guard('member')->user()->role==1 ? ceil((strtotime(Auth::guard('member')->user()->end_date) -time())/86400) : 0}}</span>
-							<span class="ex-tips">会员使用剩余天数</span>
+							<span class="ex-tips">账号使用剩余天数</span>
 						</div>
 					</li>
 					<li>
