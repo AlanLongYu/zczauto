@@ -50,8 +50,8 @@
 				4、软件内附详细安装教程，亲们请自行安装！
 			</p>
 			<p class="add">
-				 
-				对不起！年费VIP会员才能查看下载地址喔！				
+				 {!! Auth::guard('member')->check()  && Auth::guard('member')->user()->role==1 ? $articles->url : '对不起！年费VIP会员登录后才能查看下载地址喔！' !!}
+								
 			</p>
 		</section>
 	</div>
