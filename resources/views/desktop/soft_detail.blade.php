@@ -42,15 +42,15 @@
 		</section>
 		<section>
 			<h3>下载地址</h3>
-			<p>
+			<!--<p>
 				注意事项：<br>
 				1、年VIP可以直接查看下载地址。<br>
 				2、软件采用百度网盘存储。<br>
 				3、请使用百度盘客户端下载，<a href="/help/softdown">不知如何下载点这里！</a><br>
 				4、软件内附详细安装教程，亲们请自行安装！
-			</p>
+			</p>-->
 			<p class="add">
-				 {!! Auth::guard('member')->check()  && Auth::guard('member')->user()->role==1 ? $articles->url : '对不起！年费VIP会员登录后才能查看下载地址喔！' !!}
+				 {!! Auth::guard('member')->check()  && Auth::guard('member')->user()->role==1 ? $articles->url : '' !!}
 								
 			</p>
 		</section>

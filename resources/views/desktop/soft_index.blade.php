@@ -42,7 +42,6 @@
 					<img src="{{$article->thumb}}" alt="{{$article->title}}">
 					<div>
 						<h3>{{$article->title}}</h3>
-						<span>年费VIP专享</span>
 						<p>{{$article->description}}</p>
 						<div>大小：{{$article->size}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;语言：{{config('ecms.language')[$article->language]}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{{$article->downloadtimes}}人已下载</div>
 					</div>
